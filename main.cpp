@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 #include <windows.h> 
+ 
+#include "extra.h"
 
 #define ARRIBA 119
 #define ABAJO 115
@@ -7,19 +9,17 @@
 
 using namespace std;
 //Funciones de terminal y captura de teclas
-void gotoxy(int x,int y);
-char getch2();
 
 
-class Partida{
+class clsPartida{
     private:
-        
+
     public:
     int menu(string, string[], int);
     void menuPrincipal();
 };
-//Partida Metodo
-int Partida::menu(string titulo, string opciones[], int n){
+
+int clsPartida::menu(string titulo, string opciones[], int n){
     int opSeleccionada = 1;
     int tecla;
 
@@ -63,7 +63,7 @@ int Partida::menu(string titulo, string opciones[], int n){
    return opSeleccionada;
 }
 
-void Partida::menuPrincipal(){
+void clsPartida::menuPrincipal(){
     bool flag = true;
     int op;
 
@@ -99,57 +99,8 @@ ________        ___  _______   ________  ________  _______   ________
     }while(flag);
 }
 
-class Pieza{
-    protected:
-        int posX;
-        int posY;
-        char color;
-    public:
-        Pieza(int, int, char);
-};
-
-Pieza::Pieza(int x, int y, char c){
-    posX = x;
-    posY = y;
-    color = c;
-}
-
-class Peon : public Pieza{
-
-};
-
-class Caballo : public Pieza{
-
-};
-
-class Alfil : public Pieza{
-
-};
-
-class Torre : public Pieza{
-
-};
-
-class Reina : public Pieza{
-
-};
-
-class Rey : public Pieza{
-
-};
-
-class Tablero{
-    private:
-        int matriz[8][8];
-    public:
-
-};
-
- 
-
-
 int main (){
-    Partida prueba;
+    clsPartida prueba;
     prueba.menuPrincipal();
     return 0;
 }
@@ -160,29 +111,3 @@ int main (){
 
 
 
-char getch2(){
-   char c=0;
-   DWORD modo, contador;
-   HANDLE ih = GetStdHandle(STD_INPUT_HANDLE);
- 
-   // Desactivamos escritura en terminal
-   SetConsoleMode (ih, modo & ~(ENABLE_ECHO_INPUT | ENABLE_LINE_INPUT));
- 
-   ReadConsoleA (ih, &c, 1, &contador, NULL);
- 
-   if (c == 0) {
-      ReadConsoleA (ih, &c, 1, &contador, NULL);
-   }
- 
-   SetConsoleMode (ih, modo); // Devolvemos control normal
- 
-   return c;
-}
-void gotoxy(int x,int y){  
-      HANDLE hcon;  
-      hcon = GetStdHandle(STD_OUTPUT_HANDLE);  
-      COORD dwPos;  
-      dwPos.X = x;  
-      dwPos.Y= y;  
-      SetConsoleCursorPosition(hcon,dwPos);  
- }
