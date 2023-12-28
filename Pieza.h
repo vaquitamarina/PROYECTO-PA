@@ -1,9 +1,9 @@
 using namespace std;
 
 class clsPieza{
-    private:
+    protected:
         int posX;
-        int posy;
+        int posY;
         char color;
         bool estado;
 
@@ -12,8 +12,52 @@ class clsPieza{
         void setPosX(int);
         void setPosY(int);
         void getColor();
+};
+
+// Metodos de la clase Pieza
+
+void clsPieza::setPosX(int x){
+    posX = x;
+}
+void clsPieza::setPosY(int y){
+    posY = y;
 }
 
-class clsPeon{
 
-}
+
+class clsPeon : public clsPieza{
+    private:
+
+    public:
+
+};
+
+class clsReina : public clsPieza{
+    private:
+
+    public:
+
+};
+
+class clsRey : public clsPieza{
+    private:
+
+    public:
+
+};
+
+class clsAlfil : public clsPieza{
+    private:
+
+    public:
+
+};
+
+class clsCaballo : public clsPieza{
+    private:
+
+    public:
+
+};
+
+
