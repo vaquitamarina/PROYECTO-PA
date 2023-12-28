@@ -1,2 +1,2 @@
 # PROYECTO-PA
-gaaaa
+Juego de ajedrez escrito en c++
