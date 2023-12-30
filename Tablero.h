@@ -15,7 +15,6 @@ class clsCasilla {
 };
 
 clsCasilla::clsCasilla(){
-
 }
 
 void clsCasilla::setPieza(clsPieza *p){
