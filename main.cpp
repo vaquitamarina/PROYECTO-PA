@@ -2,14 +2,19 @@
 #include <windows.h> 
  
 #include "extra.h"
-#include "Partida.h"
-#include "Tablero.h"
+#include "Usuario.h"
 #include "Pieza.h"
+#include "Tablero.h"
+
+
+#include "Partida.h"
+#include "Menu.h"
+
 
 using namespace std;
 
 int main (){
-    clsPartida prueba;
+    clsMenu prueba;
     prueba.menuPrincipal();
     return 0;
 }

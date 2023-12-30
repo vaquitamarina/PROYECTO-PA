@@ -25,39 +25,4 @@ void clsPieza::setPosY(int y){
 
 
 
-class clsPeon : public clsPieza{
-    private:
-
-    public:
-
-};
-
-class clsReina : public clsPieza{
-    private:
-
-    public:
-
-};
-
-class clsRey : public clsPieza{
-    private:
-
-    public:
-
-};
-
-class clsAlfil : public clsPieza{
-    private:
-
-    public:
-
-};
-
-class clsCaballo : public clsPieza{
-    private:
-
-    public:
-
-};
-
-
+    
