@@ -2,7 +2,7 @@
 
 using namespace std;
 //------------------------------------------------------------------------------//
-// Casillas
+// Casillas//
 class clsCasilla {
     private:
         clsPieza *pPieza;
@@ -26,13 +26,14 @@ void clsCasilla::setVacio(bool v){
 }
 
 //------------------------------------------------------------------------------//
-//Tablero
+//Tablero//
 
 class clsTablero{
     private:
         clsCasilla matrizCasilla[8][8];
     public:
         clsTablero(clsCasilla matriz[8][8]);
+        mostrarTablero();
 };
 
 clsTablero::clsTablero(clsCasilla matriz[][8]){

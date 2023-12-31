@@ -7,13 +7,30 @@ using namespace std;
 
 class clsMenu{
     private:
-
+        clsPartida *pPartida;
     public:
         int menu(string titulo, string opciones[], int n);
         void menuPrincipal();
-        void crearPartida();
+        void crearPartida(string,string, clsCasilla matriz[][8]);
 };
 
+//------------------------------------------------------------------------------//
+//Metodos//
+
+void clsMenu::crearPartida(string n,string b, clsCasilla matriz[][8]){
+    pPartida = new clsPartida(n, b, matriz);
+}
+
+
+
+
+
+
+
+
+
+//------------------------------------------------------------------------------//
+//Menus//
 int clsMenu::menu(string titulo, string opciones[], int n){
     int opSeleccionada = 1;
     int tecla;
