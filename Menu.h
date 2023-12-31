@@ -11,14 +11,14 @@ class clsMenu{
     public:
         int menu(string titulo, string opciones[], int n);
         void menuPrincipal();
-        void crearPartida(string,string, clsCasilla matriz[][8]);
+        void crearPartida(string,string);
 };
 
 //------------------------------------------------------------------------------//
 //Metodos//
 
-void clsMenu::crearPartida(string n,string b, clsCasilla matriz[][8]){
-    pPartida = new clsPartida(n, b, matriz);
+void clsMenu::crearPartida(string n,string b){
+    pPartida = new clsPartida(n,b);
 }
 
 
@@ -94,10 +94,21 @@ ________        ___  _______   ________  ________  _______   ________
         op = menu(titulo,opciones,n);
 
         switch(op){
-            case 1:
+            case 1: 
+                {
                 system("cls");
-                cout<<"hola";
+                string n,b;
+                cout<<"Ingrese los 2 usuarios";
+                cin>>n;
+                cin>>b,
+                system("cls");
+                crearPartida(n,b);
+                pPartida -> mostrarTablero();
+                
+                
+
                 system("pause>nul");
+                }
                 break;
             case 2:
                 system("cls");

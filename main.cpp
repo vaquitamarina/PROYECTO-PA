@@ -13,7 +13,7 @@
 
 using namespace std;
 
-int main (){
+int main(){
     clsMenu prueba;
     prueba.menuPrincipal();
     return 0;

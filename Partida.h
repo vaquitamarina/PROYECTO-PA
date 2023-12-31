@@ -8,11 +8,16 @@ class clsPartida{
         string usuarioB;
         clsTablero *pTablero;
     public:
-        clsPartida(string, string, clsCasilla matriz[][8]);
+        clsPartida(string, string);
+        void mostrarTablero();
 };
 
-clsPartida::clsPartida(string n, string b, clsCasilla matriz[][8]){
+clsPartida::clsPartida(string n, string b){
     usuarioN = n;
     usuarioB = b;
-    pTablero = new clsTablero(matriz);
+    pTablero = new clsTablero();
+}
+
+void clsPartida::mostrarTablero(){
+    pTablero -> mostrarTablero();
 }
