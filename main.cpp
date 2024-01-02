@@ -14,8 +14,28 @@
 using namespace std;
 
 int main(){
-    clsMenu prueba;
-    //prueba.menuPrincipal();
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "Ajedrez");
+    sf::Font gameFont;
+    gameFont.loadFromFile(".\\Fonts\\04B_30__.TTF");
+
+    sf::Text text;
+    text.setFont(gameFont);
+    text.setString("Bienvenido a la plataforma...");
+
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event ::Closed)
+                window.close();
+        }
+    
+        window.clear();
+            window.draw(text);
+        window.display();
+    }
+
     return 0;
 }
 
