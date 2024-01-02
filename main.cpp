@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 #include <windows.h> 
- 
+#include <SFML/Graphics.hpp>
 #include "extra.h"
 #include "Usuario.h"
 #include "Pieza.h"
@@ -15,7 +15,7 @@ using namespace std;
 
 int main(){
     clsMenu prueba;
-    prueba.menuPrincipal();
+    //prueba.menuPrincipal();
     return 0;
 }
 
