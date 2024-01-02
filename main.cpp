@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 #include <windows.h> 
 #include <SFML/Graphics.hpp>
-#include "extra.h"
-#include "Usuario.h"
-#include "Pieza.h"
-#include "Tablero.h"
+#include "Libraries/extra.h"
+#include "Libraries/Usuario.h"
+#include "Libraries/Pieza.h"
+#include "Libraries/Tablero.h"
 
 
-#include "Partida.h"
-#include "Menu.h"
+#include "Libraries/Partida.h"
+#include "Libraries/Menu.h"
 
 
 using namespace std;
