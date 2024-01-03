@@ -32,7 +32,7 @@ int main(){
     text.setString("Bienvenido a la plataforma...");
 
     //music
-    sf :: Music backgroundMusic;
+    sf::Music backgroundMusic;
     backgroundMusic.openFromFile("Megalovania-(128kbps).ogg");
     backgroundMusic.play();
     backgroundMusic.setLoop(true);
