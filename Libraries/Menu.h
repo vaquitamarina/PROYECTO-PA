@@ -25,9 +25,10 @@ class clsMenu{
     public:
         clsMenu(RenderWindow *w);
 
-        void menuPrincipal();
         void crearPartida(string,string);
+        void menuPrincipal();
         void draw(RenderWindow &window);
+        void menuPrincipalSwitch();
         void moveUp();
         void moveDown();
 };
@@ -123,7 +124,17 @@ void clsMenu :: moveUp()
 
 //------------------------------------------------------------------------------//
 //Metodos//
-
+void clsMenu :: menuPrincipalSwitch(){
+    switch(MainMenuSelected){
+        case 0:
+            break;
+        case 1:
+            break;
+        case 2:
+            window->close();
+            break;
+    }
+}
 
 void clsMenu :: menuPrincipal()
 {
@@ -153,6 +164,10 @@ void clsMenu :: menuPrincipal()
                     moveDown();
                     efecto.play();
                     break;
+                }
+                if(event.key.code == Keyboard::Enter)
+                {
+                    menuPrincipalSwitch();
                 }
             }
         }
