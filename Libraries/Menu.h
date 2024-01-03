@@ -14,6 +14,8 @@ class clsMenu{
         RenderWindow *window;
         Font gameFont;
         Music soundtrack;
+        SoundBuffer efectoSonidoMenu;
+        Sound efecto;
         Text titulo;
         Text opciones[MaximosMenus];
         Texture tBackground;
@@ -77,6 +79,9 @@ clsMenu::clsMenu(RenderWindow *w){
 
     MainMenuSelected = 0;
 
+    efectoSonidoMenu.loadFromFile("./soundsEffects/snd_select.wav");
+    efecto.setBuffer(efectoSonidoMenu);
+
 }
 
 void clsMenu :: draw(RenderWindow &window)
@@ -135,11 +140,13 @@ void clsMenu :: menuPrincipal()
                 if(event.key.code == Keyboard::Up)
                 {
                     moveUp();
+                    efecto.play();
                     break;
                 }
                 if(event.key.code == Keyboard::Down)
                 {
                     moveDown();
+                    efecto.play();
                     break;
                 }
             }
