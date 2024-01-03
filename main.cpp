@@ -5,6 +5,7 @@
 #include "Libraries/Usuario.h"
 #include "Libraries/Pieza.h"
 #include "Libraries/Tablero.h"
+#include <SFML/Audio.hpp>
 
 
 #include "Libraries/Partida.h"
@@ -29,6 +30,12 @@ int main(){
     sf::Text text;
     text.setFont(gameFont);
     text.setString("Bienvenido a la plataforma...");
+
+    //music
+    sf :: Music backgroundMusic;
+    backgroundMusic.openFromFile("Megalovania-(128kbps).ogg");
+    backgroundMusic.play();
+    backgroundMusic.setLoop(true);
 
     while (window.isOpen())
     {
