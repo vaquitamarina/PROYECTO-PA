@@ -33,7 +33,7 @@ int main(){
 
     //music
     sf :: Music backgroundMusic;
-    backgroundMusic.openFromFile("Megalovania-(128kbps).ogg");
+    backgroundMusic.openFromFile("./music/Megalovania-(128kbps).ogg");
     backgroundMusic.play();
     backgroundMusic.setLoop(true);
 
