@@ -43,11 +43,11 @@ clsMenu::clsMenu(RenderWindow *w){
 
     gameFont.loadFromFile("./Fonts/04B_30__.TTF");
 
-    soundtrack.openFromFile("./music/Megalovania-(128kbps).ogg");
+    soundtrack.openFromFile("./music/An_Engineer_Gaming_Megalo.ogg");
     soundtrack.play();
     soundtrack.setLoop(true);
 
-    tBackground.loadFromFile("./Images/background.png");
+    tBackground.loadFromFile("./Images/wallpaperbetter.com_1440x900.jpg");
     background = new Sprite(tBackground);
 
     titulo.setFont(gameFont);
