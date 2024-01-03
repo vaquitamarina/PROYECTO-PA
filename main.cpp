@@ -13,9 +13,10 @@
 
 
 using namespace std;
+using namespace sf;
 
 int main(){
-    sf::RenderWindow window(sf::VideoMode(1280, 720), "Ajedrez", sf::Style::Titlebar | sf::Style::Close);
+    RenderWindow window(VideoMode(1280, 720), "Ajedrez", Style::Default);
     clsMenu menu(&window);
     
     menu.menuPrincipal();

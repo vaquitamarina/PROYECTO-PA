@@ -1,65 +1,148 @@
 #define ARRIBA 119
 #define ABAJO 115
 #define ENTER 13
+#define MaximosMenus 3
 
 #include <bits/stdc++.h>
-using namespace std;   
+
+using namespace std;
+using namespace sf;   
 
 class clsMenu{
     private:
         clsPartida *pPartida;
-        sf::RenderWindow *window;
-        sf::Font gameFont;
-        sf::Music soundtrack;
-        sf::Text titulo;
-        sf::Text opciones[3];
-        sf::Texture tBackground;
-        sf::Sprite *background;
+        RenderWindow *window;
+        Font gameFont;
+        Music soundtrack;
+        Text titulo;
+        Text opciones[MaximosMenus];
+        Texture tBackground;
+        Sprite *background;
+        int MainMenuSelected;
+
     public:
-        clsMenu(sf::RenderWindow *w);
-        int menu(string titulo, string opciones[], int n);
+        clsMenu(RenderWindow *w);
+
         void menuPrincipal();
         void crearPartida(string,string);
+        void draw(RenderWindow &window);
+        void moveUp();
+        void moveDown();
 };
+
+
 //constructor
 
-clsMenu::clsMenu(sf::RenderWindow *w){
+clsMenu::clsMenu(RenderWindow *w){
     float n=0.f;
     window = w;
+    float ancho=window->getSize().x;
+    float alto=window->getSize().y;
+
     gameFont.loadFromFile("./Fonts/04B_30__.TTF");
+
     soundtrack.openFromFile("./music/Megalovania-(128kbps).ogg");
     soundtrack.play();
     soundtrack.setLoop(true);
+
     tBackground.loadFromFile("./Images/background.png");
-    background = new sf::Sprite(tBackground);
+    background = new Sprite(tBackground);
+
     titulo.setFont(gameFont);
     titulo.setString("Ajedrez");
     titulo.setCharacterSize(80);
     titulo.setPosition(400.f,30.f);
+
+
+    //Iniciar partida
+    opciones[0].setFont(gameFont);
+    opciones[0].setColor(Color::Yellow);
     opciones[0].setString("Inciar partida");
+    opciones[0].setCharacterSize(30);
+    opciones[0].setPosition(400.f,300.f);
+
+    //Configuracion
+    opciones[1].setFont(gameFont);
+    opciones[1].setColor(Color::White);
     opciones[1].setString("Configuracion");
+    opciones[1].setCharacterSize(30);
+    opciones[1].setPosition(400.f,400.f);
+
+    //Salir
+    opciones[2].setFont(gameFont);
+    opciones[2].setColor(Color::White);
     opciones[2].setString("Salir");
-    for(int i=1;i<=3;i++){
-        opciones[i-1].setFont(gameFont);
-        opciones[i-1].setCharacterSize(30);
-        n = 200 + 100*i;
-        opciones[i-1].setPosition(400.f, n);
+    opciones[2].setCharacterSize(30);
+    opciones[2].setPosition(400.f,500.f);
+
+    MainMenuSelected = 0;
+
+}
+
+void clsMenu :: draw(RenderWindow &window)
+{
+    for (int i = 0; i < MaximosMenus; i++)
+    {
+        window.draw(opciones[i]);
+    }
+}
+
+void clsMenu :: moveDown()
+{
+    if(MainMenuSelected + 1 <= MaximosMenus)
+    {
+        opciones[MainMenuSelected].setColor(Color::White);
+        MainMenuSelected++;
+        if(MainMenuSelected==3)
+        {
+            MainMenuSelected=0;
+        }
+        opciones[MainMenuSelected].setColor(Color::Yellow);
+    }
+}
+void clsMenu :: moveUp()
+{
+    if(MainMenuSelected - 1 >= -1)
+    {
+        opciones[MainMenuSelected].setColor(Color::White);
+        MainMenuSelected--;
+        if(MainMenuSelected==-1)
+        {
+            MainMenuSelected=2;
+        }
+        opciones[MainMenuSelected].setColor(Color::Yellow);
     }
 }
 
 
 
-
 //------------------------------------------------------------------------------//
 //Metodos//
-void clsMenu::menuPrincipal(){
+
+
+void clsMenu :: menuPrincipal()
+{
     while (window->isOpen())
     {
-        sf::Event event;
+        Event event;
         while (window->pollEvent(event))
         {
-            if (event.type == sf::Event ::Closed)
+            if (event.type == Event ::Closed)
                 window->close();
+
+            if (event.type == Event::KeyReleased)
+            {
+                if(event.key.code == Keyboard::Up)
+                {
+                    moveUp();
+                    break;
+                }
+                if(event.key.code == Keyboard::Down)
+                {
+                    moveDown();
+                    break;
+                }
+            }
         }
     
         window->clear();
@@ -78,104 +161,3 @@ void clsMenu::crearPartida(string n,string b){
     pPartida = new clsPartida(n,b);
 }
 
-
-
-
-
-
-
-
-
-//------------------------------------------------------------------------------//
-//Menus//
-int clsMenu::menu(string titulo, string opciones[], int n){
-    int opSeleccionada = 1;
-    int tecla;
-
-    bool flag = true;
-
-    do{
-        system("cls");
-        gotoxy(5, 10 + opSeleccionada); cout << "==>" << endl;
-        gotoxy(15, 1); cout << titulo;
-        for (int i = 0; i < n; ++i) {
-            gotoxy(10, 11 + i); cout << i + 1 << ") " << opciones[i];
-        }
-    
-
-        do {
-            tecla = getch2();
-        } while (tecla != ARRIBA && tecla != ABAJO && tecla != ENTER);
-
-        switch(tecla){
-            case ARRIBA:   
-                opSeleccionada--;
-
-                if (opSeleccionada < 1) {
-                    opSeleccionada = n;
-                }
-                break;
- 
-            case ABAJO:
-                opSeleccionada++;
- 
-                if (opSeleccionada > n) {
-                    opSeleccionada = 1;
-                }
-                break; 
-            case ENTER:
-                flag = false;
-                break;
-        }
-   }while(flag);
- 
-   return opSeleccionada;
-}
-/*
-void clsMenu::menuPrincipal(){
-    bool flag = true;
-    int op;
-
-    string titulo = R"(
-________        ___  _______   ________  ________  _______   ________     
-|\   __  \      |\  \|\  ___ \ |\   ___ \|\   __  \|\  ___ \ |\_____  \    
-\ \  \|\  \     \ \  \ \   __/|\ \  \_|\ \ \  \|\  \ \   __/| \|___/  /|   
- \ \   __  \  __ \ \  \ \  \_|/_\ \  \ \\ \ \   _  _\ \  \_|/__   /  / /   
-  \ \  \ \  \|\  \\_\  \ \  \_|\ \ \  \_\\ \ \  \\  \\ \  \_|\ \ /  /_/__  
-   \ \__\ \__\ \________\ \_______\ \_______\ \__\\ _\\ \_______\\________\
-    \|__|\|__|\|________|\|_______|\|_______|\|__|\|__|\|_______|\|_______| )";
-    string opciones[] = {"Iniciar partida","Configuracion", "Salir"};
-    int n = 3;
-
-    do{
-        op = menu(titulo,opciones,n);
-
-        switch(op){
-            case 1: 
-                {
-                system("cls");
-                string n,b;
-                cout<<"Ingrese los 2 usuarios";
-                cin>>n;
-                cin>>b,
-                system("cls");
-                crearPartida(n,b);
-                pPartida -> mostrarTablero();
-                
-                
-
-                system("pause>nul");
-                }
-                break;
-            case 2:
-                system("cls");
-                cout<<"chau";
-                system("pause>nul");
-                break;
-            case 3:
-                flag = false;
-                break;
-        }
-    }while(flag);
-}
-*/
