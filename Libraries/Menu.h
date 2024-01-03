@@ -135,6 +135,11 @@ void clsMenu :: menuPrincipal()
             if (event.type == Event ::Closed)
                 window->close();
 
+            if(event.type == Event::KeyPressed && event.key.code == Keyboard::Escape)
+                {
+                    window->close();
+                    break;
+                }
             if (event.type == Event::KeyReleased)
             {
                 if(event.key.code == Keyboard::Up)
