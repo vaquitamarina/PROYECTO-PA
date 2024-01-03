@@ -14,7 +14,7 @@
 using namespace std;
 
 int main(){
-    sf::RenderWindow window(sf::VideoMode(1280, 720), "Ajedrez");
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "Ajedrez", sf::Style::Titlebar | sf::Style::Close);
     //font
     sf::Font gameFont;
     gameFont.loadFromFile("./Fonts/04B_30__.TTF");
