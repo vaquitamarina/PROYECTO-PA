@@ -8,14 +8,71 @@ using namespace std;
 class clsMenu{
     private:
         clsPartida *pPartida;
+        sf::RenderWindow *window;
+        sf::Font gameFont;
+        sf::Music soundtrack;
+        sf::Text titulo;
+        sf::Text opciones[3];
+        sf::Texture tBackground;
+        sf::Sprite *background;
     public:
+        clsMenu(sf::RenderWindow *w);
         int menu(string titulo, string opciones[], int n);
         void menuPrincipal();
         void crearPartida(string,string);
 };
+//constructor
+
+clsMenu::clsMenu(sf::RenderWindow *w){
+    float n=0.f;
+    window = w;
+    gameFont.loadFromFile("./Fonts/04B_30__.TTF");
+    soundtrack.openFromFile("./music/Megalovania-(128kbps).ogg");
+    soundtrack.play();
+    soundtrack.setLoop(true);
+    tBackground.loadFromFile("./Images/background.png");
+    background = new sf::Sprite(tBackground);
+    titulo.setFont(gameFont);
+    titulo.setString("Ajedrez");
+    titulo.setCharacterSize(80);
+    titulo.setPosition(400.f,30.f);
+    opciones[0].setString("Inciar partida");
+    opciones[1].setString("Configuracion");
+    opciones[2].setString("Salir");
+    for(int i=1;i<=3;i++){
+        opciones[i-1].setFont(gameFont);
+        opciones[i-1].setCharacterSize(30);
+        n = 200 + 100*i;
+        opciones[i-1].setPosition(400.f, n);
+    }
+}
+
+
+
 
 //------------------------------------------------------------------------------//
 //Metodos//
+void clsMenu::menuPrincipal(){
+    while (window->isOpen())
+    {
+        sf::Event event;
+        while (window->pollEvent(event))
+        {
+            if (event.type == sf::Event ::Closed)
+                window->close();
+        }
+    
+        window->clear();
+            window->draw(*background);
+            window->draw(titulo);
+            window->draw(opciones[0]);
+            window->draw(opciones[1]);
+            window->draw(opciones[2]);
+        window->display();
+    }
+    
+}
+
 
 void clsMenu::crearPartida(string n,string b){
     pPartida = new clsPartida(n,b);
@@ -74,7 +131,7 @@ int clsMenu::menu(string titulo, string opciones[], int n){
  
    return opSeleccionada;
 }
-
+/*
 void clsMenu::menuPrincipal(){
     bool flag = true;
     int op;
@@ -121,3 +178,4 @@ ________        ___  _______   ________  ________  _______   ________
         }
     }while(flag);
 }
+*/
