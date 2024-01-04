@@ -88,6 +88,7 @@ clsMenu::clsMenu(RenderWindow *w){
 
 }
 
+//Esta funcion dibuja todos los menus segun las opciones
 void clsMenu :: draw(){
     switch(mainMenuEnter){
         case 0:
@@ -106,7 +107,10 @@ void clsMenu :: draw(){
     }
 } 
 
+//---------------------------------------------------------------------------------//
 
+
+//Metodos//
 void clsMenu :: moveDown()
 {
     if(mainMenuSelected + 1 <= MaximosMenus)
@@ -134,14 +138,11 @@ void clsMenu :: moveUp()
     }
 }
 
-
-
-//------------------------------------------------------------------------------//
-//Metodos//
 void clsMenu :: menuPrincipalSwitch(){
     switch(mainMenuSelected){
         case 0:
             mainMenuEnter = 1;
+
             break;
         case 1:
             mainMenuEnter = 2;
