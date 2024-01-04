@@ -6,7 +6,7 @@
 #include "Libraries/Pieza.h"
 #include "Libraries/Tablero.h"
 #include <SFML/Audio.hpp>
-
+#include "Libraries/Registro.h"
 
 #include "Libraries/Partida.h"
 #include "Libraries/Menu.h"
