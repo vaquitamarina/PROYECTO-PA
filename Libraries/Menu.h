@@ -20,14 +20,16 @@ class clsMenu{
         Text opciones[MaximosMenus];
         Texture tBackground;
         Sprite *background;
-        int MainMenuSelected;
+        int mainMenuSelected;
+        int mainMenuEnter;
 
     public:
         clsMenu(RenderWindow *w);
 
         void crearPartida(string,string);
         void menuPrincipal();
-        void draw(RenderWindow &window);
+
+        void draw();
         void menuPrincipalSwitch();
         void moveUp();
         void moveDown();
@@ -78,45 +80,57 @@ clsMenu::clsMenu(RenderWindow *w){
     opciones[2].setCharacterSize(30);
     opciones[2].setPosition(400.f,500.f);
 
-    MainMenuSelected = 0;
+    mainMenuSelected = 0;
+    mainMenuEnter = 0;
 
     efectoSonidoMenu.loadFromFile("./soundsEffects/snd_select.wav");
     efecto.setBuffer(efectoSonidoMenu);
 
 }
 
-void clsMenu :: draw(RenderWindow &window)
-{
-    for (int i = 0; i < MaximosMenus; i++)
-    {
-        window.draw(opciones[i]);
+void clsMenu :: draw(){
+    switch(mainMenuEnter){
+        case 0:
+            window->draw(*background);
+            window->draw(titulo);
+            window->draw(opciones[0]);
+            window->draw(opciones[1]);
+            window->draw(opciones[2]);
+            break;
+        case 1:
+
+            break;
+        case 2:
+
+            break;
     }
-}
+} 
+
 
 void clsMenu :: moveDown()
 {
-    if(MainMenuSelected + 1 <= MaximosMenus)
+    if(mainMenuSelected + 1 <= MaximosMenus)
     {
-        opciones[MainMenuSelected].setColor(Color::White);
-        MainMenuSelected++;
-        if(MainMenuSelected==3)
+        opciones[mainMenuSelected].setColor(Color::White);
+        mainMenuSelected++;
+        if(mainMenuSelected==3)
         {
-            MainMenuSelected=0;
+            mainMenuSelected=0;
         }
-        opciones[MainMenuSelected].setColor(Color::Yellow);
+        opciones[mainMenuSelected].setColor(Color::Yellow);
     }
 }
 void clsMenu :: moveUp()
 {
-    if(MainMenuSelected - 1 >= -1)
+    if(mainMenuSelected - 1 >= -1)
     {
-        opciones[MainMenuSelected].setColor(Color::White);
-        MainMenuSelected--;
-        if(MainMenuSelected==-1)
+        opciones[mainMenuSelected].setColor(Color::White);
+        mainMenuSelected--;
+        if(mainMenuSelected==-1)
         {
-            MainMenuSelected=2;
+            mainMenuSelected=2;
         }
-        opciones[MainMenuSelected].setColor(Color::Yellow);
+        opciones[mainMenuSelected].setColor(Color::Yellow);
     }
 }
 
@@ -125,10 +139,12 @@ void clsMenu :: moveUp()
 //------------------------------------------------------------------------------//
 //Metodos//
 void clsMenu :: menuPrincipalSwitch(){
-    switch(MainMenuSelected){
+    switch(mainMenuSelected){
         case 0:
+            mainMenuEnter = 1;
             break;
         case 1:
+            mainMenuEnter = 2;
             break;
         case 2:
             window->close();
@@ -173,11 +189,7 @@ void clsMenu :: menuPrincipal()
         }
     
         window->clear();
-            window->draw(*background);
-            window->draw(titulo);
-            window->draw(opciones[0]);
-            window->draw(opciones[1]);
-            window->draw(opciones[2]);
+            draw();
         window->display();
     }
     
