@@ -154,6 +154,8 @@ void clsMenu :: menuPrincipalSwitch(){
 
 void clsMenu :: menuPrincipal()
 {
+    bool fullscreen=false;
+    
     while (window->isOpen())
     {
         Event event;
@@ -167,6 +169,24 @@ void clsMenu :: menuPrincipal()
                     window->close();
                     break;
                 }
+            if(event.type == Event::KeyPressed && event.key.code == Keyboard::F)
+            {
+                window->close();
+
+                if(!fullscreen)
+                {
+                    window = new RenderWindow(VideoMode::getDesktopMode(),"Ajedrez",Style::Fullscreen);
+                    fullscreen=true;
+                    
+                }
+                else
+                {
+                    window = new RenderWindow(VideoMode(1280,720),"Ajedrez");
+                    fullscreen=false;
+                }
+                break;                
+            }
+
             if (event.type == Event::KeyReleased)
             {
                 if(event.key.code == Keyboard::Up)
