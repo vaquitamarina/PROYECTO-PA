@@ -102,6 +102,7 @@ void clsMenu :: draw(){
 
             break;
         case 2:
+            window->draw(*background);
 
             break;
     }
