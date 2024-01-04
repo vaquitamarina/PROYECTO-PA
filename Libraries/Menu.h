@@ -188,7 +188,7 @@ void clsMenu :: menuPrincipal()
                 break;                
             }
 
-            if (event.type == Event::KeyReleased)
+            if (event.type == Event::KeyPressed)
             {
                 if(event.key.code == Keyboard::Up)
                 {
