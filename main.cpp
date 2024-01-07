@@ -22,7 +22,7 @@ int main(){
     clsMenu menu(&window);
     
     menu.menuPrincipal();
-        
+    
 
     return 0;
 }

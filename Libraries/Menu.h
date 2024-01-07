@@ -9,7 +9,7 @@ using namespace std;
 using namespace sf;   
 
 class clsMenu{
-    private:
+    protected:
         clsPartida *pPartida;
         RenderWindow *window;
         Font gameFont;
@@ -20,6 +20,7 @@ class clsMenu{
         Text opciones[MaximosMenus];
         Texture tBackground;
         Sprite *background;
+        clsTextbox *textbox;
         int mainMenuSelected;
         int mainMenuEnter;
 
@@ -45,6 +46,10 @@ clsMenu::clsMenu(RenderWindow *w){
     float alto=window->getSize().y;
 
     gameFont.loadFromFile("./Fonts/04B_30__.TTF");
+
+    textbox = new clsTextbox(15,Color::White,true);
+    textbox->setFont(gameFont);
+    textbox->setPosition({100,100});
 
     soundtrack.openFromFile("./music/An_Engineer_Gaming_Megalo.ogg");
     soundtrack.play();
@@ -99,7 +104,7 @@ void clsMenu :: draw(){
             window->draw(opciones[2]);
             break;
         case 1:
-
+            textbox->drawTo(window);
             break;
         case 2:
             window->draw(*background);
@@ -208,6 +213,9 @@ void clsMenu :: menuPrincipal()
                     menuPrincipalSwitch();
                 }
             }
+            if(mainMenuEnter == 1 && event.type == Event::TextEntered){
+                    textbox->typedOn(event);
+            }
         }
     
         window->clear();
@@ -221,4 +229,10 @@ void clsMenu :: menuPrincipal()
 void clsMenu::crearPartida(string n,string b){
     pPartida = new clsPartida(n,b);
 }
+
+
+
+
+
+// Menu del inicio de sesion, registro de usuarios e iniciar partida;
 
