@@ -8,6 +8,12 @@
 using namespace std;
 using namespace sf;   
 
+
+//Clases menu;
+
+class clsMenuInicioSesion;
+
+
 class clsMenu{
     protected:
         clsPartida *pPartida;
@@ -21,12 +27,13 @@ class clsMenu{
         Texture tBackground;
         Sprite *background;
         clsTextbox *textbox;
+        clsMenuInicioSesion *menuInicioSesion;
         int mainMenuSelected;
         int mainMenuEnter;
 
     public:
         clsMenu(RenderWindow *w);
-
+        clsMenu();
         void crearPartida(string,string);
         void menuPrincipal();
 
@@ -36,12 +43,23 @@ class clsMenu{
         void moveDown();
 };
 
+class clsMenuInicioSesion : public clsMenu{
+    private:
+        Text opciones[2];
+    public:
+        clsMenuInicioSesion(RenderWindow *w);
+        void moveDown();
+        void moveUp();
+        void draw();
+        Text getOpciones(int);
+};
 
-//constructor
-
+//constructor clsenu
+clsMenu::clsMenu(){}
 clsMenu::clsMenu(RenderWindow *w){
     float n=0.f;
     window = w;
+    menuInicioSesion = new clsMenuInicioSesion(window);
     float ancho=window->getSize().x;
     float alto=window->getSize().y;
 
@@ -104,7 +122,8 @@ void clsMenu :: draw(){
             window->draw(opciones[2]);
             break;
         case 1:
-            textbox->drawTo(window);
+            menuInicioSesion->draw();
+            
             break;
         case 2:
             window->draw(*background);
@@ -116,7 +135,7 @@ void clsMenu :: draw(){
 //---------------------------------------------------------------------------------//
 
 
-//Metodos//
+//Metodos clsMenu//
 void clsMenu :: moveDown()
 {
     if(mainMenuSelected + 1 <= MaximosMenus)
@@ -168,6 +187,8 @@ void clsMenu :: menuPrincipal()
         Event event;
         while (window->pollEvent(event))
         {
+            //control de la ventana;
+
             if (event.type == Event ::Closed)
                 window->close();
 
@@ -193,29 +214,50 @@ void clsMenu :: menuPrincipal()
                 }
                 break;                
             }
+            
+
+            //control de teclas;
 
             if (event.type == Event::KeyPressed)
             {
-                if(event.key.code == Keyboard::Up)
-                {
-                    moveUp();
-                    efecto.play();
-                    break;
+                if(mainMenuEnter == 0){
+                    if(event.key.code == Keyboard::Up)
+                    {
+                        moveUp();
+                        efecto.play();
+                        break;
+                    }
+                    if(event.key.code == Keyboard::Down)
+                    {
+                        moveDown();
+                        efecto.play();
+                        break;
+                    }
+                    if(event.key.code == Keyboard::Enter)
+                    {
+                        menuPrincipalSwitch();
+                    }
                 }
-                if(event.key.code == Keyboard::Down)
-                {
-                    moveDown();
-                    efecto.play();
-                    break;
+                if(mainMenuEnter = 1){
+                    if(event.key.code == Keyboard::Up)
+                    {
+                        menuInicioSesion->moveUp();
+                        efecto.play();
+                        break;
+                    }
+                    if(event.key.code == Keyboard::Down)
+                    {
+                        menuInicioSesion->moveDown();
+                        efecto.play();
+                        break;
+                    }
+
                 }
-                if(event.key.code == Keyboard::Enter)
-                {
-                    menuPrincipalSwitch();
-                }
+
             }
-            if(mainMenuEnter == 1 && event.type == Event::TextEntered){
-                    textbox->typedOn(event);
-            }
+           //if(mainMenuEnter == 1 && event.type == Event::TextEntered){
+           //         textbox->typedOn(event);
+           // }
         }
     
         window->clear();
@@ -234,5 +276,69 @@ void clsMenu::crearPartida(string n,string b){
 
 
 
-// Menu del inicio de sesion, registro de usuarios e iniciar partida;
+// Clase del menu del inicio de sesion, registro de usuarios e iniciar partida;
 
+//Constructor
+
+clsMenuInicioSesion::clsMenuInicioSesion(RenderWindow *w){
+    window = w;
+    gameFont.loadFromFile("./Fonts/04B_30__.TTF");
+
+    tBackground.loadFromFile("./Images/background.png");
+    background = new Sprite(tBackground);
+
+    opciones[0].setFont(gameFont);
+    opciones[0].setColor(Color::Yellow);
+    opciones[0].setString("Iniciar Sesion");
+    opciones[0].setCharacterSize(30);
+    opciones[0].setPosition(400.f,300.f);
+
+    //Configuracion
+    opciones[1].setFont(gameFont);
+    opciones[1].setColor(Color::White);
+    opciones[1].setString("Registrar Usuario");
+    opciones[1].setCharacterSize(30);
+    opciones[1].setPosition(400.f,400.f);
+}
+
+
+
+//---------------------------------------------------------------------------------//
+
+//Metodos//
+void clsMenuInicioSesion :: moveDown()
+{
+    if(mainMenuSelected + 1 <= 2)
+    {
+        opciones[mainMenuSelected].setColor(Color::White);
+        mainMenuSelected++;
+        if(mainMenuSelected==2)
+        {
+            mainMenuSelected=0;
+        }
+        opciones[mainMenuSelected].setColor(Color::Yellow);
+    }
+}
+void clsMenuInicioSesion :: moveUp()
+{
+    if(mainMenuSelected - 1 >= -1)
+    {
+        opciones[mainMenuSelected].setColor(Color::White);
+        mainMenuSelected--;
+        if(mainMenuSelected==-1)
+        {
+            mainMenuSelected=1;
+        }
+        opciones[mainMenuSelected].setColor(Color::Yellow);
+    }
+}
+
+void clsMenuInicioSesion::draw(){
+    window->draw(*background);
+    window->draw(opciones[0]);
+    window->draw(opciones[1]);
+}
+
+Text clsMenuInicioSesion::getOpciones(int n){
+    return titulo;
+}
