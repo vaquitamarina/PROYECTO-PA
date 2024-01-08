@@ -27,9 +27,10 @@ clsActualScreen::clsActualScreen(RenderWindow *w){
 
     //Menu principal;
     screen[0] = new clsMenu(window);
-    screen[0]->setBackground(0,"./Images/backgroundMenu.jpg");
+    //background
+    screen[0]->setSprite(0,"./Images/backgroundMenu.jpg");
     screen[0]->setText(0,&fonts[0],"Ajedrez",80,{400,30});
-
+    //
     screen[0]->setText(1,&fonts[0],"Iniciar Partida",30,{400,300});
     screen[0]->setTextColor(1,Color::Yellow);
     screen[0]->setText(2,&fonts[0],"Configuracion",30,{400,400});
@@ -40,7 +41,10 @@ clsActualScreen::clsActualScreen(RenderWindow *w){
 
     //Menu inicio de sesion;
     screen[1] = new clsMenu(window);
-    screen[1]->setBackground(0,"./Images/backgroundPartida.png");
+    //background
+    screen[1]->setSprite(0,"./Images/prueba.png");
+    screen[1]->setScaleSprite(0,{0.65,0.65});
+    //
     screen[1]->setText(0,&fonts[0],"Iniciar Sesion",30,{400,300});
     screen[1]->setTextColor(0,Color::Yellow);
     screen[1]->setText(1,&fonts[0],"Registrar Usuario",30,{400,400});
@@ -69,6 +73,7 @@ void clsActualScreen::iniciarPartida(){
                     control[actualScreen]->pressEnter(&actualScreen);
                     effect[0].play();
                 }
+               
             }
         }
     window->clear();

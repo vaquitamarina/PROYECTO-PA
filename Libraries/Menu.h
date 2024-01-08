@@ -27,16 +27,20 @@ class clsMenu{
 
     public:
         clsMenu(RenderWindow *);
-        void setBackground(int,string);
+        //Metodos de imagenes
+        void setSprite(int,string);
+        void setScaleSprite(int, Vector2f);
+        //Metodos de texto
         void setText(int, Font *, string, int, Vector2f);
         void setTextColor(int, Color);
+        
         void draw();
 };
 clsMenu::clsMenu(RenderWindow *w){
     window = w;
 }
 
-void clsMenu::setBackground(int n,string b){
+void clsMenu::setSprite(int n,string b){
     Image image;
     image.loadFromFile(b);
     
@@ -56,6 +60,11 @@ void clsMenu::setTextColor(int i, Color color){
     text[i].setColor(color);
 }
 
+void clsMenu::setScaleSprite(int i, Vector2f scale){
+    sprites[i]->setScale(scale);
+}
+
+
 void clsMenu::draw(){
     window->draw(*sprites[0]);
     window->draw(text[0]);
@@ -63,6 +72,7 @@ void clsMenu::draw(){
     window->draw(text[2]);
     window->draw(text[3]);
 }
+
 
 
 // class clsMenu{
