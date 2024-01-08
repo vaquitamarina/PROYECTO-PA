@@ -13,7 +13,7 @@ class clsControl{
         clsControl(clsMenu *,int,int,int);
         void pressUp();
         void pressDown();
-        void pressEnter(int *);
+        void pressEnter(int* a);
 };
 
 clsControl::clsControl(clsMenu *m,int s, int mx, int mn){
@@ -26,9 +26,9 @@ clsControl::clsControl(clsMenu *m,int s, int mx, int mn){
 void clsControl::pressUp(){
     menu->setTextColor(selected, Color::White);
     selected--;
-    if(selected == 0)
+    if(selected == min - 1)
     {
-        selected = 3;
+        selected = max;
     }
     menu->setTextColor(selected, Color::Yellow);
 }
@@ -36,13 +36,13 @@ void clsControl::pressUp(){
 void clsControl::pressDown(){
     menu->setTextColor(selected, Color::White);
     selected++;
-    if(selected == 4)
+    if(selected == max + 1)
     {
-        selected = 1;
+        selected = min;
     }
     menu->setTextColor(selected, Color::Yellow);
 } 
 
-// void clsControl::pressEnter(int *actualScreen){
-//     actualScreen = 1;
-// }
+void clsControl::pressEnter(int* actualScreen){
+    *actualScreen = 1;
+}

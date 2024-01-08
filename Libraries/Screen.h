@@ -25,7 +25,7 @@ clsActualScreen::clsActualScreen(RenderWindow *w){
     effectBuffer[0].loadFromFile("./soundsEffects/snd_select.wav");
     effect[0].setBuffer(effectBuffer[0]);
 
-    //Menu principal
+    //Menu principal;
     screen[0] = new clsMenu(window);
     screen[0]->setBackground(0,"./Images/backgroundMenu.jpg");
     screen[0]->setText(0,&fonts[0],"Ajedrez",80,{400,30});
@@ -37,8 +37,14 @@ clsActualScreen::clsActualScreen(RenderWindow *w){
     
     control[0] = new clsControl(screen[0], 1, 3, 1);
 
+
+    //Menu inicio de sesion;
     screen[1] = new clsMenu(window);
-    screen[1]->setBackground(0,"./Images/background.png");
+    screen[1]->setBackground(0,"./Images/backgroundPartida.png");
+    screen[1]->setText(0,&fonts[0],"Iniciar Sesion",30,{400,300});
+    screen[1]->setTextColor(0,Color::Yellow);
+    screen[1]->setText(1,&fonts[0],"Registrar Usuario",30,{400,400});
+    control[1] = new clsControl(screen[1],0,1,0);
 }
 
 void clsActualScreen::iniciarPartida(){
@@ -52,16 +58,16 @@ void clsActualScreen::iniciarPartida(){
 
             if(event.type == Event ::KeyPressed){
                 if(event.key.code == Keyboard::Up){
-                    control[0]->pressUp();
+                    control[actualScreen]->pressUp();
                     effect[0].play();
                 }
                 if(event.key.code == Keyboard::Down){
-                    control[0]->pressDown();
+                    control[actualScreen]->pressDown();
                     effect[0].play();
                 }
                 if(event.key.code == Keyboard::Enter){
-                    //control[0]->pressEnter(&actualScreen);
-                    actualScreen = 1;
+                    control[actualScreen]->pressEnter(&actualScreen);
+                    effect[0].play();
                 }
             }
         }
