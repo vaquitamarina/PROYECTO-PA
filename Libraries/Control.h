@@ -14,6 +14,7 @@ class clsControl{
         void pressUp();
         void pressDown();
         void pressEnter(int* a);
+        void pressEscape();
 };
 
 clsControl::clsControl(clsMenu *m,int s, int mx, int mn){
@@ -45,4 +46,8 @@ void clsControl::pressDown(){
 
 void clsControl::pressEnter(int* actualScreen){
     *actualScreen = 1;
+}
+
+void clsControl::pressEscape(){
+    
 }

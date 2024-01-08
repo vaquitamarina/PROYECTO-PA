@@ -22,8 +22,13 @@ clsActualScreen::clsActualScreen(RenderWindow *w){
     window = w;
     actualScreen = 0;
     fonts[0].loadFromFile("./Fonts/04B_30__.TTF");
+
     effectBuffer[0].loadFromFile("./soundsEffects/snd_select.wav");
     effect[0].setBuffer(effectBuffer[0]);
+
+    soundtrack[0].openFromFile("./music/An_Engineer_Gaming_Megalo.ogg");
+    soundtrack[0].play();
+    soundtrack[0].setLoop(true);
 
     //Menu principal;
     screen[0] = new clsMenu(window);
