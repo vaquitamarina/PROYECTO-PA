@@ -5,20 +5,23 @@ class clsUsuario{
     private:
         string nombre;
         int mmr;
-        string passWd;
+        string passwd;
     public:
-        clsUsuario(int,int,string);
+        clsUsuario(string,int,string);
         string getNombre();
+        string getPasswd();
 };
 
-clsUsuario::clsUsuario(int n, int m, string p){
+clsUsuario::clsUsuario(string n, int m, string p){
     nombre = n;
     mmr = m;
-    passWd = p;
+    passwd = p;
 }
 
 string clsUsuario::getNombre(){
     return nombre;
 }
 
-
+string clsUsuario::getPasswd(){
+    return passwd;
+}
