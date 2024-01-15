@@ -103,6 +103,10 @@ void clsMenu :: draw(){
             break;
         case 2:
             window->draw(*background);
+            window->draw(titulo);
+            window->draw(opciones[0]);
+            window->draw(opciones[1]);
+            window->draw(opciones[2]);
 
             break;
     }
