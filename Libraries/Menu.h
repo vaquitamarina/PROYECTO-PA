@@ -37,85 +37,9 @@ clsMenu::clsMenu(RenderWindow *w){
     window = w;
 }
 
-<<<<<<< HEAD
-//Esta funcion dibuja todos los menus segun las opciones
-void clsMenu :: draw(){
-    switch(mainMenuEnter){
-        case 0:
-            window->draw(*background);
-            window->draw(titulo);
-            window->draw(opciones[0]);
-            window->draw(opciones[1]);
-            window->draw(opciones[2]);
-            break;
-        case 1:
-
-            break;
-        case 2:
-            window->draw(*background);
-            window->draw(titulo);
-            window->draw(opciones[0]);
-            window->draw(opciones[1]);
-            window->draw(opciones[2]);
-
-            break;
-    }
-} 
-
-//---------------------------------------------------------------------------------//
-
-
-//Metodos//
-void clsMenu :: moveDown()
-{
-    if(mainMenuSelected + 1 <= MaximosMenus)
-    {
-        opciones[mainMenuSelected].setColor(Color::White);
-        mainMenuSelected++;
-        if(mainMenuSelected==3)
-        {
-            mainMenuSelected=0;
-        }
-        opciones[mainMenuSelected].setColor(Color::Yellow);
-    }
-}
-void clsMenu :: moveUp()
-{
-    if(mainMenuSelected - 1 >= -1)
-    {
-        opciones[mainMenuSelected].setColor(Color::White);
-        mainMenuSelected--;
-        if(mainMenuSelected==-1)
-        {
-            mainMenuSelected=2;
-        }
-        opciones[mainMenuSelected].setColor(Color::Yellow);
-    }
-}
-
-void clsMenu :: menuPrincipalSwitch(){
-    switch(mainMenuSelected){
-        case 0:
-            mainMenuEnter = 1;
-
-            break;
-        case 1:
-            mainMenuEnter = 2;
-            break;
-        case 2:
-            window->close();
-            break;
-    }
-}
-
-void clsMenu :: menuPrincipal()
-{
-    bool fullscreen=false;
-=======
 void clsMenu::setSprite(int n,string b){
     Image image;
     image.loadFromFile(b);
->>>>>>> f592a7f477c6d86aedc9b58d7918779d8a4f5019
     
     textures[n].loadFromImage(image);
     sprites[n] = new Sprite(textures[n]);
