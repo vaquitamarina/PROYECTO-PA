@@ -25,6 +25,7 @@ class clsTextbox{
         string getText();
         void drawTo(RenderWindow *);
         void typedOn(Event input);
+        void setColor(Color);
 };
 //constructor
 clsTextbox::clsTextbox(int size, Color color, bool sel){
@@ -50,6 +51,10 @@ void clsTextbox::inputLogic(int charTyped){
         }
     }
     textbox.setString(text.str() + "_");
+}
+
+void clsTextbox::setColor(Color c){
+    textbox.setColor(c);
 }
 
 void clsTextbox::deleteLastChar(){
