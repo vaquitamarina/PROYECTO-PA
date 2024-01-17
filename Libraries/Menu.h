@@ -1,6 +1,3 @@
-#define ARRIBA 119
-#define ABAJO 115
-#define ENTER 13
 #define MaximosMenus 3
 
 #define NUM_FONTS 2
