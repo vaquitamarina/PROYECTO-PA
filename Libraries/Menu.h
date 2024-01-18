@@ -90,6 +90,7 @@ class clsMenuInicioSesion : public clsMenu{
         clsMenuInicioSesion(RenderWindow *w,Font *f);
         void setTextbox(Font *f);
         void setTextboxColor(int, Color, bool);
+        void setTextboxSelected(int, bool);
         void draw();
         void typedOn(Event);
 };
@@ -117,6 +118,14 @@ void clsMenuInicioSesion::setTextboxColor(int i,Color c, bool sel){
     
 }
 
+void clsMenuInicioSesion::typedOn(Event event){
+    textbox[0]->typedOn(event);
+    textbox[1]->typedOn(event);
+}
+
+void clsMenuInicioSesion::setTextboxSelected(int i, bool sel){
+    textbox[i]->setSelected(sel);
+}
 // void clsMenuInicioSesion::draw(){
 //     cout<<"gatito";
 //     //window->draw(*sprites[0]);
@@ -128,10 +137,7 @@ void clsMenuInicioSesion::setTextboxColor(int i,Color c, bool sel){
 //     textbox[1]->drawTo(window);
 // }
 
-void clsMenuInicioSesion::typedOn(Event event){
-    textbox[0]->typedOn(event);
-    textbox[1]->typedOn(event);
-}
+
 
 // class clsMenu{
 //     protected:

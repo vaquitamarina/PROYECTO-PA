@@ -90,10 +90,18 @@ void clsTextbox::setSelected(bool sel){
     if(!sel){
         string t = text.str();
         string newT = "";
-        for(int i = 0; i < t.length() - 1; i++){
+        for(int i = 0; i < t.length(); i++){
             newT += t[i];
         }
         textbox.setString(newT);
+    }
+    else{
+        string t = text.str();
+        string newT = "";
+        for(int i = 0; i < t.length(); i++){
+            newT += t[i];
+        }
+        textbox.setString(newT + "_");
     }
 }
 

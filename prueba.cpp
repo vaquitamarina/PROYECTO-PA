@@ -10,7 +10,7 @@ using namespace sf;
 int main(){
     RenderWindow window(VideoMode(1280, 720), "Ajedrez", Style::Default);
 
-    clsTextbox textbox1(15,Color::White,true);
+    clsTextbox textbox1(15,Color::White,false);
     Font gameFont;
     gameFont.loadFromFile("./Fonts/04B_30__.TTF");
     textbox1.setFont(gameFont);
@@ -25,7 +25,16 @@ int main(){
                     window.close();
                 case Event::TextEntered:
                     textbox1.typedOn(event);
+                case Event::KeyPressed:
+                    if(event.key.code == Keyboard::Enter){
+                        textbox1.setSelected(true);
+                        cout<<"ga";
+                    }
+                    if(event.key.code == Keyboard::Escape){
+                        textbox1.setSelected(false);
+                    }
             }
+            
         }
 
         window.clear();

@@ -10,6 +10,7 @@ class clsControl{
         int max;
         int min;
         int op;
+        bool in;
     public:
         clsControl(clsMenu *,int,int,int,int);
         void pressUp();
@@ -24,35 +25,78 @@ clsControl::clsControl(clsMenu *m,int s, int mx, int mn,int o){
     max = mx;
     min = mn;
     op = o;
+    in = false;
 }
 
 void clsControl::pressUp(){
     switch (op) {
-    case 0:
-        
-        break;
-    case 1:
-        
-        break;
+        case 0:
+            menu->setTextColor(selected, Color::White);
+            selected--;
+            if(selected == min - 1)
+            {
+                selected = max;
+            }
+            menu->setTextColor(selected, Color::Yellow);
+            break;
+        case 1:
+            if(in){
+                reinterpret_cast<clsMenuInicioSesion *> (menu)->setTextboxSelected(selected,false);
+                selected--;
+                if(selected == min - 1)
+                {
+                    selected = max;
+                }
+                reinterpret_cast<clsMenuInicioSesion *> (menu)->setTextboxSelected(selected,true);
+            }
+            else{
+                menu->setTextColor(selected, Color::White);
+                selected--;
+                if(selected == min - 1)
+                {
+                    selected = max;
+                }
+                menu->setTextColor(selected, Color::Yellow);
+            }
+            break;
+        }
     
-    }
-    menu->setTextColor(selected, Color::White);
-    selected--;
-    if(selected == min - 1)
-    {
-        selected = max;
-    }
-    menu->setTextColor(selected, Color::Yellow);
 }
 
 void clsControl::pressDown(){
-    menu->setTextColor(selected, Color::White);
-    selected++;
-    if(selected == max + 1)
-    {
-        selected = min;
+    switch(op){
+        case 0:
+            menu->setTextColor(selected, Color::White);
+            selected++;
+            if(selected == max + 1)
+            {
+                selected = min;
+            }
+            menu->setTextColor(selected, Color::Yellow);
+            break;
+        case 1:
+            if(in){
+                reinterpret_cast<clsMenuInicioSesion *> (menu)->setTextboxSelected(selected,false);
+                selected++;
+                if(selected == max + 1)
+                {
+                    selected = min;
+                }
+                reinterpret_cast<clsMenuInicioSesion *> (menu)->setTextboxSelected(selected,true);
+            }
+            else{
+                menu->setTextColor(selected, Color::White);
+                selected++;
+                if(selected == max + 1)
+                {
+                    selected = min;
+                }
+                menu->setTextColor(selected, Color::Yellow);
+            }
+            break;
     }
-    menu->setTextColor(selected, Color::Yellow);
+
+    
 } 
 
 void clsControl::pressEnter(int* actualScreen){
@@ -64,6 +108,9 @@ void clsControl::pressEnter(int* actualScreen){
             menu->setTextColor(0,Color(255,255,255,0));
             menu->setTextColor(1,Color(255,255,255,0));
             reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(0,Color(255,255,255,255),true);
+            reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,255),true);
+            reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxSelected(1,false);
+            in = true;
     } 
     
 }
@@ -72,6 +119,11 @@ void clsControl::pressEscape(int* actualScreen){
     switch (op) {
         case 1:
             *actualScreen = 0;
+            menu->setTextColor(0,Color(255,255,255,255));
+            menu->setTextColor(1,Color(255,255,255,255));
+            reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(0,Color(255,255,255,0),false);
+            reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,0),false);
+            in = false;
             break;
     }
 }
