@@ -27,7 +27,15 @@ clsControl::clsControl(clsMenu *m,int s, int mx, int mn,int o){
 }
 
 void clsControl::pressUp(){
+    switch (op) {
+    case 0:
+        
+        break;
+    case 1:
+        
+        break;
     
+    }
     menu->setTextColor(selected, Color::White);
     selected--;
     if(selected == min - 1)
