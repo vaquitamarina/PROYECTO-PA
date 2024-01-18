@@ -108,8 +108,8 @@ void clsControl::pressEnter(int* actualScreen){
             menu->setTextColor(0,Color(255,255,255,0));
             menu->setTextColor(1,Color(255,255,255,0));
             reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(0,Color(255,255,255,255),true);
-            reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,255),true);
-            reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxSelected(1,false);
+            reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,255),false);
+            
             in = true;
     } 
     
@@ -118,12 +118,19 @@ void clsControl::pressEnter(int* actualScreen){
 void clsControl::pressEscape(int* actualScreen){
     switch (op) {
         case 1:
-            *actualScreen = 0;
-            menu->setTextColor(0,Color(255,255,255,255));
-            menu->setTextColor(1,Color(255,255,255,255));
-            reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(0,Color(255,255,255,0),false);
-            reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,0),false);
-            in = false;
+            if(in){
+                menu->setTextColor(0,Color::Yellow);
+                menu->setTextColor(1,Color::White);
+                reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(0,Color(255,255,255,0),false);
+                reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,0),false);
+                in = false;
+            }
+            else{
+                *actualScreen = 0;
+                in = false;
+
+            }
+            
             break;
     }
 }
