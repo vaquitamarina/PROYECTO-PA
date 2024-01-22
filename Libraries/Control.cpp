@@ -9,7 +9,15 @@ clsControl::clsControl(clsMenu *m,int s, int mx, int mn,int o){
     op = o;
     in = false;
 }
-
+clsControl::clsControl(clsMenu *m,int s, int mx, int mn,int o,clsRegistro *regis){
+    menu = m;
+    selected = s;
+    max = mx;
+    min = mn;
+    op = o;
+    in = false;
+    registro = regis;
+}
 void clsControl::pressUp(){
     switch (op) {
         case 0:
@@ -86,18 +94,36 @@ void clsControl::pressEnter(int* actualScreen){
         case 0:
             *actualScreen = selected;
             break;
-        case 1:
+        case 1: {
+            
             if(in){
-                //
+                switch(oldSelected){
+                    case 0:
+
+                        break;
+                    case 1:
+                        if(registro->crearUsuario(reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(0),reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(1),0)){
+                            reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(0);
+                            reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(1);    
+                        }
+                        else{
+                            //Aqui hay que hacer que aparezca un texto indicando esto en el programa, el cout es provisinal ga
+                            cout<<"Este nombre ya ha sido registrado";
+                        }
+                        break;
+                }
             }
             else{
                 menu->setTextColor(0,Color(255,255,255,0));
                 menu->setTextColor(1,Color(255,255,255,0));
                 reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(0,Color(255,255,255,255),true);
                 reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,255),false);
-                
+                oldSelected = selected;
+        
                 in = true;
+
             }
+        }
     } 
     
 }

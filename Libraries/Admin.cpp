@@ -1,9 +1,9 @@
-#include "Screen.h"
+#include "Admin.h"
 
 using namespace std;
 using namespace sf;  
 
-clsActualScreen::clsActualScreen(RenderWindow *w){
+clsAdmin::clsAdmin(RenderWindow *w){
     window = w;
     actualScreen = 0;
     fonts[0].loadFromFile("./Fonts/04B_30__.TTF");
@@ -39,10 +39,10 @@ clsActualScreen::clsActualScreen(RenderWindow *w){
     screen[1]->setText(0,&fonts[0],"Iniciar Sesion",30,{400,300});
     screen[1]->setTextColor(0,Color::Yellow);
     screen[1]->setText(1,&fonts[0],"Registrar Usuario",30,{400,400});
-    control[1] = new clsControl(screen[1],0,1,0, 1);
+    control[1] = new clsControl(screen[1],0,1,0, 1, &registro);
 }
 
-void clsActualScreen::iniciarPartida(){
+void clsAdmin::iniciarPartida(){
     while (window->isOpen()){
         Event event;    
 

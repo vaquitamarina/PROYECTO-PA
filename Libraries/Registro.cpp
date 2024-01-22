@@ -2,7 +2,7 @@
 using namespace std;
 //constructor
 clsRegistro::clsRegistro(){
-    nUsuarios = 1;
+    nUsuarios = 0;
 }
 
 //metodos
@@ -20,14 +20,16 @@ bool clsRegistro::iniciarSesion(string n, string p){
     return false;
 }
 
-bool clsRegistro::crearUsuario(string n,int m,string p){
+bool clsRegistro::crearUsuario(string n,string p,int m){
     for(int i=0;i<nUsuarios;i++){
         if(usuarios[i]->getNombre() == n){
-            usuarios[nUsuarios-1] = new clsUsuario(n,m,p);
-            registroOutput.open("./Registro/registro.txt", ios::app );
-            registroOutput<<n<<" "<<p<<" "<<m;
-            return true;
+            return false;
         }  
     }
-    return false;
+    usuarios[nUsuarios] = new clsUsuario(n,p,m);
+    nUsuarios++;
+    registroOutput.open("./Registro/registro.txt", ios::app );
+    registroOutput<<n<<" "<<p<<" "<<m<<endl;
+    registroOutput.close();
+    return true;
 }

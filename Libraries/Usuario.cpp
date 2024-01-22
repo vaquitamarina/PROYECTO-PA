@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-clsUsuario::clsUsuario(string n, int m, string p){
+clsUsuario::clsUsuario(string n,string p ,int m ){
     nombre = n;
     mmr = m;
     passwd = p;

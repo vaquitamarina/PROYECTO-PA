@@ -16,6 +16,7 @@ class clsMenuInicioSesion : public clsMenu{
         void draw();
         void typedOn(Event);
         void deleteTextboxString(int);
+        string getTextbox(int);
 
 };
 

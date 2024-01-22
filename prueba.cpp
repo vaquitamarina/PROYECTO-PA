@@ -17,7 +17,10 @@ int main(){
     textbox1.setPosition({100,100});
 
     clsRegistro registro;
-    registro.crearUsuario("pepito",22,"vaquita");
+    // ofstream registro;
+    // registro.open("./Registro/registro.txt",ios::app);
+    // registro<<"Hola";
+    registro.crearUsuario("aalala",22,"vaquita");
 
     while(window.isOpen()){
         Event event;

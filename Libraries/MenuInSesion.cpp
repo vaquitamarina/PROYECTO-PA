@@ -35,3 +35,7 @@ void clsMenuInicioSesion::setTextboxSelected(int i, bool sel){
 void clsMenuInicioSesion::deleteTextboxString(int i){
     textbox[i]->deleteString();
 }
+
+string clsMenuInicioSesion::getTextbox(int i){
+    return textbox[i]->getText();
+}

@@ -2,19 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-#include "Libraries/Textbox.h"
-#include "Libraries/Casilla.h"
-#include "Libraries/Usuario.h"
-#include "Libraries/Pieza.h"
-#include "Libraries/Tablero.h"
-
-#include "Libraries/Registro.h"
-
-#include "Libraries/Partida.h"
-#include "Libraries/Menu.h"
-#include "Libraries/Control.h"
-
-#include "Libraries/Screen.h"
+#include "Libraries/Class.h"
 
 using namespace std;
 using namespace sf;
@@ -25,7 +13,7 @@ int main(){
     
     // menu.menuPrincipal();
     
-    clsActualScreen main(&window);
+    clsAdmin main(&window);
     main.iniciarPartida();
     return 0;
 }

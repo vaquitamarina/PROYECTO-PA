@@ -12,8 +12,11 @@ class clsControl{
         int min;
         int op;
         bool in;
+        clsRegistro *registro;
+        int oldSelected;
     public:
         clsControl(clsMenu *,int,int,int,int);
+        clsControl(clsMenu *,int,int,int,int,clsRegistro *);
         void pressUp();
         void pressDown();
         void pressEnter(int* a);

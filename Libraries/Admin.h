@@ -1,10 +1,10 @@
-#ifndef SCREEN_H
-#define SCREEN_H
+#ifndef ADMIN_H
+#define ADMIN_H
 
 using namespace std;
 using namespace sf;   
 
-class clsActualScreen{
+class clsAdmin{
     private:
         clsMenu *screen[10];
         clsControl *control[10];
@@ -13,12 +13,13 @@ class clsActualScreen{
         Sound effect[10];
         SoundBuffer effectBuffer[10];
         RenderWindow *window;
+        clsRegistro registro;
         int actualScreen;
     public:
-        clsActualScreen(RenderWindow *window);
+        clsAdmin(RenderWindow *window);
         void iniciarPartida();
 };
 
-#include "Screen.cpp"
+#include "Admin.cpp"
 
 #endif

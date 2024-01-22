@@ -8,7 +8,7 @@ class clsUsuario{
         int mmr;
         string passwd;
     public:
-        clsUsuario(string,int,string);
+        clsUsuario(string,string,int);
         string getNombre();
         string getPasswd();
 };
