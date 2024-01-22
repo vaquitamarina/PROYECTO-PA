@@ -1,11 +1,13 @@
 #include <bits/stdc++.h>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+
 #include "Libraries/Textbox.h"
 #include "Libraries/Casilla.h"
 #include "Libraries/Usuario.h"
 #include "Libraries/Pieza.h"
 #include "Libraries/Tablero.h"
-#include <SFML/Audio.hpp>
+
 #include "Libraries/Registro.h"
 
 #include "Libraries/Partida.h"
