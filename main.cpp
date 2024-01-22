@@ -1,9 +1,7 @@
 #include <bits/stdc++.h>
-#include <windows.h> 
 #include <SFML/Graphics.hpp>
 #include "Libraries/Textbox.h"
-
-#include "Libraries/extra.h"
+#include "Libraries/Casilla.h"
 #include "Libraries/Usuario.h"
 #include "Libraries/Pieza.h"
 #include "Libraries/Tablero.h"

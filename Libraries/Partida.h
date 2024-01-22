@@ -1,5 +1,5 @@
-#include<bits/stdc++.h>
-
+#ifndef PARTIDA_H
+#define PARTIDA_H
 using namespace std;
 
 class clsPartida{
@@ -11,13 +11,5 @@ class clsPartida{
         clsPartida(string, string);
         void mostrarTablero();
 };
-
-clsPartida::clsPartida(string n, string b){
-    usuarioN = n;
-    usuarioB = b;
-    pTablero = new clsTablero();
-}
-
-void clsPartida::mostrarTablero(){
-    pTablero -> mostrarTablero();
-}
+#include "Partida.cpp"
+#endif

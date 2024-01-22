@@ -1,3 +1,5 @@
+#ifndef PIEZA_H
+#define PIEZA_H
 using namespace std;
 
 class clsPieza{
@@ -16,24 +18,6 @@ class clsPieza{
         string getFigura();
 };
 
-// Metodos de la clase Pieza
+#include "Pieza.cpp"
 
-clsPieza::clsPieza(int x, int y, char c,string f){
-    posX = x;
-    posY = y;
-    color = c;
-    figura = f;
-}
-
-void clsPieza::setPosX(int x){
-    posX = x;
-}
-void clsPieza::setPosY(int y){
-    posY = y;
-}
-
-string clsPieza::getFigura(){
-    return figura;
-}
-
-    
+#endif

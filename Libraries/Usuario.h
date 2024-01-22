@@ -1,6 +1,7 @@
-#include <bits/stdc++.h>
-using namespace std;
+#ifndef USUARIO_H
+#define USUARIO_H
 
+using namespace std;
 class clsUsuario{
     private:
         string nombre;
@@ -12,16 +13,6 @@ class clsUsuario{
         string getPasswd();
 };
 
-clsUsuario::clsUsuario(string n, int m, string p){
-    nombre = n;
-    mmr = m;
-    passwd = p;
-}
+#include "Usuario.cpp"
 
-string clsUsuario::getNombre(){
-    return nombre;
-}
-
-string clsUsuario::getPasswd(){
-    return passwd;
-}
+#endif
