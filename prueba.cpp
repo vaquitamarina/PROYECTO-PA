@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #include <windows.h> 
 #include <SFML/Graphics.hpp>
-
+#include "Libraries/Registro.h"
 #include "Libraries/Textbox.h"
 
 using namespace std;
@@ -15,6 +15,9 @@ int main(){
     gameFont.loadFromFile("./Fonts/04B_30__.TTF");
     textbox1.setFont(gameFont);
     textbox1.setPosition({100,100});
+
+    clsRegistro registro;
+    registro.crearUsuario("pepito",22,"vaquita");
 
     while(window.isOpen()){
         Event event;

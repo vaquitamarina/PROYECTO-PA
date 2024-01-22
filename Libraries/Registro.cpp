@@ -24,6 +24,8 @@ bool clsRegistro::crearUsuario(string n,int m,string p){
     for(int i=0;i<nUsuarios;i++){
         if(usuarios[i]->getNombre() == n){
             usuarios[nUsuarios-1] = new clsUsuario(n,m,p);
+            registroOutput.open("./Registro/registro.txt", ios::app );
+            registroOutput<<n<<" "<<p<<" "<<m;
             return true;
         }  
     }
