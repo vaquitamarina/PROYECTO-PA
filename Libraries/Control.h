@@ -123,7 +123,10 @@ void clsControl::pressEscape(int* actualScreen){
                 menu->setTextColor(1,Color::White);
                 reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(0,Color(255,255,255,0),false);
                 reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,0),false);
+                reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(0);
+                reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(1);
                 in = false;
+                
             }
             else{
                 *actualScreen = 0;

@@ -113,6 +113,18 @@ void clsTextbox::drawTo(RenderWindow *window){
     window->draw(textbox);
 }
 
+void clsTextbox::deleteString(){
+    string t = text.str();
+    string newT = "";
+    for(int i = 0; i < t.length(); i++){
+        newT += "";
+    }
+    text.str("");
+    text << newT;
+    
+    textbox.setString(text.str());
+}
+
 void clsTextbox::typedOn(Event input){
     if(isSelected){
         int charTyped = input.text.unicode;
