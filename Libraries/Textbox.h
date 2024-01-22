@@ -26,6 +26,7 @@ class clsTextbox{
         void drawTo(RenderWindow *);
         void typedOn(Event input);
         void setColor(Color);
+        void deleteString();
 };
 //constructor
 clsTextbox::clsTextbox(int size, Color color, bool sel){

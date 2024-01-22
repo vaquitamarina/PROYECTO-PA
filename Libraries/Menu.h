@@ -93,6 +93,8 @@ class clsMenuInicioSesion : public clsMenu{
         void setTextboxSelected(int, bool);
         void draw();
         void typedOn(Event);
+        void deleteTextboxString(int);
+
 };
 
 clsMenuInicioSesion::clsMenuInicioSesion(RenderWindow *w,Font *f) : clsMenu(w){
@@ -126,6 +128,12 @@ void clsMenuInicioSesion::typedOn(Event event){
 void clsMenuInicioSesion::setTextboxSelected(int i, bool sel){
     textbox[i]->setSelected(sel);
 }
+
+void clsMenuInicioSesion::deleteTextboxString(int i){
+    textbox[i]->deleteString();
+}
+
+
 // void clsMenuInicioSesion::draw(){
 //     cout<<"gatito";
 //     //window->draw(*sprites[0]);
