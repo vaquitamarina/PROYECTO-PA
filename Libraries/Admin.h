@@ -14,11 +14,12 @@ class clsAdmin{
         SoundBuffer effectBuffer[10];
         RenderWindow *window;
         clsRegistro registro;
+        clsPartida *partida;
         int actualScreen;
     public:
         clsAdmin(RenderWindow *window);
         void iniciarPrograma();
-        void iniciarPartida();
+        void iniciarPartida(string, string);
 };
 
 #include "Admin.cpp"

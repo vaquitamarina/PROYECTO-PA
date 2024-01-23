@@ -43,3 +43,6 @@ void clsMenu::draw(){
     textbox[1]->drawTo(window);
 }
 
+void clsMenu::closeWindow(){
+    window->close();
+}

@@ -26,6 +26,7 @@ class clsMenu{
         
         //Cajas de texto
         void draw();
+        void closeWindow();
 };
 
 #include "Menu.cpp"

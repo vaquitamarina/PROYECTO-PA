@@ -9,7 +9,7 @@ clsControl::clsControl(clsMenu *m,int s, int mx, int mn,int o){
     op = o;
     in = false;
 }
-clsControl::clsControl(clsMenu *m,int s, int mx, int mn,int o,clsRegistro *regis){
+clsControl::clsControl(clsMenu *m,int s, int mx, int mn,int o,clsRegistro *regis, clsAdmin *a){
     menu = m;
     selected = s;
     max = mx;
@@ -17,6 +17,7 @@ clsControl::clsControl(clsMenu *m,int s, int mx, int mn,int o,clsRegistro *regis
     op = o;
     in = false;
     registro = regis;
+    admin = a;
 }
 void clsControl::pressUp(){
     switch (op) {
@@ -92,6 +93,9 @@ void clsControl::pressDown(){
 void clsControl::pressEnter(int* actualScreen){
     switch(op){
         case 0:
+            if(selected == 3){
+                menu->closeWindow();
+            }
             *actualScreen = selected;
             break;
         case 1: {
@@ -104,6 +108,7 @@ void clsControl::pressEnter(int* actualScreen){
                                 reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(0);
                                 reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(1);
                                 cont ++;
+                                // admin->iniciarPartida();
                             }
                             else{
                                 cout<<"No se pudo iniciar seison";
@@ -156,7 +161,9 @@ void clsControl::pressEscape(int* actualScreen){
                 in = false;
 
             }
-            
+            break;
+        case 2:
+            *actualScreen = 0;
             break;
     }
 }

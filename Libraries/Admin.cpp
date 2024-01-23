@@ -39,7 +39,12 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[1]->setText(0,&fonts[0],"Iniciar Sesion",30,{400,300});
     screen[1]->setTextColor(0,Color::Yellow);
     screen[1]->setText(1,&fonts[0],"Registrar Usuario",30,{400,400});
-    control[1] = new clsControl(screen[1],0,1,0, 1, &registro);
+    control[1] = new clsControl(screen[1],0,1,0, 1, &registro,this);
+
+    //Menu de configuracion
+    screen[2] = new clsMenu(window);
+    screen[2]->setSprite(0,"./Images/backgroundConfig.png");
+    control[2] = new clsControl(screen[2],0,0,0,2);
 }
 
 void clsAdmin::iniciarPrograma(){
@@ -68,6 +73,7 @@ void clsAdmin::iniciarPrograma(){
                 }
                 if(event.key.code == Keyboard::Escape){
                     control[actualScreen]->pressEscape(&actualScreen);
+                    effect[0].play();
                 }
                
             }
@@ -78,6 +84,6 @@ void clsAdmin::iniciarPrograma(){
     }
 }
 
-void clsAdmin::iniciarPartida(){
-    
+void clsAdmin::iniciarPartida(string n, string b){
+    partida = new clsPartida(n,b);
 }
