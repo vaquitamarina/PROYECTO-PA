@@ -17,6 +17,7 @@ class clsAdmin{
         int actualScreen;
     public:
         clsAdmin(RenderWindow *window);
+        void iniciarPrograma();
         void iniciarPartida();
 };
 

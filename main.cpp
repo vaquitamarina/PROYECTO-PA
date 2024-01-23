@@ -14,7 +14,7 @@ int main(){
     // menu.menuPrincipal();
     
     clsAdmin main(&window);
-    main.iniciarPartida();
+    main.iniciarPrograma();
     return 0;
 }
 

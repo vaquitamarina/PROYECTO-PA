@@ -42,7 +42,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     control[1] = new clsControl(screen[1],0,1,0, 1, &registro);
 }
 
-void clsAdmin::iniciarPartida(){
+void clsAdmin::iniciarPrograma(){
     while (window->isOpen()){
         Event event;    
 
@@ -76,4 +76,8 @@ void clsAdmin::iniciarPartida(){
         screen[actualScreen]->draw();
     window->display();
     }
+}
+
+void clsAdmin::iniciarPartida(){
+    
 }
