@@ -14,6 +14,7 @@ class clsControl{
         bool in;
         clsRegistro *registro;
         int oldSelected;
+        int cont = 0;
     public:
         clsControl(clsMenu *,int,int,int,int);
         clsControl(clsMenu *,int,int,int,int,clsRegistro *);

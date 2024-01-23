@@ -95,11 +95,21 @@ void clsControl::pressEnter(int* actualScreen){
             *actualScreen = selected;
             break;
         case 1: {
-            
             if(in){
                 switch(oldSelected){
                     case 0:
-
+                        if(cont < 2){
+                            if(registro->iniciarSesion(reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(0),reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(1))){
+                                cout<<"Se ha iniciado sesion correctamente";
+                                reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(0);
+                                reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(1);
+                                cont ++;
+                            }
+                            else{
+                                cout<<"No se pudo iniciar seison";
+                            }
+                        }
+                        
                         break;
                     case 1:
                         if(registro->crearUsuario(reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(0),reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(1),0)){
