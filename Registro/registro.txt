@@ -1,4 +1,3 @@
-vaquita  0
-vaq vaq 0
-ola ola 0
-s as 0
+vaquita ola 0
+will chau 0
+russ ga 0
