@@ -6,6 +6,7 @@
 #include "Casilla.h"
 #include "Usuario.h"
 #include "Pieza.h"
+#include "Peon.h"
 #include "Tablero.h"
 #include "Registro.h"
 #include "Partida.h"

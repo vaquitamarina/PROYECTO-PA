@@ -6,18 +6,31 @@ using namespace std;
 clsPieza::clsPieza(int x, int y, char c){
     posX = x;
     posY = y;
+    sprite.setPosition({x,y});
     color = c;
 }
-
-void clsPieza::setPos(Vector2f p){
-    sprite.setPosition(p);
+    
+void clsPieza::setPosX(int pos){
+    posX = pos;
+    sprite.setPosition({pos,posY});
 }
+void clsPieza::setPosY(int pos){
+    posY = pos;
+    sprite.setPosition({posX,pos});
+}
+int clsPieza::getPosX(){
+    return posX;
+}
+int clsPieza::getPosY(){
+    return posY;
+}
+
 
 void clsPieza::setSprite(string d){
     Image image;
     image.loadFromFile(d);
     texture.loadFromImage(image);
-    sprite.setTexture(texture); 
+    sprite.setTexture(texture);     
 }
 
     

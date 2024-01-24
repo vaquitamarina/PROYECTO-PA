@@ -2,24 +2,24 @@
 
 using namespace std;
 
-clsTablero::clsTablero(){}
-//     clsPieza peon1(0,1,'b',"p");
-//     clsPieza peon2(0,1,'b',"p");
-//     clsPieza peon3(0,1,'b',"p");
-//     clsPieza peon4(0,1,'b',"p");
-//     clsPieza peon5(0,1,'b',"p");
-//     clsPieza peon6(0,1,'b',"p");
-//     clsPieza peon7(0,1,'b',"p");
-//     clsPieza peon8(0,1,'b',"p");
-//     clsPieza peon1n(0,1,'b',"p");
-//     clsPieza peon2n(0,1,'b',"p");
-//     clsPieza peon3n(0,1,'b',"p");
-//     clsPieza peon4n(0,1,'b',"p");
-//     clsPieza peon5n(0,1,'b',"p");
-//     clsPieza peon6n(0,1,'b',"p");
-//     clsPieza peon7n(0,1,'b',"p");
-//     clsPieza peon8n(0,1,'b',"p");
-   
+clsTablero::clsTablero(){
+    // clsPieza peon1(0,1,'b');
+    // clsPieza peon2(0,1,'b');
+    // clsPieza peon3(0,1,'b');
+    // clsPieza peon4(0,1,'b');
+    // clsPieza peon5(0,1,'b');
+    // clsPieza peon6(0,1,'b');
+    // clsPieza peon7(0,1,'b');
+    // clsPieza peon8(0,1,'b');
+    // clsPieza peon1n(0,1,'n');
+    // clsPieza peon2n(0,1,'n');
+    // clsPieza peon3n(0,1,'n');
+    // clsPieza peon4n(0,1,'n');
+    // clsPieza peon5n(0,1,'n');
+    // clsPieza peon6n(0,1,'n');
+    // clsPieza peon7n(0,1,'n');
+    // clsPieza peon8n(0,1,'n');
+}   
 //     clsCasilla a1;
 //     clsCasilla a2;
 //     clsCasilla a3;

@@ -13,7 +13,10 @@ class clsPieza{
 
     public:
         clsPieza(int, int, char);
-        void setPos(Vector2f);
+        void setPosX(int);
+        void setPosY(int);
+        int getPosX();
+        int getPosY();
         void setSprite(string);
         char getColor();
 };
