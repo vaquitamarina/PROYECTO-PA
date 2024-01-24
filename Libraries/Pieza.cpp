@@ -9,18 +9,15 @@ clsPieza::clsPieza(int x, int y, char c){
     color = c;
 }
 
-void clsPieza::setPosX(int x){
-    posX = x;
-}
-void clsPieza::setPosY(int y){
-    posY = y;
+void clsPieza::setPos(Vector2f p){
+    sprite.setPosition(p);
 }
 
 void clsPieza::setSprite(string d){
     Image image;
     image.loadFromFile(d);
     texture.loadFromImage(image);
-    sprite.setTexture(texture);
+    sprite.setTexture(texture); 
 }
 
     
