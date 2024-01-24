@@ -1,20 +1,21 @@
 #include "Casilla.h"
 
-clsCasilla::clsCasilla(){
+clsCasilla::clsCasilla(int x,int y){
     vacio = true;
+    posX = x;
+    posY = y;
+}
+clsCasilla::clsCasilla(){
 }
 
-string clsCasilla::getFigura(bool f){
-    if(!vacio){
-        // return pPieza->getFigura();
-    }
-    if(f){
-        return "/";
-    }
-    return " ";
+Sprite clsCasilla::getSprite(){
+    return pPieza->getSprite();
 }
 void clsCasilla::setPieza(clsPieza *p){
     pPieza = p;
+    pPieza->setPosX(posX);
+    pPieza->setPosY(posY);
+
     vacio = false;
 }
 

@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Libraries/Registro.h"
 #include "Libraries/Textbox.h"
+#include "Libraries/Class.h"
 
 using namespace std;
 using namespace sf;
@@ -16,11 +17,10 @@ int main(){
     textbox1.setFont(gameFont);
     textbox1.setPosition({100,100});
 
-    clsRegistro registro;
-    // ofstream registro;
-    // registro.open("./Registro/registro.txt",ios::app);
-    // registro<<"Hola";
-    registro.crearUsuario("aalala",22,"vaquita");
+    ///////////////////////////////////////////////
+    clsPeon peon1(1,1,'n');
+    peon1.setSprite("./Images/Sprites/peon.png");
+
 
     while(window.isOpen()){
         Event event;
@@ -45,6 +45,7 @@ int main(){
 
         window.clear();
             textbox1.drawTo(&window);
+            window.draw(peon1.getSprite());
         window.display();
         
     }

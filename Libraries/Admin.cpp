@@ -47,7 +47,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     control[2] = new clsControl(screen[2],0,0,0,2);
 
     //Partida
-    screen[3] = new clsScreen(window);
+    screen[3] = new clsScreenPartida(window,partida);
     screen[3]->setSprite(0,"./Images/backgroundPartida.png");
     screen[3]->setScaleSprite(0,{0.8,0.8});
 }
@@ -84,7 +84,12 @@ void clsAdmin::iniciarPrograma(){
             }
         }
     window->clear();
-        screen[actualScreen]->draw();
+        if(actualScreen == 3){
+            reinterpret_cast<clsScreenPartida *>(screen[actualScreen])->draw();
+        }
+        else{
+            screen[actualScreen]->draw();
+        }
     window->display();
     }
 }

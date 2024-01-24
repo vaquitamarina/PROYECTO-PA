@@ -6,5 +6,7 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
 }
 
 void clsScreenPartida::draw(){
-    
+    window->draw(*sprites[0]);
+    // window->draw(partida->getSprite(1,1));
+    // window->draw(partida->getSprite(6,1));
 }

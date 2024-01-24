@@ -9,11 +9,14 @@ class clsCasilla {
     private:
         clsPieza *pPieza;
         bool vacio;
+        int posX;
+        int posY;
     public:
         clsCasilla();
+        clsCasilla(int, int);
         void setPieza(clsPieza *p);
         void setVacio(bool);
-        string getFigura(bool);
+        Sprite getSprite();
     
 };
 

@@ -19,6 +19,7 @@ class clsPieza{
         int getPosY();
         void setSprite(string);
         char getColor();
+        Sprite getSprite();
         virtual bool testMovement(int,int) = 0;
 };
 

@@ -33,4 +33,7 @@ void clsPieza::setSprite(string d){
     sprite.setTexture(texture);     
 }
 
+Sprite clsPieza::getSprite(){
+    return sprite;
+}
     
