@@ -111,6 +111,8 @@ void clsControl::pressEnter(int* actualScreen){
                                 usuarioN = reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(0);
                                 reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(0);
                                 reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(1);
+                                reinterpret_cast <clsScreenInSesion *> (menu) -> setTextboxSelected(0,true);
+                                reinterpret_cast <clsScreenInSesion *> (menu) -> setTextboxSelected(1,false);
                                 cont ++;
                             }
                             else{
@@ -126,7 +128,7 @@ void clsControl::pressEnter(int* actualScreen){
                                 reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(0);
                                 reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(1);
                                 cont ++;
-            
+                                *actualScreen = 3;
                                 admin->iniciarPartida(usuarioN,usuarioB);
                             }
                             else{

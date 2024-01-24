@@ -19,6 +19,7 @@ class clsPieza{
         int getPosY();
         void setSprite(string);
         char getColor();
+        virtual bool testMovement(int,int) = 0;
 };
 
 #include "Pieza.cpp"

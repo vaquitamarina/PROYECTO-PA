@@ -45,6 +45,11 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[2] = new clsScreen(window);
     screen[2]->setSprite(0,"./Images/backgroundConfig.png");
     control[2] = new clsControl(screen[2],0,0,0,2);
+
+    //Partida
+    screen[3] = new clsScreen(window);
+    screen[3]->setSprite(0,"./Images/backgroundPartida.png");
+    screen[3]->setScaleSprite(0,{0.8,0.8});
 }
 
 void clsAdmin::iniciarPrograma(){

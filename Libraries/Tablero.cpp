@@ -3,7 +3,7 @@
 using namespace std;
 
 clsTablero::clsTablero(){
-    // clsPieza peon1(0,1,'b');
+    clsPeon peon1(0,1,'b');
     // clsPieza peon2(0,1,'b');
     // clsPieza peon3(0,1,'b');
     // clsPieza peon4(0,1,'b');
@@ -11,7 +11,7 @@ clsTablero::clsTablero(){
     // clsPieza peon6(0,1,'b');
     // clsPieza peon7(0,1,'b');
     // clsPieza peon8(0,1,'b');
-    // clsPieza peon1n(0,1,'n');
+    clsPeon peon1n(0,1,'n');
     // clsPieza peon2n(0,1,'n');
     // clsPieza peon3n(0,1,'n');
     // clsPieza peon4n(0,1,'n');
@@ -19,6 +19,13 @@ clsTablero::clsTablero(){
     // clsPieza peon6n(0,1,'n');
     // clsPieza peon7n(0,1,'n');
     // clsPieza peon8n(0,1,'n');
+    clsCasilla b7;
+    clsCasilla b2;
+    b2.setPieza(&peon1);
+    b7.setPieza(&peon1n);
+    matrizCasilla[1][1] = b7;
+    matrizCasilla[6][1] = b2;
+
 }   
 //     clsCasilla a1;
 //     clsCasilla a2;

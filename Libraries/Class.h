@@ -13,5 +13,6 @@
 
 #include "Screen.h"
 #include "ScreenInSesion.h"
+#include "ScreenPartida.h"
 #include "Control.h"
 #include "Admin.h"
