@@ -6,7 +6,7 @@ clsCasilla::clsCasilla(){
 
 string clsCasilla::getFigura(bool f){
     if(!vacio){
-        return pPieza->getFigura();
+        // return pPieza->getFigura();
     }
     if(f){
         return "/";

@@ -16,6 +16,11 @@ void clsPieza::setPosY(int y){
     posY = y;
 }
 
-
+void clsPieza::setSprite(string d){
+    Image image;
+    image.loadFromFile(d);
+    texture.loadFromImage(image);
+    sprite.setTexture(texture);
+}
 
     
