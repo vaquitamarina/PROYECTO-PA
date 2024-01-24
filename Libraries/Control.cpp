@@ -100,17 +100,37 @@ void clsControl::pressEnter(int* actualScreen){
             break;
         case 1: {
             if(in){
+                //
+                cout<<oldSelected<<endl;
                 switch(oldSelected){
                     case 0:
-                        if(cont < 2){
+                        if(cont == 0){
                             if(registro->iniciarSesion(reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(0),reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(1))){
+                                //
                                 cout<<"Se ha iniciado sesion correctamente";
+                                usuarioN = reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(0);
                                 reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(0);
                                 reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(1);
                                 cont ++;
-                                // admin->iniciarPartida();
                             }
                             else{
+                                //
+                                cout<<"No se pudo iniciar seison";
+                            }
+                        }
+                        if(cont == 1){
+                            if(registro->iniciarSesion(reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(0),reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(1))){
+                                //
+                                cout<<"Se ha iniciado sesion correctamente";
+                                usuarioB = reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(0);
+                                reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(0);
+                                reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(1);
+                                cont ++;
+            
+                                admin->iniciarPartida(usuarioN,usuarioB);
+                            }
+                            else{
+                                //
                                 cout<<"No se pudo iniciar seison";
                             }
                         }
