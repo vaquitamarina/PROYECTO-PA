@@ -10,7 +10,7 @@
 #include "Registro.h"
 #include "Partida.h"
 
-#include "Menu.h"
-#include "MenuInSesion.h"
+#include "Screen.h"
+#include "ScreenInSesion.h"
 #include "Control.h"
 #include "Admin.h"

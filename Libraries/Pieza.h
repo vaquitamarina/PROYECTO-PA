@@ -8,14 +8,15 @@ class clsPieza{
         int posY;
         char color;
         bool estado;
-        string figura;
+        Texture texture;
+        Sprite  sprite;
 
     public:
-        clsPieza(int, int, char, string);
+        clsPieza(int, int, char);
         void setPosX(int);
         void setPosY(int);
+        void setSprite(string);
         char getColor();
-        string getFigura();
 };
 
 #include "Pieza.cpp"

@@ -1,7 +1,7 @@
 #include "Control.h"
 
 
-clsControl::clsControl(clsMenu *m,int s, int mx, int mn,int o){
+clsControl::clsControl(clsScreen *m,int s, int mx, int mn,int o){
     menu = m;
     selected = s;
     max = mx;
@@ -9,7 +9,7 @@ clsControl::clsControl(clsMenu *m,int s, int mx, int mn,int o){
     op = o;
     in = false;
 }
-clsControl::clsControl(clsMenu *m,int s, int mx, int mn,int o,clsRegistro *regis, clsAdmin *a){
+clsControl::clsControl(clsScreen *m,int s, int mx, int mn,int o,clsRegistro *regis, clsAdmin *a){
     menu = m;
     selected = s;
     max = mx;
@@ -32,13 +32,13 @@ void clsControl::pressUp(){
             break;
         case 1:
             if(in){
-                reinterpret_cast<clsMenuInicioSesion *> (menu)->setTextboxSelected(selected,false);
+                reinterpret_cast<clsScreenInSesion *> (menu)->setTextboxSelected(selected,false);
                 selected--;
                 if(selected == min - 1)
                 {
                     selected = max;
                 }
-                reinterpret_cast<clsMenuInicioSesion *> (menu)->setTextboxSelected(selected,true);
+                reinterpret_cast<clsScreenInSesion *> (menu)->setTextboxSelected(selected,true);
             }
             else{
                 menu->setTextColor(selected, Color::White);
@@ -67,13 +67,13 @@ void clsControl::pressDown(){
             break;
         case 1:
             if(in){
-                reinterpret_cast<clsMenuInicioSesion *> (menu)->setTextboxSelected(selected,false);
+                reinterpret_cast<clsScreenInSesion *> (menu)->setTextboxSelected(selected,false);
                 selected++;
                 if(selected == max + 1)
                 {
                     selected = min;
                 }
-                reinterpret_cast<clsMenuInicioSesion *> (menu)->setTextboxSelected(selected,true);
+                reinterpret_cast<clsScreenInSesion *> (menu)->setTextboxSelected(selected,true);
             }
             else{
                 menu->setTextColor(selected, Color::White);
@@ -105,12 +105,12 @@ void clsControl::pressEnter(int* actualScreen){
                 switch(oldSelected){
                     case 0:
                         if(cont == 0){
-                            if(registro->iniciarSesion(reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(0),reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(1))){
+                            if(registro->iniciarSesion(reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(0),reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(1))){
                                 //
                                 cout<<"Se ha iniciado sesion correctamente";
-                                usuarioN = reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(0);
-                                reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(0);
-                                reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(1);
+                                usuarioN = reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(0);
+                                reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(0);
+                                reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(1);
                                 cont ++;
                             }
                             else{
@@ -119,12 +119,12 @@ void clsControl::pressEnter(int* actualScreen){
                             }
                         }
                         if(cont == 1){
-                            if(registro->iniciarSesion(reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(0),reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(1))){
+                            if(registro->iniciarSesion(reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(0),reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(1))){
                                 //
                                 cout<<"Se ha iniciado sesion correctamente";
-                                usuarioB = reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(0);
-                                reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(0);
-                                reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(1);
+                                usuarioB = reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(0);
+                                reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(0);
+                                reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(1);
                                 cont ++;
             
                                 admin->iniciarPartida(usuarioN,usuarioB);
@@ -137,9 +137,9 @@ void clsControl::pressEnter(int* actualScreen){
                         
                         break;
                     case 1:
-                        if(registro->crearUsuario(reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(0),reinterpret_cast<clsMenuInicioSesion *>(menu)->getTextbox(1),0)){
-                            reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(0);
-                            reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(1);    
+                        if(registro->crearUsuario(reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(0),reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(1),0)){
+                            reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(0);
+                            reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(1);    
                         }
                         else{
                             //Aqui hay que hacer que aparezca un texto indicando esto en el programa, el cout es provisinal ga
@@ -151,8 +151,8 @@ void clsControl::pressEnter(int* actualScreen){
             else{
                 menu->setTextColor(0,Color(255,255,255,0));
                 menu->setTextColor(1,Color(255,255,255,0));
-                reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(0,Color(255,255,255,255),true);
-                reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,255),false);
+                reinterpret_cast < clsScreenInSesion *> (menu) -> setTextboxColor(0,Color(255,255,255,255),true);
+                reinterpret_cast < clsScreenInSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,255),false);
                 oldSelected = selected;
         
                 in = true;
@@ -169,10 +169,10 @@ void clsControl::pressEscape(int* actualScreen){
             if(in){
                 menu->setTextColor(0,Color::Yellow);
                 menu->setTextColor(1,Color::White);
-                reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(0,Color(255,255,255,0),false);
-                reinterpret_cast < clsMenuInicioSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,0),false);
-                reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(0);
-                reinterpret_cast <clsMenuInicioSesion *> (menu) -> deleteTextboxString(1);
+                reinterpret_cast < clsScreenInSesion *> (menu) -> setTextboxColor(0,Color(255,255,255,0),false);
+                reinterpret_cast < clsScreenInSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,0),false);
+                reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(0);
+                reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(1);
                 in = false;
                 
             }

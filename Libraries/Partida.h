@@ -7,6 +7,7 @@ class clsPartida{
         string usuarioN;
         string usuarioB;
         clsTablero *pTablero;
+
     public:
         clsPartida(string, string);
         void mostrarTablero();

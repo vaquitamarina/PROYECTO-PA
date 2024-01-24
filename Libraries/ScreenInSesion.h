@@ -1,15 +1,15 @@
-#ifndef MENUINSESION_H
-#define MENUINSESION_H
+#ifndef SCREENINSESION_H
+#define SCREENINSESION_H
 
 
 using namespace std;
 using namespace sf;  
 
-class clsMenuInicioSesion : public clsMenu{
+class clsScreenInSesion : public clsScreen{
     private:
         
     public:
-        clsMenuInicioSesion(RenderWindow *w,Font *f);
+        clsScreenInSesion(RenderWindow *w,Font *f);
         void setTextbox(Font *f);
         void setTextboxColor(int, Color, bool);
         void setTextboxSelected(int, bool);
@@ -20,6 +20,6 @@ class clsMenuInicioSesion : public clsMenu{
 
 };
 
-#include "MenuInSesion.cpp"
+#include "ScreenInSesion.cpp"
 
 #endif

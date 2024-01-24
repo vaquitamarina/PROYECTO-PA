@@ -1,9 +1,9 @@
-#include "MenuInSesion.h"
+#include "ScreenInSesion.h"
 
-clsMenuInicioSesion::clsMenuInicioSesion(RenderWindow *w,Font *f) : clsMenu(w){
+clsScreenInSesion::clsScreenInSesion(RenderWindow *w,Font *f) : clsScreen(w){
     this->setTextbox(f);
 }
-void clsMenuInicioSesion::setTextbox(Font *f){
+void clsScreenInSesion::setTextbox(Font *f){
     textbox[0] = new clsTextbox(20,Color(255,255,255,0),false);
     textbox[1] = new clsTextbox(20,Color(255,255,255,0),false);
 
@@ -17,25 +17,25 @@ void clsMenuInicioSesion::setTextbox(Font *f){
     textbox[1]->setLimit(true,10);
 }
 
-void clsMenuInicioSesion::setTextboxColor(int i,Color c, bool sel){
+void clsScreenInSesion::setTextboxColor(int i,Color c, bool sel){
     textbox[i]->setColor(c);
     textbox[i]->setSelected(sel);
     
 }
 
-void clsMenuInicioSesion::typedOn(Event event){
+void clsScreenInSesion::typedOn(Event event){
     textbox[0]->typedOn(event);
     textbox[1]->typedOn(event);
 }
 
-void clsMenuInicioSesion::setTextboxSelected(int i, bool sel){
+void clsScreenInSesion::setTextboxSelected(int i, bool sel){
     textbox[i]->setSelected(sel);
 }
 
-void clsMenuInicioSesion::deleteTextboxString(int i){
+void clsScreenInSesion::deleteTextboxString(int i){
     textbox[i]->deleteString();
 }
 
-string clsMenuInicioSesion::getTextbox(int i){
+string clsScreenInSesion::getTextbox(int i){
     return textbox[i]->getText();
 }

@@ -17,7 +17,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     soundtrack[0].setLoop(true);
 
     //Menu principal;
-    screen[0] = new clsMenu(window);
+    screen[0] = new clsScreen(window);
     //background
     screen[0]->setSprite(0,"./Images/backgroundMenu.jpg");
     screen[0]->setText(0,&fonts[0],"Ajedrez",80,{400,30});
@@ -31,7 +31,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
 
     //Menu inicio de sesion;
-    screen[1] = new clsMenuInicioSesion(window,&fonts[0]);
+    screen[1] = new clsScreenInSesion(window,&fonts[0]);
     //background
     screen[1]->setSprite(0,"./Images/prueba.png");
     screen[1]->setScaleSprite(0,{0.65,0.65});
@@ -42,7 +42,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     control[1] = new clsControl(screen[1],0,1,0, 1, &registro,this);
 
     //Menu de configuracion
-    screen[2] = new clsMenu(window);
+    screen[2] = new clsScreen(window);
     screen[2]->setSprite(0,"./Images/backgroundConfig.png");
     control[2] = new clsControl(screen[2],0,0,0,2);
 }
@@ -56,7 +56,7 @@ void clsAdmin::iniciarPrograma(){
                 window->close();
             }
             if(event.type == Event ::TextEntered){
-                reinterpret_cast <clsMenuInicioSesion *> (screen[1]) -> typedOn(event);
+                reinterpret_cast <clsScreenInSesion *> (screen[1]) -> typedOn(event);
             }
             if(event.type == Event ::KeyPressed){
                 if(event.key.code == Keyboard::Up){

@@ -6,7 +6,7 @@ using namespace sf;
 
 class clsAdmin{
     private:
-        clsMenu *screen[10];
+        clsScreen *screen[10];
         clsControl *control[10];
         Font fonts[10];
         Music soundtrack[10];

@@ -6,7 +6,7 @@ using namespace sf;
 class clsAdmin;
 class clsControl{
     protected:
-        clsMenu *menu;
+        clsScreen *menu;
         clsRegistro *registro;
         clsAdmin *admin;
         int selected;
@@ -20,8 +20,8 @@ class clsControl{
         int oldSelected;
         int cont = 0;
     public:
-        clsControl(clsMenu *,int,int,int,int);
-        clsControl(clsMenu *,int,int,int,int,clsRegistro *,clsAdmin *);
+        clsControl(clsScreen *,int,int,int,int);
+        clsControl(clsScreen *,int,int,int,int,clsRegistro *,clsAdmin *);
         void pressUp();
         void pressDown();
         void pressEnter(int* a);

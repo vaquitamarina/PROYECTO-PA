@@ -1,9 +1,9 @@
-#ifndef MENU_H
-#define MENU_H
+#ifndef SCREEN_H
+#define SCREEN_H
 using namespace std;
 using namespace sf;  
 
-class clsMenu{
+class clsScreen{
     protected:
         RenderWindow *window;
         clsTextbox *textbox[2];
@@ -15,7 +15,7 @@ class clsMenu{
         
 
     public:
-        clsMenu(RenderWindow *);
+        clsScreen(RenderWindow *);
         //Metodos de imagenes
         void setSprite(int,string);
         void setScaleSprite(int, Vector2f);
@@ -29,5 +29,5 @@ class clsMenu{
         void closeWindow();
 };
 
-#include "Menu.cpp"
+#include "Screen.cpp"
 #endif

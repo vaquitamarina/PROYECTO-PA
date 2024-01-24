@@ -3,11 +3,10 @@ using namespace std;
 
 // Metodos de la clase Pieza
 
-clsPieza::clsPieza(int x, int y, char c,string f){
+clsPieza::clsPieza(int x, int y, char c){
     posX = x;
     posY = y;
     color = c;
-    figura = f;
 }
 
 void clsPieza::setPosX(int x){
@@ -17,8 +16,6 @@ void clsPieza::setPosY(int y){
     posY = y;
 }
 
-string clsPieza::getFigura(){
-    return figura;
-}
+
 
     
