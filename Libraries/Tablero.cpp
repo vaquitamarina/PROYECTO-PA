@@ -21,17 +21,16 @@ clsTablero::clsTablero(){
     // clsPieza peon6n(0,1,'n');
     // clsPieza peon7n(0,1,'n');
     // clsPieza peon8n(0,1,'n');
-    pieza = new clsPeon(0,0,'n');
-    pieza->setSprite("./Images/Sprites/peon_alt.png");
+    // pieza = new clsPeon(0,0,'n');
+    // pieza->setSprite("./Images/Sprites/peon_alt.png");
 
-    matrizCasilla[1][1] = new clsCasilla(100,100);
-    matrizCasilla[1][1]->setPieza(pieza);
+    // matrizCasilla[1][1] = new clsCasilla(100,100);
+    // matrizCasilla[1][1]->setPieza(pieza);
 
 }
-Sprite clsTablero::getSprite(int i,int j){
-    // return matrizCasilla[i][j]->getSprite();
-    return pieza->getSprite();
+void clsTablero::setPiezas(clsPieza *p[]){
 }
+
 //     clsCasilla a1;   
 //     clsCasilla a2;
 //     clsCasilla a3;

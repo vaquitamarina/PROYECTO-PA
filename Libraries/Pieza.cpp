@@ -30,7 +30,9 @@ void clsPieza::setSprite(string d){
     Image image;
     image.loadFromFile(d);
     texture.loadFromImage(image);
-    sprite.setTexture(texture);     
+    sprite.setTexture(texture);
+    sprite.setPosition({posX,posY});
+    
 }
 
 Sprite clsPieza::getSprite(){

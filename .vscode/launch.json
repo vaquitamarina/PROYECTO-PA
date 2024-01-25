@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/pca/Github/PROYECTO-PA",
-      "program": "c:/Users/pca/Github/PROYECTO-PA/build/Debug/outDebug",
+      "cwd": "c:/Users/pca/Documents/ga/PROYECTO-PA",
+      "program": "c:/Users/pca/Documents/ga/PROYECTO-PA/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

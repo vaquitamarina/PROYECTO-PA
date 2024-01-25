@@ -6,6 +6,7 @@
 class clsScreenPartida : public clsScreen {
     private:
         clsPartida *partida;
+        clsPieza *piezas[32];
     public:
         clsScreenPartida(RenderWindow *, clsPartida *);
         void draw();

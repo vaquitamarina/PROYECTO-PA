@@ -11,7 +11,7 @@ class clsPartida{
     public:
         clsPartida(string, string);
         void mostrarTablero();
-        Sprite getSprite(int,int);
+        void setPiezas(clsPieza *[]);
 };
 #include "Partida.cpp"
 #endif
