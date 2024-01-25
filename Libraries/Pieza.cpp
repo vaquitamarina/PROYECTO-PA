@@ -3,20 +3,23 @@ using namespace std;
 
 // Metodos de la clase Pieza
 
-clsPieza::clsPieza(int x, int y, char c){
-    posX = x;
-    posY = y;
-    sprite.setPosition({x,y});
+clsPieza::clsPieza(Vector2f pos, char c){
+    // posX = x;
+    // posY = y;
+    sprite.setPosition(pos);
     color = c;
 }
     
-void clsPieza::setPosX(int pos){
-    posX = pos;
-    sprite.setPosition({pos,posY});
-}
-void clsPieza::setPosY(int pos){
-    posY = pos;
-    sprite.setPosition({posX,pos});
+// void clsPieza::setPosX(int pos){
+//     posX = pos;
+//     sprite.setPosition({pos,posY});
+// }
+// void clsPieza::setPosY(int pos){
+//     posY = pos;
+//     sprite.setPosition({posX,pos});
+// }
+void clsPieza::setPos(Vector2f pos){
+    sprite.setPosition(pos);
 }
 int clsPieza::getPosX(){
     return posX;
@@ -31,7 +34,7 @@ void clsPieza::setSprite(string d){
     image.loadFromFile(d);
     texture.loadFromImage(image);
     sprite.setTexture(texture);
-    sprite.setPosition({posX,posY});
+    sprite.setScale({3,3});
     
 }
 

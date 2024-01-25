@@ -8,7 +8,7 @@ using namespace std;
 using namespace sf;
 
 int main(){
-    RenderWindow window(VideoMode(1280, 720), "Ajedrez", Style::Default);
+    RenderWindow window(VideoMode(), "Ajedrez", Style::Fullscreen);
     // clsMenu menu(&window);
     
     // menu.menuPrincipal();

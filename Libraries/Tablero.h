@@ -5,11 +5,11 @@
 class clsTablero{
     private:
         clsCasilla *matrizCasilla[8][8];
-        clsPieza *piezas[32];
+        // clsPieza *piezas[32];
     public:
         clsTablero(/*clsCasilla matriz[8][8] */);
         void mostrarTablero();
-        void setPiezas(*[]);
+        // void setPiezas(*[]);
 };
 
 #include "Tablero.cpp"

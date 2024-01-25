@@ -13,8 +13,8 @@ Sprite clsCasilla::getSprite(){
 }
 void clsCasilla::setPieza(clsPieza *p){
     pPieza = p;
-    pPieza->setPosX(posX);
-    pPieza->setPosY(posY);
+    // pPieza->setPosX(posX);
+    // pPieza->setPosY(posY);
 
     vacio = false;
 }

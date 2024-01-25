@@ -28,8 +28,8 @@ clsTablero::clsTablero(){
     // matrizCasilla[1][1]->setPieza(pieza);
 
 }
-void clsTablero::setPiezas(clsPieza *p[]){
-}
+// void clsTablero::setPiezas(clsPieza *p[]){
+// }
 
 //     clsCasilla a1;   
 //     clsCasilla a2;

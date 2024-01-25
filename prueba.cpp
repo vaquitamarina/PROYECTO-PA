@@ -21,7 +21,22 @@ int main(){
     clsPeon peon1(1,1,'n');
     peon1.setSprite("./Images/Sprites/peon.png");
 
+    Vector2f v1;
+    v1.x = 10.1;
+    v1.y = 10;
 
+    Vector2f v2;
+    v2.x = 20;
+    v2.y = 30;
+
+    Vector2f v3;
+    v3.x = 10;
+    v3.y = 10;
+    bool a;
+    a = v1==v2;
+    cout<<a;
+    a = v1==v3;
+    cout<<a;
     while(window.isOpen()){
         Event event;
 

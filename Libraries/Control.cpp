@@ -114,6 +114,7 @@ void clsControl::pressEnter(int* actualScreen){
                                 reinterpret_cast <clsScreenInSesion *> (menu) -> setTextboxSelected(0,true);
                                 reinterpret_cast <clsScreenInSesion *> (menu) -> setTextboxSelected(1,false);
                                 cont ++;
+                                selected = min;
                             }
                             else{
                                 //

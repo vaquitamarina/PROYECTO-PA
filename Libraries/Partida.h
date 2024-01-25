@@ -6,12 +6,12 @@ class clsPartida{
     private:
         string usuarioN;
         string usuarioB;
-        clsTablero *pTablero;
+        clsPieza *piezas[32];
+        // clsTablero *pTablero;
 
     public:
         clsPartida(string, string);
-        void mostrarTablero();
-        void setPiezas(clsPieza *[]);
+        void setPiezas(clsPieza *);
 };
 #include "Partida.cpp"
 #endif

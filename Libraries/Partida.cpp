@@ -4,13 +4,9 @@ using namespace std;
 clsPartida::clsPartida(string n, string b){
     usuarioN = n;
     usuarioB = b;
-    pTablero = new clsTablero();
+    // pTablero = new clsTablero();
 }
 
-void clsPartida::mostrarTablero(){
-    pTablero -> mostrarTablero();
-}
-
-void clsPartida::setPiezas(clsPieza *piezas[]){
-    
+void clsPartida::setPiezas(clsPieza *ps){
+    piezas[0] = &ps[0];
 }

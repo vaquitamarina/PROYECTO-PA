@@ -12,9 +12,10 @@ class clsPieza{
         Sprite  sprite;
 
     public:
-        clsPieza(int, int, char);
-        void setPosX(int);
-        void setPosY(int);
+        clsPieza(Vector2f, char);
+        // void setPosX(int);
+        // void setPosY(int);
+        void setPos(Vector2f);
         int getPosX();
         int getPosY();
         void setSprite(string);
