@@ -24,6 +24,8 @@ class clsControl{
         clsControl(clsScreen *,int,int,int,int,clsRegistro *,clsAdmin *);
         void pressUp();
         void pressDown();
+        void pressLeft();
+        void pressRight();
         void pressEnter(int* a);
         void pressEscape(int* a);
 };

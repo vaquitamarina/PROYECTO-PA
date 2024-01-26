@@ -9,6 +9,7 @@ using namespace sf;
 
 int main(){
     RenderWindow window(VideoMode(), "Ajedrez", Style::Fullscreen);
+    window.setKeyRepeatEnabled(false);
     // clsMenu menu(&window);
     
     // menu.menuPrincipal();

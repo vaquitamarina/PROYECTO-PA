@@ -20,6 +20,12 @@ void clsScreen::setSpriteOpacity(int i, int a){
     sprites[i]->setColor(Color(255,255,255,a));
 }
 
+void clsScreen::setPosSprite(int i, Vector2f pos){
+    sprites[i]->setPosition(pos);
+}
+Vector2f clsScreen::getPosSprite(int i){
+    return sprites[i]->getPosition();
+}
 
 void clsScreen::setText(int i,Font *f, string s, int c, Vector2f pos){
     

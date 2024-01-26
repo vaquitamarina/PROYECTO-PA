@@ -50,8 +50,15 @@ void clsControl::pressUp(){
                 menu->setTextColor(selected, Color::Yellow);
             }
             break;
-        }
-    
+        case 3:
+            selected--;
+            if(selected == min - 1)
+            {
+                selected = max;
+            }
+            reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'y');
+            break;
+    }
 }
 
 void clsControl::pressDown(){
@@ -85,10 +92,42 @@ void clsControl::pressDown(){
                 menu->setTextColor(selected, Color::Yellow);
             }
             break;
+        case 3:
+            selected++;
+            if(selected == max + 1)
+            {
+                selected = min;
+            }
+            reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'y');
+            break;
     }
 
     
-} 
+}
+void clsControl::pressRight(){
+    switch(op){
+        case 3:
+            selected++;
+            if(selected == max + 1)
+            {
+                selected = min;
+            }
+            reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'x');
+    }
+}
+
+void clsControl::pressLeft(){
+    switch(op){
+        case 3:
+            selected--;
+            if(selected == min - 1)
+            {
+                selected = max;
+            }
+            reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'x');
+
+    }
+}
 
 void clsControl::pressEnter(int* actualScreen){
     switch(op){

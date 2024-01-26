@@ -19,6 +19,8 @@ class clsScreen{
         //Metodos de imagenes
         void setSprite(int,string);
         void setScaleSprite(int, Vector2f);
+        void setPosSprite(int, Vector2f);
+        Vector2f getPosSprite(int);
         void setSpriteOpacity(int, int);
         //Metodos de texto
         void setText(int, Font *, string, int, Vector2f);

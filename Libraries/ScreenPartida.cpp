@@ -9,6 +9,8 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
 
         }
     }
+    this->setSprite(1,"./Images/Pointers/02.png");
+    this->setPosSprite(1,casillas[0][1]);
     piezas[0] = new clsPeon(casillas[0][1],'n');
     piezas[0]->setSprite("./Images/Sprites/peon_alt.png");
     piezas[1] = new clsPeon(casillas[1][1],'n');
@@ -117,7 +119,17 @@ void clsScreenPartida::draw(){
     window->draw(piezas[29]->getSprite());
     window->draw(piezas[30]->getSprite());
     window->draw(piezas[31]->getSprite());
+    window->draw(*sprites[1]);
 
 
     // window->draw(partida->getSprite(6,1));
+}
+
+void clsScreenPartida::setPointerPos(int selected, char axis){
+    if(axis == 'x'){
+        this->setPosSprite(1,{casillas[selected][0].x,this->getPosSprite(1).y});    
+    }
+    if(axis == 'y'){
+        this->setPosSprite(1,{this->getPosSprite(1).x,casillas[0][selected].y});  
+    }
 }

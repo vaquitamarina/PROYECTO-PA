@@ -13,6 +13,7 @@ class clsScreenPartida : public clsScreen {
         string usuarioB;
     public:
         clsScreenPartida(RenderWindow *, clsPartida *);
+        void setPointerPos(int,char);
         void setUsuarios();
         void draw();
 };

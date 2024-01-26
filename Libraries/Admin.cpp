@@ -50,6 +50,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[3] = new clsScreenPartida(window,partida);
     screen[3]->setSprite(0,"./Images/backgroundPartida.png");
     screen[3]->setScaleSprite(0,{0.8,0.8});
+    control[3] = new clsControl(screen[3],0,7,0,3);
 }
 
 void clsAdmin::iniciarPrograma(){
@@ -78,6 +79,14 @@ void clsAdmin::iniciarPrograma(){
                 }
                 if(event.key.code == Keyboard::Escape){
                     control[actualScreen]->pressEscape(&actualScreen);
+                    effect[0].play();
+                }
+                if(event.key.code == Keyboard::Left){
+                    control[actualScreen]->pressLeft();
+                    effect[0].play();
+                }
+                if(event.key.code == Keyboard::Right){
+                    control[actualScreen]->pressRight();
                     effect[0].play();
                 }
                
