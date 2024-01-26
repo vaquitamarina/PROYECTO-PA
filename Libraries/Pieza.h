@@ -16,6 +16,7 @@ class clsPieza{
         // void setPosX(int);
         // void setPosY(int);
         void setPos(Vector2f);
+        Vector2f getPos();
         int getPosX();
         int getPosY();
         void setSprite(string);

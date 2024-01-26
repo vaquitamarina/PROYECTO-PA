@@ -38,6 +38,9 @@ void clsPieza::setSprite(string d){
     
 }
 
+Vector2f clsPieza::getPos(){
+    return sprite.getPosition();
+}
 Sprite clsPieza::getSprite(){
     return sprite;
 }

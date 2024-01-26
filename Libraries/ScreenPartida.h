@@ -4,6 +4,7 @@
 #include "Screen.h"
 #define _CASILLA 62
 #define _CASILLAORIGEN 130
+#define _PUNTERODIF 10
 class clsScreenPartida : public clsScreen {
     private:
         clsPartida *partida;

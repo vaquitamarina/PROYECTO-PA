@@ -93,12 +93,12 @@ void clsControl::pressDown(){
             }
             break;
         case 3:
-            selected++;
-            if(selected == max + 1)
-            {
-                selected = min;
-            }
-            reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'y');
+                selected++;
+                if(selected == max + 1)
+                {
+                    selected = min;
+                }
+                reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'y');
             break;
     }
 
@@ -107,24 +107,24 @@ void clsControl::pressDown(){
 void clsControl::pressRight(){
     switch(op){
         case 3:
-            selected++;
-            if(selected == max + 1)
+            oldSelected++;
+            if(oldSelected == max + 1)
             {
-                selected = min;
+                oldSelected = min;
             }
-            reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'x');
+            reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(oldSelected,'x');
     }
 }
 
 void clsControl::pressLeft(){
     switch(op){
         case 3:
-            selected--;
-            if(selected == min - 1)
+            oldSelected--;
+            if(oldSelected == min - 1)
             {
-                selected = max;
+                oldSelected = max;
             }
-            reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'x');
+            reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(oldSelected,'x');
 
     }
 }
@@ -201,6 +201,15 @@ void clsControl::pressEnter(int* actualScreen){
 
             }
         }
+
+        case 3:
+            if(!cent){
+                cent = true;
+            }
+            if(cent){
+                cent = false;
+            }
+            break;
     } 
     
 }

@@ -14,10 +14,11 @@ class clsControl{
         int min;
         int op;
         bool in;
+        bool cent = false;
         string usuarioN;
         string usuarioB;
         
-        int oldSelected;
+        int oldSelected = 0;
         int cont = 0;
     public:
         clsControl(clsScreen *,int,int,int,int);
