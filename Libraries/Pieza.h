@@ -21,7 +21,7 @@ class clsPieza{
         void setSprite(string);
         char getColor();
         Sprite getSprite();
-        virtual bool testMovement(int,int) = 0;
+        virtual bool testMovement(Vector2f) = 0;
 };
 
 #include "Pieza.cpp"
