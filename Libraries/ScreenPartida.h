@@ -2,7 +2,7 @@
 #define SCREENPARTIDA_H
 
 #include "Screen.h"
-#define _CASILLA 63
+#define _CASILLA 62
 #define _CASILLAORIGEN 130
 class clsScreenPartida : public clsScreen {
     private:
