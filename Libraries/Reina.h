@@ -7,6 +7,7 @@ class clsReina : public clsPieza{
     private:
 
     public:
+        clsReina(Vector2f,char);
         bool testMovement(Vector2f);
 };
 

@@ -6,6 +6,7 @@
 class clsCaballo : public clsPieza{
     private:
     public:
+        clsCaballo(Vector2f,char);
         bool testMovement(Vector2f);
 };
 

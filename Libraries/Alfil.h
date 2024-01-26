@@ -5,7 +5,8 @@
 
 class clsAlfil : public clsPieza{
     private:
-    public: 
+    public:
+        clsAlfil(Vector2f,char);
         bool testMovement(Vector2f);
 };
 #include "Alfil.cpp"

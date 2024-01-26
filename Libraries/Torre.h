@@ -5,6 +5,7 @@
 class clsTorre : public clsPieza{
     private:
     public:
+        clsTorre(Vector2f,char);
         bool testMovement(Vector2f);
 };
 
