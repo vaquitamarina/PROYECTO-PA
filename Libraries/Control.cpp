@@ -56,7 +56,12 @@ void clsControl::pressUp(){
             {
                 selected = max;
             }
+            Vector2f origin(menu->getPosSprite(1));
+
             reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'y');
+            if(cent){
+                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos(origin, menu->getPosSprite(1));
+            }
             break;
     }
 }
@@ -98,7 +103,12 @@ void clsControl::pressDown(){
                 {
                     selected = min;
                 }
+                Vector2f origin(menu->getPosSprite(1));
+
                 reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'y');
+                if(cent){
+                    reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos(origin, menu->getPosSprite(1));
+                }
             break;
     }
 
@@ -112,7 +122,13 @@ void clsControl::pressRight(){
             {
                 oldSelected = min;
             }
+            Vector2f origin(menu->getPosSprite(1));
+
             reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(oldSelected,'x');
+
+            if(cent){
+                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos(origin, menu->getPosSprite(1));
+            }
     }
 }
 
@@ -124,8 +140,13 @@ void clsControl::pressLeft(){
             {
                 oldSelected = max;
             }
-            reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(oldSelected,'x');
+            Vector2f origin(menu->getPosSprite(1));
 
+            reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(oldSelected,'x');
+            
+            if(cent){
+                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos(origin, menu->getPosSprite(1));
+            }
     }
 }
 
@@ -205,9 +226,11 @@ void clsControl::pressEnter(int* actualScreen){
         case 3:
             if(!cent){
                 cent = true;
+                cout<<"se levanto la pieza";
             }
-            if(cent){
+            else{
                 cent = false;
+                cout<<"   a;a";
             }
             break;
     } 

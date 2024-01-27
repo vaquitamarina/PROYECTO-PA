@@ -10,7 +10,7 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
         }
     }
     this->setSprite(1,"./Images/Pointers/02.png");
-    this->setPosSprite(1,{casillas[0][0].x - _PUNTERODIF,casillas[0][0].y});
+    this->setPosSprite(1,{casillas[0][0].x /*- _PUNTERODIF*/,casillas[0][0].y});
     piezas[0] = new clsPeon(casillas[0][1],'n');
     piezas[0]->setSprite("./Images/Sprites/peon_alt.png");
     piezas[1] = new clsPeon(casillas[1][1],'n');
@@ -127,10 +127,25 @@ void clsScreenPartida::draw(){
 
 void clsScreenPartida::setPointerPos(int selected, char axis){  
     if(axis == 'x'){
-        this->setPosSprite(1,{casillas[selected][0].x - _PUNTERODIF,this->getPosSprite(1).y});    
+        this->setPosSprite(1,{casillas[selected][0].x /*- _PUNTERODIF*/,this->getPosSprite(1).y});    
     }
     if(axis == 'y'){
         this->setPosSprite(1,{this->getPosSprite(1).x, casillas[0][selected].y});  
     }
 }
 
+int clsScreenPartida::getCasillaPieza(Vector2f pos){
+    for(int i = 0; i < 32; i ++){
+        if(piezas[i]->getPos() == pos){
+            return i;
+        }
+    }
+    return -1;
+}
+
+void clsScreenPartida::setPiezaPos(Vector2f origin, Vector2f pos){
+    int i = getCasillaPieza(origin);
+    if(i != -1){
+        piezas[i]->setPos(pos);
+    }
+}

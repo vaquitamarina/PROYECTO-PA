@@ -15,6 +15,8 @@ class clsScreenPartida : public clsScreen {
     public:
         clsScreenPartida(RenderWindow *, clsPartida *);
         void setPointerPos(int,char);
+        void setPiezaPos(Vector2f, Vector2f);
+        int getCasillaPieza(Vector2f);
         void setUsuarios();
         void draw();
 };
