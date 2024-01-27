@@ -54,10 +54,16 @@ clsAdmin::clsAdmin(RenderWindow *w){
 }
 
 void clsAdmin::iniciarPrograma(){
+    int previousScreen=-1;
     while (window->isOpen()){
-        soundtrack[actualScreen].play();
+        if (actualScreen != previousScreen) {
+            if (previousScreen != -1) {
+                soundtrack[previousScreen].stop();
+            }
+            soundtrack[actualScreen].play();
+            previousScreen = actualScreen;
+        }
         Event event;    
-
         while (window->pollEvent(event)){
             if(event.type == Event ::Closed){
                 window->close();
