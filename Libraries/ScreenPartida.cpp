@@ -14,6 +14,40 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
     //para acomodar el puntero
     sprites[1]->setOrigin({-14,-27});
     //
+    memset(casillasOcupadas,0,sizeof(casillasOcupadas));
+    casillasOcupadas[0][1] = true;
+    casillasOcupadas[1][1] = true;
+    casillasOcupadas[2][1] = true;
+    casillasOcupadas[3][1] = true;
+    casillasOcupadas[4][1] = true;
+    casillasOcupadas[5][1] = true;
+    casillasOcupadas[6][1] = true;
+    casillasOcupadas[7][1] = true;
+    casillasOcupadas[0][6] = true;
+    casillasOcupadas[1][6] = true;
+    casillasOcupadas[2][6] = true;
+    casillasOcupadas[3][6] = true;
+    casillasOcupadas[4][6] = true;
+    casillasOcupadas[5][6] = true;
+    casillasOcupadas[6][6] = true;
+    casillasOcupadas[7][6] = true;
+    casillasOcupadas[0][0] = true;
+    casillasOcupadas[7][0] = true;
+    casillasOcupadas[0][7] = true;
+    casillasOcupadas[7][7] = true;
+    casillasOcupadas[1][0] = true;
+    casillasOcupadas[6][0] = true;
+    casillasOcupadas[1][7] = true;
+    casillasOcupadas[6][7] = true;
+    casillasOcupadas[2][0] = true;
+    casillasOcupadas[5][0] = true;
+    casillasOcupadas[2][7] = true;
+    casillasOcupadas[5][7] = true;
+    casillasOcupadas[3][0] = true;
+    casillasOcupadas[3][7] = true;
+    casillasOcupadas[4][0] = true;
+    casillasOcupadas[4][7] = true;
+    //
     piezas[0] = new clsPeon(casillas[0][1],'n');
     piezas[0]->setSprite("./Images/Sprites/peon2.png");
     piezas[1] = new clsPeon(casillas[1][1],'n');
@@ -157,6 +191,8 @@ void clsScreenPartida::setPiezaPos(Vector2f origin, Vector2f pos, int cent){
         }
         if(cent == 2){
             piezas[i]->setPosOrigin(pos);
+            casillasOcupadas[int(pos.x/_CASILLA)-1][int(pos.y/_CASILLA)-1] = true;
+            casillasOcupadas[int(piezas[i]->getPosOrigin().x/_CASILLA)][int(piezas[i]->getPosOrigin().y/_CASILLA)] = false;
         }
     }
 }
@@ -171,3 +207,4 @@ void clsScreenPartida::setPriority(Vector2f pos){
 bool clsScreenPartida::getTestMovement(Vector2f pos, int i){
     return piezas[i]->testMovement(pos);
 }
+

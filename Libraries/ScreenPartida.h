@@ -8,6 +8,7 @@ class clsScreenPartida : public clsScreen {
         clsPartida *partida;
         clsPieza *piezas[32];
         Vector2f casillas[8][8];
+        bool casillasOcupadas[8][8];
         string usuarioN;
         string usuarioB;
         int priority;
@@ -19,6 +20,7 @@ class clsScreenPartida : public clsScreen {
         int getCasillaPieza(Vector2f);
         void setPriority(Vector2f);
         void setUsuarios();
+        void updateCasillas();
         void draw();
 };
 #include "ScreenPartida.cpp"

@@ -3,7 +3,7 @@
 clsPeon::clsPeon(Vector2f pos, char c) : clsPieza(pos,c){
     firstMovement = true;
 }
-bool clsPeon::testMovement(Vector2f){
+bool clsPeon::testMovement(Vector2f pos){
     // if(x == posX){
     //     if(color = 'b'){
     //         if(y == posY + 1){
@@ -23,5 +23,25 @@ bool clsPeon::testMovement(Vector2f){
     //     }
         
     // }
+    if (pos.x == posOrigin.x){
+        if(color == 'b'){
+            if(pos.y == posOrigin.y - _CASILLA){
+                return true;
+            }
+            if(firstMovement && pos.y == posOrigin.y - (2 * _CASILLA)){ 
+                firstMovement = false;
+                return true;
+            }
+        }
+        if(color == 'n'){
+            if(pos.y == posOrigin.y + _CASILLA){
+                return true;
+            }
+            if(firstMovement && pos.y == posOrigin.y + (2 * _CASILLA)){ 
+                firstMovement = false;
+                return true;
+            }
+        }
+    }
     return false;
 }
