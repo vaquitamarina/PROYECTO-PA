@@ -15,6 +15,11 @@ clsAdmin::clsAdmin(RenderWindow *w){
     soundtrack[0].openFromFile("./music/An_Engineer_Gaming_Megalo.ogg");
     soundtrack[1].openFromFile("./music/Red.ogg");
     soundtrack[2].openFromFile("./music/big_shot.ogg");
+    soundtrack[0].play();
+    soundtrack[0].setLoop(true);
+    soundtrack[1].setLoop(true);
+    soundtrack[2].setLoop(true);
+
 
     //Menu principal;
     screen[0] = new clsScreen(window);
@@ -56,15 +61,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
 }
 
 void clsAdmin::iniciarPrograma(){
-    int previousScreen=-1;
     while (window->isOpen()){
-        if (actualScreen != previousScreen) {
-            if (previousScreen != -1) {
-                soundtrack[previousScreen].stop();
-            }
-            soundtrack[actualScreen].play();
-            previousScreen = actualScreen;
-        }
         Event event;    
         while (window->pollEvent(event)){
             if(event.type == Event ::Closed){
@@ -114,4 +111,11 @@ void clsAdmin::iniciarPrograma(){
 
 void clsAdmin::iniciarPartida(string n, string b){
     partida = new clsPartida(n,b);
+}
+
+void clsAdmin::setSoundtrack(int i){
+    soundtrack[actualSoundtrack].stop();
+    soundtrack[i].play();
+
+    actualSoundtrack = i;
 }

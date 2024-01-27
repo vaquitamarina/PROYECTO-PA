@@ -188,6 +188,7 @@ void clsControl::pressEnter(int* actualScreen){
                                 reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(1);
                                 cont ++;
                                 *actualScreen = 3;
+                                admin->setSoundtrack(1);
                                 admin->iniciarPartida(usuarioN,usuarioB);
                             }
                             else{

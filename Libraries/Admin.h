@@ -16,10 +16,12 @@ class clsAdmin{
         clsRegistro registro;
         clsPartida *partida;
         int actualScreen;
+        int actualSoundtrack;
     public:
         clsAdmin(RenderWindow *window);
         void iniciarPrograma();
         void iniciarPartida(string, string);
+        void setSoundtrack(int);
 };
 
 #include "Admin.cpp"
