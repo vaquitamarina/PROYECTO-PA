@@ -60,7 +60,7 @@ void clsControl::pressUp(){
 
             reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'y');
             if(cent){
-                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos(origin, menu->getPosSprite(1));
+                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10});
             }
             break;
     }
@@ -107,7 +107,7 @@ void clsControl::pressDown(){
 
                 reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'y');
                 if(cent){
-                    reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos(origin, menu->getPosSprite(1));
+                    reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10});
                 }
             break;
     }
@@ -127,7 +127,7 @@ void clsControl::pressRight(){
             reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(oldSelected,'x');
 
             if(cent){
-                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos(origin, menu->getPosSprite(1));
+                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10});
             }
     }
 }
@@ -143,9 +143,9 @@ void clsControl::pressLeft(){
             Vector2f origin(menu->getPosSprite(1));
 
             reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(oldSelected,'x');
-            
+
             if(cent){
-                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos(origin, menu->getPosSprite(1));
+                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10});
             }
     }
 }
@@ -158,10 +158,8 @@ void clsControl::pressEnter(int* actualScreen){
             }
             *actualScreen = selected;
             break;
-        case 1: {
+        case 1: 
             if(in){
-                //
-                cout<<oldSelected<<endl;
                 switch(oldSelected){
                     case 0:
                         if(cont == 0){
@@ -209,6 +207,8 @@ void clsControl::pressEnter(int* actualScreen){
                             cout<<"Este nombre ya ha sido registrado";
                         }
                         break;
+                    default:
+                        break;
                 }
             }
             else{
@@ -221,17 +221,22 @@ void clsControl::pressEnter(int* actualScreen){
                 in = true;
 
             }
-        }
+            break;
 
-        case 3:
+        case 3: 
             if(!cent){
+                Vector2f origin(menu->getPosSprite(1));
                 cent = true;
-                cout<<"se levanto la pieza";
+                reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos(origin,{origin.x,origin.y-10});
             }
             else{
                 cent = false;
-                cout<<"   a;a";
+                Vector2f origin(menu->getPosSprite(1));
+                reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10},{origin.x,origin.y});
             }
+            break;
+        
+        default:
             break;
     } 
     

@@ -35,6 +35,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     //background
     screen[1]->setSprite(0,"./Images/prueba.png");
     screen[1]->setScaleSprite(0,{0.65,0.65});
+
     //
     screen[1]->setText(0,&fonts[0],"Iniciar Sesion",30,{400,300});
     screen[1]->setTextColor(0,Color::Yellow);
@@ -44,6 +45,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     //Menu de configuracion
     screen[2] = new clsScreen(window);
     screen[2]->setSprite(0,"./Images/backgroundConfig.png");
+    
     control[2] = new clsControl(screen[2],0,0,0,2);
 
     //Partida
