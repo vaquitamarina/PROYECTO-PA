@@ -26,6 +26,7 @@ bool clsPeon::testMovement(Vector2f pos, bool matriz[][8]){
     if (pos.x == posOrigin.x){
         if(color == 'b'){
             if(pos.y == posOrigin.y - _CASILLA){
+                firstMovement = false;
                 return true;
             }
             if(firstMovement && pos.y == posOrigin.y - (2 * _CASILLA)){ 
@@ -35,6 +36,7 @@ bool clsPeon::testMovement(Vector2f pos, bool matriz[][8]){
         }
         if(color == 'n'){
             if(pos.y == posOrigin.y + _CASILLA){
+                firstMovement = false;
                 return true;
             }
             if(firstMovement && pos.y == posOrigin.y + (2 * _CASILLA)){ 
