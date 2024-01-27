@@ -4,7 +4,6 @@
 
 #define _CASILLA 62
 #define _CASILLAORIGEN 100
-#define _PUNTERODIF 10
 
 #include "Textbox.h"
 #include "Casilla.h"

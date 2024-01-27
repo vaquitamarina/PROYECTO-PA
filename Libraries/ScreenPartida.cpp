@@ -10,7 +10,10 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
         }
     }
     this->setSprite(1,"./Images/Pointers/02.png");
-    this->setPosSprite(1,{casillas[0][0].x /*- _PUNTERODIF*/,casillas[0][0].y});
+    this->setPosSprite(1,{casillas[0][0].x,casillas[0][0].y});
+    //para acomodar el puntero
+    sprites[1]->setOrigin({-14,-27});
+    //
     piezas[0] = new clsPeon(casillas[0][1],'n');
     piezas[0]->setSprite("./Images/Sprites/peon2.png");
     piezas[1] = new clsPeon(casillas[1][1],'n');
