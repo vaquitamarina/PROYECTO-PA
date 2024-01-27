@@ -13,8 +13,8 @@ clsAdmin::clsAdmin(RenderWindow *w){
     effect[0].setBuffer(effectBuffer[0]);
 
     soundtrack[0].openFromFile("./music/An_Engineer_Gaming_Megalo.ogg");
-    soundtrack[0].play();
-    soundtrack[0].setLoop(true);
+    soundtrack[1].openFromFile("./music/Red.ogg");
+    soundtrack[2].openFromFile("./music/big_shot.ogg");
 
     //Menu principal;
     screen[0] = new clsScreen(window);
@@ -55,6 +55,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
 void clsAdmin::iniciarPrograma(){
     while (window->isOpen()){
+        soundtrack[actualScreen].play();
         Event event;    
 
         while (window->pollEvent(event)){
