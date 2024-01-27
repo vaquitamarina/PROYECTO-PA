@@ -8,7 +8,7 @@ class clsReina : public clsPieza{
 
     public:
         clsReina(Vector2f,char);
-        bool testMovement(Vector2f);
+        bool testMovement(Vector2f,bool matriz[8][8]);
 };
 
 #include "Reina.cpp"

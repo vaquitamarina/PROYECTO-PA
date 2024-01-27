@@ -8,7 +8,7 @@ class clsPeon : public clsPieza{
         bool firstMovement;
     public:
         clsPeon(Vector2f,char);
-        bool testMovement(Vector2f);
+        bool testMovement(Vector2f,bool matriz[8][8]);
 };
 #include "Peon.cpp"
 #endif

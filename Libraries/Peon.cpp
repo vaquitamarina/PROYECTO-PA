@@ -3,7 +3,7 @@
 clsPeon::clsPeon(Vector2f pos, char c) : clsPieza(pos,c){
     firstMovement = true;
 }
-bool clsPeon::testMovement(Vector2f pos){
+bool clsPeon::testMovement(Vector2f pos, bool matriz[][8]){
     // if(x == posX){
     //     if(color = 'b'){
     //         if(y == posY + 1){

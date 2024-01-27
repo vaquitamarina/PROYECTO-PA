@@ -239,9 +239,12 @@ void clsControl::pressEnter(int* actualScreen){
             }
             else{
                 if(piezaPuntero == -1){
+                    reinterpret_cast<clsScreenPartida *>(menu)->imprimirMatrizPrueba();
                     if(reinterpret_cast<clsScreenPartida *>(menu)->getTestMovement(origin,piezaLevantada)){
                         cent = false;
                         reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10},{origin.x,origin.y},2);
+                        //
+                        
                     }
                 }
             }
