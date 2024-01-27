@@ -182,14 +182,14 @@ void clsControl::pressEnter(int* actualScreen){
                         if(cont == 1){
                             if(registro->iniciarSesion(reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(0),reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(1))){
                                 //
-                                cout<<"Se ha iniciado sesion correctamente";
+                                // cout<<"Se ha iniciado sesion correctamente";
                                 usuarioB = reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(0);
-                                reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(0);
-                                reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(1);
-                                cont ++;
+                                // reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(0);
+                                // reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(1);
+                                // cont ++;
                                 *actualScreen = 3;
                                 admin->setSoundtrack(1);
-                                admin->iniciarPartida(usuarioN,usuarioB);
+                                //admin->iniciarPartida(usuarioN,usuarioB);
                             }
                             else{
                                 //

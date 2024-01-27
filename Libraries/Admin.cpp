@@ -12,9 +12,9 @@ clsAdmin::clsAdmin(RenderWindow *w){
     effectBuffer[0].loadFromFile("./soundsEffects/snd_select.wav");
     effect[0].setBuffer(effectBuffer[0]);
 
-    soundtrack[0].openFromFile("./music/An_Engineer_Gaming_Megalo.ogg");
-    soundtrack[1].openFromFile("./music/Red.ogg");
-    soundtrack[2].openFromFile("./music/big_shot.ogg");
+    soundtrack[0].openFromFile("./Music/An_Engineer_Gaming_Megalo.ogg");
+    soundtrack[1].openFromFile("./Music/Red.ogg");
+    soundtrack[2].openFromFile("./Music/big_shot.ogg");
     soundtrack[0].play();
     soundtrack[0].setLoop(true);
     soundtrack[1].setLoop(true);
@@ -114,8 +114,8 @@ void clsAdmin::iniciarPartida(string n, string b){
 }
 
 void clsAdmin::setSoundtrack(int i){
-    soundtrack[actualSoundtrack].stop();
-    soundtrack[i].play();
+    // soundtrack[actualSoundtrack].stop();
+    // soundtrack[i].play();
 
-    actualSoundtrack = i;
+    // actualSoundtrack = i;
 }
