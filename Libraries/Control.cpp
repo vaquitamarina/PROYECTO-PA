@@ -226,8 +226,10 @@ void clsControl::pressEnter(int* actualScreen){
         case 3: 
             if(!cent){
                 Vector2f origin(menu->getPosSprite(1));
+                reinterpret_cast<clsScreenPartida *>(menu)->setPriority(origin);
                 cent = true;
                 reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos(origin,{origin.x,origin.y-10});
+            
             }
             else{
                 cent = false;

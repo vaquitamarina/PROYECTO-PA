@@ -12,11 +12,13 @@ class clsScreenPartida : public clsScreen {
         Vector2f casillas[8][8];
         string usuarioN;
         string usuarioB;
+        int priority;
     public:
         clsScreenPartida(RenderWindow *, clsPartida *);
         void setPointerPos(int,char);
         void setPiezaPos(Vector2f, Vector2f);
         int getCasillaPieza(Vector2f);
+        void setPriority(Vector2f);
         void setUsuarios();
         void draw();
 };

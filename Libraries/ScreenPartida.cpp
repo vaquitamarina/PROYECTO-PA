@@ -83,6 +83,7 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
     piezas[31]->setSprite("./Images/Sprites/rey.png");
     // partida = p;
     // partida->setPiezas(piezas[0]);
+    priority = 31;
 }
 
 void clsScreenPartida::draw(){
@@ -119,6 +120,7 @@ void clsScreenPartida::draw(){
     window->draw(piezas[29]->getSprite());
     window->draw(piezas[30]->getSprite());
     window->draw(piezas[31]->getSprite());
+    window->draw(piezas[priority]->getSprite());
     window->draw(*sprites[1]);
 
 
@@ -149,3 +151,11 @@ void clsScreenPartida::setPiezaPos(Vector2f origin, Vector2f pos){
         piezas[i]->setPos(pos);
     }
 }
+
+void clsScreenPartida::setPriority(Vector2f pos){
+    int i = getCasillaPieza(pos);
+    if(i != -1){
+        priority = i;
+    }
+}
+
