@@ -232,9 +232,14 @@ void clsControl::pressEnter(int* actualScreen){
             
             }
             else{
-                cent = false;
                 Vector2f origin(menu->getPosSprite(1));
-                reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10},{origin.x,origin.y});
+                if(reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza(origin) == -1){
+                    
+                    cent = false;
+                    reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10},{origin.x,origin.y});
+
+                }
+                
             }
             break;
         
