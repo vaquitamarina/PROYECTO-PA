@@ -223,28 +223,27 @@ void clsControl::pressEnter(int* actualScreen){
             }
             break;
 
-        case 3: 
+        case 3:
+            Vector2f origin(menu->getPosSprite(1));
             if(!cent){
-                Vector2f origin(menu->getPosSprite(1));
-                reinterpret_cast<clsScreenPartida *>(menu)->setPriority(origin);
-                cent = true;
-                reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos(origin,{origin.x,origin.y-10});
+                if(reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza(origin) != -1){
+                    
+                    reinterpret_cast<clsScreenPartida *>(menu)->setPriority(origin);
+                    cent = true;
+                    reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos(origin,{origin.x,origin.y-10});
+                }
             
             }
             else{
-                Vector2f origin(menu->getPosSprite(1));
                 if(reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza(origin) == -1){
-                    
+
                     cent = false;
                     reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10},{origin.x,origin.y});
 
                 }
-                
             }
             break;
-        
-        default:
-            break;
+
     } 
     
 }
