@@ -19,6 +19,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     soundtrack[0].setLoop(true);
     soundtrack[1].setLoop(true);
     soundtrack[2].setLoop(true);
+    actualSoundtrack=0;
 
 
     //Menu principal;
@@ -114,8 +115,8 @@ void clsAdmin::iniciarPartida(string n, string b){
 }
 
 void clsAdmin::setSoundtrack(int i){
-    // soundtrack[actualSoundtrack].stop();
-    // soundtrack[i].play();
+    soundtrack[actualSoundtrack].stop();
+    soundtrack[i].play();
 
-    // actualSoundtrack = i;
+    actualSoundtrack = i;
 }
