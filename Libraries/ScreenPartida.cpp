@@ -145,10 +145,16 @@ int clsScreenPartida::getCasillaPieza(Vector2f pos){
     return -1;
 }
 
-void clsScreenPartida::setPiezaPos(Vector2f origin, Vector2f pos){
+void clsScreenPartida::setPiezaPos(Vector2f origin, Vector2f pos, int cent){
     int i = getCasillaPieza(origin);
     if(i != -1){
         piezas[i]->setPos(pos);
+        if(cent == 1){
+            piezas[i]->setPosOrigin(origin);
+        }
+        if(cent == 2){
+            piezas[i]->setPosOrigin(pos);
+        }
     }
 }
 
@@ -159,3 +165,6 @@ void clsScreenPartida::setPriority(Vector2f pos){
     }
 }
 
+bool clsScreenPartida::getTestMovement(Vector2f pos, int i){
+    return piezas[i]->testMovement(pos);
+}

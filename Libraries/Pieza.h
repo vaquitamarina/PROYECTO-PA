@@ -10,6 +10,7 @@ class clsPieza{
         bool estado;
         Texture texture;
         Sprite  sprite;
+        Vector2f posOrigin;
 
     public:
         clsPieza(Vector2f, char);
@@ -23,6 +24,7 @@ class clsPieza{
         char getColor();
         Sprite getSprite();
         virtual bool testMovement(Vector2f) = 0;
+        void setPosOrigin(Vector2f);
 };
 
 #include "Pieza.cpp"

@@ -60,7 +60,7 @@ void clsControl::pressUp(){
 
             reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'y');
             if(cent){
-                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10});
+                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10},false);
             }
             break;
     }
@@ -107,7 +107,7 @@ void clsControl::pressDown(){
 
                 reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(selected,'y');
                 if(cent){
-                    reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10});
+                    reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10},false);
                 }
             break;
     }
@@ -127,7 +127,7 @@ void clsControl::pressRight(){
             reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(oldSelected,'x');
 
             if(cent){
-                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10});
+                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10},false);
             }
     }
 }
@@ -145,7 +145,7 @@ void clsControl::pressLeft(){
             reinterpret_cast<clsScreenPartida *> (menu)->setPointerPos(oldSelected,'x');
 
             if(cent){
-                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10});
+                reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10},false);
             }
     }
 }
@@ -226,21 +226,23 @@ void clsControl::pressEnter(int* actualScreen){
 
         case 3:
             Vector2f origin(menu->getPosSprite(1));
+            int piezaPuntero = reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza(origin);
+            int piezaLevantada = reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza({origin.x,origin.y-10});
             if(!cent){
-                if(reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza(origin) != -1){
+                if(piezaPuntero != -1){
                     
                     reinterpret_cast<clsScreenPartida *>(menu)->setPriority(origin);
                     cent = true;
-                    reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos(origin,{origin.x,origin.y-10});
+                    reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos(origin,{origin.x,origin.y-10},1);
                 }
             
             }
             else{
-                if(reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza(origin) == -1){
-
-                    cent = false;
-                    reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10},{origin.x,origin.y});
-
+                if(piezaPuntero == -1){
+                    if(reinterpret_cast<clsScreenPartida *>(menu)->getTestMovement(origin,piezaLevantada)){
+                        cent = false;
+                        reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10},{origin.x,origin.y},2);
+                    }
                 }
             }
             break;

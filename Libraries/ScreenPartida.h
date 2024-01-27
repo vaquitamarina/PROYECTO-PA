@@ -2,9 +2,7 @@
 #define SCREENPARTIDA_H
 
 #include "Screen.h"
-#define _CASILLA 62
-#define _CASILLAORIGEN 100
-#define _PUNTERODIF 10
+
 class clsScreenPartida : public clsScreen {
     private:
         clsPartida *partida;
@@ -16,7 +14,8 @@ class clsScreenPartida : public clsScreen {
     public:
         clsScreenPartida(RenderWindow *, clsPartida *);
         void setPointerPos(int,char);
-        void setPiezaPos(Vector2f, Vector2f);
+        void setPiezaPos(Vector2f, Vector2f, int);
+        bool getTestMovement(Vector2f, int);
         int getCasillaPieza(Vector2f);
         void setPriority(Vector2f);
         void setUsuarios();

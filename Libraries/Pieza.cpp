@@ -45,3 +45,6 @@ Sprite clsPieza::getSprite(){
     return sprite;
 }
     
+void clsPieza::setPosOrigin(Vector2f pos){
+    posOrigin = pos;
+}
