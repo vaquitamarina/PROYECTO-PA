@@ -54,3 +54,4 @@ bool clsAlfil::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
     }
     return false;
 }
+
