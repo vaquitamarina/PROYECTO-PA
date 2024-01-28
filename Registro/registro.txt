@@ -12,3 +12,7 @@ GOTO GOTO 0
 GOGO  0
 DASD QW 0
 QW QW 0
+1 1 0
+1 1 0
+1  0
+
