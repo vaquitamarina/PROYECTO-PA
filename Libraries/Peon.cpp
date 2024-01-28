@@ -10,10 +10,13 @@ bool clsPeon::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
 
     if (pos.x == posOrigin.x){
         if(color == 'b'){
-            if(pos.y == posOrigin.y - _CASILLA){ 
-                firstMovement = false;
-                *turno = !*turno;
-                return true;
+            if(pos.y == posOrigin.y - _CASILLA){
+                if(matriz[int(pos.x/_CASILLA)-1][int(pos.y/_CASILLA)-1] == false){
+                    firstMovement = false;
+                    *turno = !*turno;
+                    return true;
+                }
+                return false;
             }
             if(firstMovement && pos.y == posOrigin.y - (2 * _CASILLA)){ 
                 if(matriz[int(pos.x/_CASILLA)-1][int(pos.y/_CASILLA)] == false){
@@ -26,11 +29,6 @@ bool clsPeon::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
         }
         if(color == 'n'){
             if(pos.y == posOrigin.y + _CASILLA){
-                firstMovement = false;
-                *turno = !*turno;
-                return true;
-            }
-            if(firstMovement && pos.y == posOrigin.y + (2 * _CASILLA)){ 
                 if(matriz[int(pos.x/_CASILLA)-1][int(pos.y/_CASILLA)-1] == false){
                     firstMovement = false;
                     *turno = !*turno;
@@ -38,7 +36,38 @@ bool clsPeon::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
                 }
                 return false;
             }
+            if(firstMovement && pos.y == posOrigin.y + (2 * _CASILLA)){ 
+                if(matriz[int(pos.x/_CASILLA)-1][int(pos.y/_CASILLA)-1] == false){
+                    firstMovement = false;
+                    *turno = !*turno;
+                    return true;
+                }
+            }
+            
+            return false;
         }
     }
+    if(color == 'n'){
+        if(pos.y == posOrigin.y + _CASILLA){
+            if(pos.x == posOrigin.x + _CASILLA || pos.x == posOrigin.x - _CASILLA){
+                if(matriz[int(pos.x/_CASILLA)-1][int(pos.y/_CASILLA)-1] == true){
+                    *turno = !*turno;
+                    return true;
+                }
+            }
+        }
+    }
+    if(color == 'b'){
+        if(pos.y == posOrigin.y - _CASILLA){
+            if(pos.x == posOrigin.x + _CASILLA || pos.x == posOrigin.x - _CASILLA){
+                if(matriz[int(pos.x/_CASILLA)-1][int(pos.y/_CASILLA)-1] == true){
+                    *turno = !*turno;
+                    return true;
+                }
+            }
+        }
+    }
+    
+
     return false;
 }
