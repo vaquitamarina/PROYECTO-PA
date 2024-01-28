@@ -20,7 +20,7 @@ bool clsTorre::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
             }   
         }
         else{
-            for(int i = inicio; i <= final; i++){
+            for(int i = inicio; i < final; i++){
                 if(matriz[int(posOrigin.x/_CASILLA)-1][i] == true){
                     return false;
                 }
@@ -41,7 +41,7 @@ bool clsTorre::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
             } 
         }
         else{
-            for(int i = inicio; i <= final; i++){
+            for(int i = inicio; i < final; i++){
                 if(matriz[i][int(posOrigin.y/_CASILLA)-1] == true){
                     return false;
                 }

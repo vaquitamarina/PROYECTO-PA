@@ -20,7 +20,7 @@ bool clsReina::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
             }   
         }
         else{
-            for(int i = inicio; i <= final; i++){
+            for(int i = inicio; i < final; i++){
                 if(matriz[int(posOrigin.x/_CASILLA)-1][i] == true){
                     return false;
                 }
@@ -41,7 +41,7 @@ bool clsReina::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
             } 
         }
         else{
-            for(int i = inicio; i <= final; i++){
+            for(int i = inicio; i < final; i++){
                 if(matriz[i][int(posOrigin.y/_CASILLA)-1] == true){
                     return false;
                 }
@@ -51,7 +51,7 @@ bool clsReina::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
         return true;
     }
 
-    
+
     Vector2f posibility;
     for(int i = 0; i < 8; i ++){
         posibility = {posOrigin.x + i*_CASILLA,posOrigin.y + i*_CASILLA};
