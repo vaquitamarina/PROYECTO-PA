@@ -249,7 +249,8 @@ void clsControl::pressEnter(int* actualScreen){
                     if(reinterpret_cast<clsScreenPartida *>(menu)->getTestMovement(origin,piezaLevantada)){
                         cent = false;
                         reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10},{origin.x,origin.y},2);
-                        //
+                        int pieza = reinterpret_cast<clsScreenPartida *> (menu)->getCasillaPieza(origin);
+                        reinterpret_cast<clsScreenPartida *>(menu)->comprobarGanador(pieza);
                         cout<< reinterpret_cast<clsScreenPartida * >(menu)->getTurn();
                     }
                 }

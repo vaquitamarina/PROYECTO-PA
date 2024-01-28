@@ -240,3 +240,20 @@ bool clsScreenPartida::getTurn(){
 char clsScreenPartida::getPiezaColor(int i ){
     return piezas[i]->getColor();
 }
+
+void clsScreenPartida::comprobarGanador(int i){
+    Vector2f reyBlanco(piezas[30]->getPos());
+    Vector2f reyNegro(piezas[31]->getPos());
+    bool p = true;
+    if(piezas[i]->getColor() == 'n'){
+        if(piezas[i]->testMovement(reyBlanco,casillasOcupadas,&p)){
+            cout<<"GANARON LOS NEGROS";
+        }
+    }
+    if(piezas[i]->getColor() == 'b'){
+        if(piezas[i]->testMovement(reyNegro,casillasOcupadas,&p)){
+            cout<<"GANARON LOS BLACNOS";
+        }
+        
+    }
+}
