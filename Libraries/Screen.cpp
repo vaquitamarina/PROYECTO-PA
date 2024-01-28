@@ -56,11 +56,11 @@ void clsScreen::closeWindow(){
 }
 
 void clsScreen::setTexture(int n, string filename,Texture *texture){
-    Texture texture;
     texturesCo[n].loadFromFile(filename);
 }
 
 void clsScreen::setTextureTexturetoSprite(int n, int m){
     sprites[n]->setTexture(texturesCo[m]);
 }
+
 

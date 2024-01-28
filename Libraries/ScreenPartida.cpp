@@ -13,23 +13,12 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
     this->setPosSprite(1,{casillas[0][0].x,casillas[0][0].y});
     //para acomodar el puntero
     sprites[1]->setOrigin({-14,-27});
-<<<<<<< HEAD
     //para colocar el tablero
     this->setSprite(2,"./Images/Wii - Wii Chess - Chessboards.png");
     this->setScaleSprite(2,{0.25,0.25});
     this->setPosSprite(2,{120,120});    
 
-    memset(casillasOcupadas,0,sizeof(casillasOcupadas));
-=======
-    //
-    for (int i = 0; i < 8; i++){
-        for (int j = 0; j < 8; j++){
-            casillasOcupadas[i][j] = false;
-        }
-    }
-    
     // memset(casillasOcupadas,0,sizeof(casillasOcupadas));
->>>>>>> 604a4fad3c535814e73ed6c90e2a312a6ab5665b
     casillasOcupadas[0][1] = true;
     casillasOcupadas[1][1] = true;
     casillasOcupadas[2][1] = true;
