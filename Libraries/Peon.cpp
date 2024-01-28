@@ -10,7 +10,7 @@ bool clsPeon::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
 
     if (pos.x == posOrigin.x){
         if(color == 'b'){
-            if(pos.y == posOrigin.y - _CASILLA){
+            if(pos.y == posOrigin.y - _CASILLA){ 
                 firstMovement = false;
                 *turno = !*turno;
                 return true;

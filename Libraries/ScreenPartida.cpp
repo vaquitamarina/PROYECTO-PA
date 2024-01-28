@@ -14,7 +14,7 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
     
     //para acomodar el puntero
     sprites[1]->setOrigin({-14,-32});
-    sprites[1]->setColor(Color(188, 87, 222,255));
+    sprites[1]->setColor(Color(235,171,52,255));
 
     //para colocar el tablero
     this->setTexture(0,"./Images/chessboardPixel.png");
@@ -262,7 +262,7 @@ void clsScreenPartida::comprobarGanador(int i){
 }
 
 void  clsScreenPartida::TurnPlayer(){
-    if(turn==false)
+    if(turn==true)
     {
         sprites[1]->setColor(Color(235,171,52,255));
     }
@@ -270,4 +270,16 @@ void  clsScreenPartida::TurnPlayer(){
     {
         sprites[1]->setColor(Color(188, 87, 222,255));
     }
+}
+
+void clsScreenPartida::deletePieza(int i){
+    piezas[i]->setPos({-100,-100});
+    
+    turn = !turn;
+    
+}
+
+bool clsScreenPartida::getTestEat(Vector2f pos, int i){
+    bool chivo = true;
+    return piezas[i]->testMovement(pos,casillasOcupadas, &chivo);    
 }

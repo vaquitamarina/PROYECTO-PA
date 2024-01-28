@@ -245,7 +245,7 @@ void clsControl::pressEnter(int* actualScreen){
             }
             else{
                 if(piezaPuntero == -1){
-                    reinterpret_cast<clsScreenPartida *>(menu)->imprimirMatrizPrueba();
+                    // reinterpret_cast<clsScreenPartida *>(menu)->imprimirMatrizPrueba();
                     if(reinterpret_cast<clsScreenPartida *>(menu)->getTestMovement(origin,piezaLevantada)){
                         cent = false;
                         reinterpret_cast<clsScreenPartida *>(menu)->comprobarGanador(piezaLevantada);
@@ -255,7 +255,19 @@ void clsControl::pressEnter(int* actualScreen){
                         // cout<< reinterpret_cast<clsScreenPartida * >(menu)->getTurn();
                     }
                 }
-            }
+                else{
+                    bool expiratorio = false;
+                    if(reinterpret_cast<clsScreenPartida *>(menu)->getTestEat(origin,piezaLevantada)){
+                        cent = false;
+                        int dlt = reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza(origin);
+                        reinterpret_cast<clsScreenPartida *>(menu)->deletePieza(dlt);
+                        reinterpret_cast<clsScreenPartida *>(menu)->comprobarGanador(piezaLevantada);
+                        reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10},{origin.x,origin.y},2);
+                        reinterpret_cast<clsScreenPartida *>(menu)->TurnPlayer();
+                        
+                    }
+                }
+            }   
             
             break;
 

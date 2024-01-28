@@ -14,6 +14,7 @@ class clsPieza{
 
     public:
         clsPieza(Vector2f, char);
+        
         // void setPosX(int);
         // void setPosY(int);
         void setPos(Vector2f);
