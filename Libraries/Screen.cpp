@@ -63,6 +63,6 @@ void clsScreen::setTextureTexturetoSprite(int n, int m){
     sprites[n]->setTexture(texturesCo[m]);
 }
 
-void clsScreen::setTextureForm(int n,int m, int x, int y, int w, int h){
+void clsScreen::setTextureForm(int n,int x, int y, int w, int h){
     sprites[n]->setTextureRect(IntRect(x,y,w,h));
 }

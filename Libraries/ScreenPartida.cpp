@@ -11,12 +11,14 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
     }
     this->setSprite(1,"./Images/Pointers/02.png");
     this->setPosSprite(1,{casillas[0][0].x,casillas[0][0].y});
+    
     //para acomodar el puntero
     sprites[1]->setOrigin({-14,-27});
+
     //para colocar el tablero
-    this->setSprite(2,"./Images/Wii - Wii Chess - Chessboards.png");
-    this->setScaleSprite(2,{0.25,0.25});
-    this->setPosSprite(2,{120,120});    
+    this->setTexture(0,"./Images/Wii - Wii Chess - Chessboards.png");
+    this->setTextureTexturetoSprite(2,0);
+    this->setTextureForm(2, 50,50,100,100);
 
     // memset(casillasOcupadas,0,sizeof(casillasOcupadas));
     casillasOcupadas[0][1] = true;
