@@ -4,8 +4,8 @@
 clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w){
     for(int i = 0; i < 8; i++){
         for(int j = 0; j < 8; j++){
-            casillas[i][j].x = (_CASILLAORIGEN) + (i * _CASILLA);
-            casillas[i][j].y = (_CASILLAORIGEN) + (j * _CASILLA);
+            casillas[i][j].x = (_CASILLAORIGENX) + (i * _CASILLA);
+            casillas[i][j].y = (_CASILLAORIGENY) + (j * _CASILLA);
 
         }
     }

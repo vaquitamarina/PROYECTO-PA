@@ -3,7 +3,8 @@
 #include <SFML/Audio.hpp>
 
 #define _CASILLA 63
-#define _CASILLAORIGEN 100
+#define _CASILLAORIGENY 110
+#define _CASILLAORIGENX 95
 
 #include "Textbox.h"
 #include "Casilla.h"
