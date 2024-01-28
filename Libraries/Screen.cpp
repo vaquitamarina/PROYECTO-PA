@@ -5,7 +5,6 @@ clsScreen::clsScreen(RenderWindow *w){
     textbox[1] = new clsTextbox(0,Color(0,0,0,0),false);
 }
 
-
 void clsScreen::setSprite(int n,string b){
     Image image;
     image.loadFromFile(b);
@@ -13,9 +12,11 @@ void clsScreen::setSprite(int n,string b){
     textures[n].loadFromImage(image);
     sprites[n] = new Sprite(textures[n]);
 }
+
 void clsScreen::setScaleSprite(int i, Vector2f scale){
     sprites[i]->setScale(scale);
 }
+
 void clsScreen::setSpriteOpacity(int i, int a){
     sprites[i]->setColor(Color(255,255,255,a));
 }
@@ -23,6 +24,7 @@ void clsScreen::setSpriteOpacity(int i, int a){
 void clsScreen::setPosSprite(int i, Vector2f pos){
     sprites[i]->setPosition(pos);
 }
+
 Vector2f clsScreen::getPosSprite(int i){
     return sprites[i]->getPosition();
 }
@@ -52,3 +54,13 @@ void clsScreen::draw(){
 void clsScreen::closeWindow(){
     window->close();
 }
+
+void clsScreen::setTexture(int n, string filename,Texture *texture){
+    Texture texture;
+    texturesCo[n].loadFromFile(filename);
+}
+
+void clsScreen::setTextureTexturetoSprite(int n, int m){
+    sprites[n]->setTexture(texturesCo[m]);
+}
+

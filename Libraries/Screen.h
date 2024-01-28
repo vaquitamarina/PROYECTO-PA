@@ -9,9 +9,10 @@ class clsScreen{
         clsTextbox *textbox[2];
         //Font    fonts[NUM_FONTS]; 
         //Music   soundtrack[NUM_SOUNDTRACKS];
-        Text    text[10];
-        Texture textures[10];
-        Sprite  *sprites[10];
+        Text    text[100];
+        Texture textures[100];
+        Sprite  *sprites[100];
+        Texture texturesCo[100];
         
 
     public:
@@ -22,6 +23,20 @@ class clsScreen{
         void setPosSprite(int, Vector2f);
         Vector2f getPosSprite(int);
         void setSpriteOpacity(int, int);
+
+        //Metodos de texturas
+        void setTexture(int, string,Texture *);
+        void setTextureTexturetoSprite(int, int);
+
+        void setScaleTexture(int, Vector2f);
+        void setPosTexture(int, Vector2f);
+        void setTextureOpacity(int, int);
+        void setTextureColor(int, Color);
+        void setTextureRotation(int, float);
+        void setTextureOrigin(int, Vector2f);
+        void setTextureScale(int, Vector2f);
+        void setTexturtureRect();
+
         //Metodos de texto
         void setText(int, Font *, string, int, Vector2f);
         void setTextColor(int, Color);
