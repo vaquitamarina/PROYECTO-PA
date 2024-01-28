@@ -128,6 +128,10 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[0]->setSprite(98,"./Images/Frames/b0099.png");
     screen[0]->setSprite(99,"./Images/Frames/b0100.png");
 
+    for(int i=0;i<100;i++){
+        screen[0]->setPosSprite(i,{0,0});
+        screen[0]->setScaleSprite(i,{1.5,1.5});
+    }
 
     //Menu principal;
     
