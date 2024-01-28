@@ -16,7 +16,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     effectBuffer[0].loadFromFile("./soundsEffects/snd_select.wav");
     effect[0].setBuffer(effectBuffer[0]);
 
-    soundtrack[0].openFromFile("./Music/An_Engineer_Gaming_Megalo.ogg");
+    soundtrack[0].openFromFile("./Music/Home.ogg");
     soundtrack[1].openFromFile("./Music/Red.ogg");
     soundtrack[2].openFromFile("./Music/big_shot.ogg");
     soundtrack[0].play();
