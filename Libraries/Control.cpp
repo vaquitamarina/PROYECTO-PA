@@ -259,6 +259,7 @@ void clsControl::pressEnter(int* actualScreen){
                     bool expiratorio = false;
                     if(reinterpret_cast<clsScreenPartida *>(menu)->getTestEat(origin,piezaLevantada)){
                         cent = false;
+                        reinterpret_cast<clsScreenPartida *>(menu)->getEffectSound(3).play();
                         int dlt = reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza(origin);
                         reinterpret_cast<clsScreenPartida *>(menu)->deletePieza(dlt);
                         // reinterpret_cast<clsScreenPartida *>(menu)->comprobarGanador(piezaLevantada);

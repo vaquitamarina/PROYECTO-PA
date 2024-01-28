@@ -1,7 +1,7 @@
 #include "ScreenPartida.h"
 #include<SFML/Graphics.hpp>
 
-clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w){
+clsScreenPartida::clsScreenPartida(RenderWindow *w) : clsScreen(w){
     for(int i = 0; i < 8; i++){
         for(int j = 0; j < 8; j++){
             casillas[i][j].x = (_CASILLAORIGENX) + (i * _CASILLA);
@@ -9,6 +9,7 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
 
         }
     }
+
     this->setSprite(1,"./Images/Pointers/02.png");
     this->setPosSprite(1,{casillas[0][0].x,casillas[0][0].y});
     
@@ -306,3 +307,17 @@ void clsScreenPartida::setUsuarios(string n, string b){
     usuarioB = b;
     text[1].setString(usuarioB);
 }
+
+void clsScreenPartida::setEffectSound(Sound s[])
+{
+    for(int i=0;i<10;i++)
+    {
+        effects[i]=s[i];
+    }
+}
+
+Sound clsScreenPartida::getEffectSound(int j)
+{
+    return effects[j];
+}
+

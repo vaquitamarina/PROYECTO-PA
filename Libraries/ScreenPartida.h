@@ -5,7 +5,6 @@
 
 class clsScreenPartida : public clsScreen {
     private:
-        clsPartida *partida;
         clsPieza *piezas[32];
         Vector2f casillas[8][8];
         bool casillasOcupadas[8][8];
@@ -13,8 +12,9 @@ class clsScreenPartida : public clsScreen {
         string usuarioB;
         bool turn = true;
         int priority;
+        Sound effects[10];
     public:
-        clsScreenPartida(RenderWindow *, clsPartida *);
+        clsScreenPartida(RenderWindow *);
         void setPointerPos(int,char);
         void setPiezaPos(Vector2f, Vector2f, int);
         bool getTestMovement(Vector2f, int);
@@ -28,7 +28,8 @@ class clsScreenPartida : public clsScreen {
         // void comprobarGanador(int i);
         void TurnPlayer();
         void deletePieza(int);
-
+        void setEffectSound(Sound *);
+        Sound getEffectSound(int);
         void imprimirMatrizPrueba();
 
         void draw();

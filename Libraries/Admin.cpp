@@ -16,6 +16,9 @@ clsAdmin::clsAdmin(RenderWindow *w){
     effectBuffer[0].loadFromFile("./soundsEffects/snd_select.wav");
     effect[0].setBuffer(effectBuffer[0]);
 
+    effectBuffer[1].loadFromFile("./soundsEffects/snd_pearrise.wav");
+    effect[1].setBuffer(effectBuffer[1]);
+
     soundtrack[0].openFromFile("./Music/Home.ogg");
     soundtrack[1].openFromFile("./Music/Red.ogg");
     soundtrack[2].openFromFile("./Music/big_shot.ogg");
@@ -222,11 +225,12 @@ clsAdmin::clsAdmin(RenderWindow *w){
     control[2] = new clsControl(screen[2],0,0,0,2);
 
     //Partida
-    screen[3] = new clsScreenPartida(window,partida);
+    screen[3] = new clsScreenPartida(window);
     screen[3]->setSprite(0,"./Images/gatito.png");
     screen[3]->setScaleSprite(0,{1.3,1.2});
     screen[3]->setText(0,&fonts[5],"Turn of: ",70,{700,100});
     screen[3]->setText(1,&fonts[5],"pepito",60,{700,200});
+    reinterpret_cast <clsScreenPartida *> (screen[3]) -> setEffectSound(effect);
     control[3] = new clsControl(screen[3],0,7,0,3);
 }
 
