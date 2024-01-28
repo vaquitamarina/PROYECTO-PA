@@ -18,6 +18,8 @@ class clsAdmin{
         int actualScreen;
         int actualSoundtrack;
         Clock clock;
+        Texture AnimationSpriteShet;
+        AnimationManager am;
 
     public:
         clsAdmin(RenderWindow *window);

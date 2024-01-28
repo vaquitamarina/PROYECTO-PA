@@ -1,6 +1,6 @@
 #include "AnimationManager.h"
-#include<SFML/Graphics.hpp>
 #include<bits/stdc++.h>
+#include<SFML/Graphics.hpp>
 
 using namespace std;
 using namespace sf;

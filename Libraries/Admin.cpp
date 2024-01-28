@@ -26,6 +26,13 @@ clsAdmin::clsAdmin(RenderWindow *w){
     actualSoundtrack=0;
 
     //prueba de animacion por frames
+    AnimationSpriteShet.loadFromFile("./Images/PC Computer - Kaeru nyo Panyon - Cat.png");
+    Vector2i frameRectange(1,10);
+    Vector2i spriteSize(64,64);
+    am.addAnimation("Walking",AnimationSpriteShet,frameRectange,spriteSize);
+    am.setAnimationFrequency("Walking",4);
+
+
     // screen[4] = new clsScreen(window);
     screen[0] = new clsScreen(window, &clock);
     screen[0]->setSprite(0,"./Images/Frames/b0001.png");
@@ -177,7 +184,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
 void clsAdmin::iniciarPrograma(){
     while (window->isOpen()){
-        Event event;    
+        Event event;   
         while (window->pollEvent(event)){
             if(event.type == Event ::Closed){
                 window->close();
@@ -215,7 +222,7 @@ void clsAdmin::iniciarPrograma(){
         }
         window->clear();
         if(actualScreen == 0){
-            screen[actualScreen]->update(0,100);
+            screen[actualScreen]->update(0,100); 
         }
         if(actualScreen == 3){
             reinterpret_cast<clsScreenPartida *>(screen[actualScreen])->draw();
