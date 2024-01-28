@@ -19,7 +19,7 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
     this->setTexture(0,"./Images/chessboardPixel.png");
     this->setTextureTexturetoSprite(2,0);
     this->setTextureForm(2, 100,10,400,400);
-    this->setScaleSprite(2,{1.4,1.4});
+    this->setScaleSprite(2,{1.45,1.45});
     this->setPosSprite(2,{85,85});
 
     memset(casillasOcupadas,0,sizeof(casillasOcupadas));
