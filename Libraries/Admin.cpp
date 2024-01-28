@@ -30,7 +30,6 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[0]->setSprite(0,"./Images/Frames/b0001.png");
     screen[0]->setSprite(1,"./Images/Frames/b0002.png");
     screen[0]->setSprite(2,"./Images/Frames/b0003.png");
-    
     screen[0]->setSprite(3,"./Images/Frames/b0004.png");
     screen[0]->setSprite(4,"./Images/Frames/b0005.png");
     screen[0]->setSprite(5,"./Images/Frames/b0006.png");
@@ -207,17 +206,17 @@ void clsAdmin::iniciarPrograma(){
                
             }
         }
+        window->clear();
         if(actualScreen == 0){
-            screen[actualScreen]->update();
+            screen[actualScreen]->update(0,100);
         }
-    window->clear();
         if(actualScreen == 3){
             reinterpret_cast<clsScreenPartida *>(screen[actualScreen])->draw();
         }
         else{
             screen[actualScreen]->draw();
         }
-    window->display();
+        window->display();
     }
 }
 

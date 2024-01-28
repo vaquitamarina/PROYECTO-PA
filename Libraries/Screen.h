@@ -47,7 +47,7 @@ class clsScreen{
         void setTextColor(int, Color);
 
         //animacion
-        void update();
+        void update(int,int);
         
         //Cajas de texto
         void draw();
