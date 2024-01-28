@@ -26,3 +26,5 @@
 #include "Control.h"
 #include "Admin.h"
 
+#include "AnimationManager.h"
+
