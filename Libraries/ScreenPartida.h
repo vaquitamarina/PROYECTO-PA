@@ -23,7 +23,7 @@ class clsScreenPartida : public clsScreen {
         char getPiezaColor(int);
         int getCasillaPieza(Vector2f);
         void setPriority(Vector2f);
-        void setUsuarios();
+        void setUsuarios(string,string);
         void updateCasillas();
         // void comprobarGanador(int i);
         void TurnPlayer();

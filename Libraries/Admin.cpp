@@ -11,6 +11,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     fonts[2].loadFromFile("./Fonts/pixela-extreme.otf");
     fonts[3].loadFromFile("./Fonts/hachicro.TTF");
     fonts[4].loadFromFile("./Fonts/CryptOfTomorrow.ttf");
+    fonts[5].loadFromFile("./Fonts/font.TTF");
 
     effectBuffer[0].loadFromFile("./soundsEffects/snd_select.wav");
     effect[0].setBuffer(effectBuffer[0]);
@@ -169,7 +170,8 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[3] = new clsScreenPartida(window,partida);
     screen[3]->setSprite(0,"./Images/gatito.png");
     screen[3]->setScaleSprite(0,{1.3,1.2});
-    screen[3]->setText(0,&fonts[1],"Es el turno de:",30,{300,400});
+    screen[3]->setText(0,&fonts[5],"Turn of: ",70,{700,100});
+    screen[3]->setText(1,&fonts[5],"pepito",60,{700,200});
     control[3] = new clsControl(screen[3],0,7,0,3);
 }
 
@@ -226,7 +228,7 @@ void clsAdmin::iniciarPrograma(){
 }
 
 void clsAdmin::iniciarPartida(string n, string b){
-    partida = new clsPartida(n,b);
+    reinterpret_cast<clsScreenPartida *>(screen[3])->setUsuarios(n,b);
 }
 
 void clsAdmin::setSoundtrack(int i){

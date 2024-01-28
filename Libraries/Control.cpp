@@ -189,7 +189,7 @@ void clsControl::pressEnter(int* actualScreen){
                                 // cont ++;
                                 *actualScreen = 3;
                                 admin->setSoundtrack(1);
-                                //admin->iniciarPartida(usuarioN,usuarioB);
+                                admin->iniciarPartida(usuarioN,usuarioB);
                             }
                             else{
                                 //

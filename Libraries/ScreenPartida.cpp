@@ -25,6 +25,8 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
     this->setScaleSprite(2,{1.45,1.45});
     this->setPosSprite(2,{85,85});
 
+    //usuarios
+
     memset(casillasOcupadas,0,sizeof(casillasOcupadas));
     casillasOcupadas[0][1] = true;
     casillasOcupadas[1][1] = true;
@@ -175,6 +177,7 @@ void clsScreenPartida::draw(){
     window->draw(piezas[priority]->getSprite());
     window->draw(*sprites[1]);
     window->draw(text[0]);
+    window->draw(text[1]);
     // window->draw(partida->getSprite(6,1));
 }
 
@@ -269,10 +272,14 @@ void  clsScreenPartida::TurnPlayer(){
     if(turn==true)
     {
         sprites[1]->setColor(Color(235,171,52,255));
+        text[1].setString(usuarioB);
+
     }
     else
     {
         sprites[1]->setColor(Color(188, 87, 222,255));
+        text[1].setString(usuarioN);
+
     }
 }
 
@@ -292,4 +299,10 @@ void clsScreenPartida::deletePieza(int i){
 bool clsScreenPartida::getTestEat(Vector2f pos, int i){
     bool chivo = true;
     return piezas[i]->testMovement(pos,casillasOcupadas, &chivo);    
+}
+
+void clsScreenPartida::setUsuarios(string n, string b){
+    usuarioN = n;
+    usuarioB = b;
+    text[1].setString(usuarioB);
 }
