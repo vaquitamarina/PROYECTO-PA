@@ -19,6 +19,7 @@ class clsScreenPartida : public clsScreen {
         void setPiezaPos(Vector2f, Vector2f, int);
         bool getTestMovement(Vector2f, int);
         bool getTurn();
+        char getPiezaColor(int);
         int getCasillaPieza(Vector2f);
         void setPriority(Vector2f);
         void setUsuarios();

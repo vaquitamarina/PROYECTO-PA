@@ -236,3 +236,7 @@ void clsScreenPartida::imprimirMatrizPrueba(){
 bool clsScreenPartida::getTurn(){
     return turn;
 }
+
+char clsScreenPartida::getPiezaColor(int i ){
+    return piezas[i]->getColor();
+}
