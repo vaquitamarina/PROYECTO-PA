@@ -4,6 +4,13 @@ clsScreen::clsScreen(RenderWindow *w){
     textbox[0] = new clsTextbox(0,Color(0,0,0,0),false);
     textbox[1] = new clsTextbox(0,Color(0,0,0,0),false);
 }
+clsScreen::clsScreen(RenderWindow *w,Clock 	*c){
+    reloj=c;
+    window = w;
+    textbox[0] = new clsTextbox(0,Color(0,0,0,0),false);
+    textbox[1] = new clsTextbox(0,Color(0,0,0,0),false);
+}
+
 
 void clsScreen::setSprite(int n,string b){
     Image image;
@@ -65,4 +72,14 @@ void clsScreen::setTextureTexturetoSprite(int n, int m){
 
 void clsScreen::setTextureForm(int n,int x, int y, int w, int h){
     sprites[n]->setTextureRect(IntRect(x,y,w,h));
+}
+
+void clsScreen::update(int& currentSprite, int numSprites) {
+    Time elapsed = reloj->getElapsedTime();
+    if (elapsed.asSeconds() >= 0.1f) { // Cambia el sprite cada 0.1 segundos
+        // Aquí, 'currentSprite' es el índice del sprite actual
+        // y 'numSprites' es el número total de sprites
+        currentSprite = (currentSprite + 1) % numSprites;
+        reloj->restart();
+    }
 }

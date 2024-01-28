@@ -11,12 +11,14 @@ class clsScreen{
         //Music   soundtrack[NUM_SOUNDTRACKS];
         Text    text[100];
         Texture textures[1000];
-        Sprite  *sprites[100];
+        Sprite  *sprites[1000];
         Texture texturesCo[100];
         Texture frames[500];
+        Clock *reloj;
 
     public:
-        clsScreen(RenderWindow *);
+        clsScreen(RenderWindow*);
+        clsScreen(RenderWindow *,Clock*);
         //Metodos de imagenes
         void setSprite(int,string);
         void setScaleSprite(int, Vector2f);
@@ -42,6 +44,9 @@ class clsScreen{
         //Metodos de texto
         void setText(int, Font *, string, int, Vector2f);
         void setTextColor(int, Color);
+
+        //animacion
+        void update(int&,int);
         
         //Cajas de texto
         void draw();
