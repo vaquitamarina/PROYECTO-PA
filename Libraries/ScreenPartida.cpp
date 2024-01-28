@@ -242,24 +242,26 @@ char clsScreenPartida::getPiezaColor(int i ){
     return piezas[i]->getColor();
 }
 
-void clsScreenPartida::comprobarGanador(int i){
-    Vector2f reyNegro(piezas[30]->getPos());
-    Vector2f reyBlanco(piezas[31]->getPos());
-    bool p = true;
-    if(piezas[i]->getColor() == 'n'){
-        if(this->getTestMovement(reyBlanco,i)){
-            cout<<"GANARON LOS NEGROS";
-        }
+// void clsScreenPartida::comprobarGanador(int i){
+//     Vector2f reyNegro(piezas[30]->getPos());
+//     Vector2f reyBlanco(piezas[31]->getPos());
+//     bool p = true;
+//     if(piezas[i]->getColor() == 'n'){
+//         cout<< this->getTestMovement(reyBlanco,i)<<" ";
+//         cout<< i;
+//         if(this->getTestMovement(reyBlanco,i)){
+//             cout<<"GANARON LOS NEGROS";
+//         }
         
-    }
-    if(piezas[i]->getColor() == 'b'){
-        cout<< this->getTestMovement(reyNegro,i);
-        cout<< i;
-        if(this->getTestMovement(reyNegro,i)){
-            cout<<"GANARON LOS BLACOS";
-        }
-    }
-}
+//     }
+//     if(piezas[i]->getColor() == 'b'){
+//         cout<< this->getTestMovement(reyNegro,i)<<" ";
+//         cout<< i;
+//         if(this->getTestMovement(reyNegro,i)){
+//             cout<<"GANARON LOS BLACOS";
+//         }
+//     }
+// }
 
 void  clsScreenPartida::TurnPlayer(){
     if(turn==true)
@@ -273,6 +275,12 @@ void  clsScreenPartida::TurnPlayer(){
 }
 
 void clsScreenPartida::deletePieza(int i){
+    if(i == 30){
+        cout<<"GANARON LOS BLANCOS";
+    }
+    if(i == 31){
+        cout<<"GANARON LOS NEGROS";
+    }
     piezas[i]->setPos({-100,-100});
     
     turn = !turn;

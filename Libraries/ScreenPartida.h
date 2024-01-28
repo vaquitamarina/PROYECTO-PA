@@ -25,7 +25,7 @@ class clsScreenPartida : public clsScreen {
         void setPriority(Vector2f);
         void setUsuarios();
         void updateCasillas();
-        void comprobarGanador(int i);
+        // void comprobarGanador(int i);
         void TurnPlayer();
         void deletePieza(int);
 

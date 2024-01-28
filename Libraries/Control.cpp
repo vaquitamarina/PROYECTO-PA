@@ -248,7 +248,7 @@ void clsControl::pressEnter(int* actualScreen){
                     // reinterpret_cast<clsScreenPartida *>(menu)->imprimirMatrizPrueba();
                     if(reinterpret_cast<clsScreenPartida *>(menu)->getTestMovement(origin,piezaLevantada)){
                         cent = false;
-                        reinterpret_cast<clsScreenPartida *>(menu)->comprobarGanador(piezaLevantada);
+                        // reinterpret_cast<clsScreenPartida *>(menu)->comprobarGanador(piezaLevantada);
                     
                         reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10},{origin.x,origin.y},2);
                         reinterpret_cast<clsScreenPartida *>(menu)->TurnPlayer();
@@ -261,7 +261,7 @@ void clsControl::pressEnter(int* actualScreen){
                         cent = false;
                         int dlt = reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza(origin);
                         reinterpret_cast<clsScreenPartida *>(menu)->deletePieza(dlt);
-                        reinterpret_cast<clsScreenPartida *>(menu)->comprobarGanador(piezaLevantada);
+                        // reinterpret_cast<clsScreenPartida *>(menu)->comprobarGanador(piezaLevantada);
                         reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10},{origin.x,origin.y},2);
                         reinterpret_cast<clsScreenPartida *>(menu)->TurnPlayer();
                         
