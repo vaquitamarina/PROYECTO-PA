@@ -28,6 +28,9 @@ int clsPieza::getPosY(){
     return posY;
 }
 
+char clsPieza::getColor(){
+    return color;
+}
 
 void clsPieza::setSprite(string d){
     Image image;

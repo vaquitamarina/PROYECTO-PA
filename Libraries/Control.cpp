@@ -150,7 +150,7 @@ void clsControl::pressLeft(){
     }
 }
 
-void clsControl::pressEnter(int* actualScreen){
+void clsControl::pressEnter(int* actualScreen){ 
     switch(op){
         case 0:
             if(selected == 3){
@@ -230,10 +230,16 @@ void clsControl::pressEnter(int* actualScreen){
             int piezaLevantada = reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza({origin.x,origin.y-10});
             if(!cent){
                 if(piezaPuntero != -1){
-                    
-                    reinterpret_cast<clsScreenPartida *>(menu)->setPriority(origin);
-                    cent = true;
-                    reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos(origin,{origin.x,origin.y-10},1);
+                    if(reinterpret_cast<clsScreenPartida *>(menu)->getTurn() == true && reinterpret_cast<clsScreenPartida *>(menu)->getPiezaColor(piezaPuntero) == 'b'){
+                        reinterpret_cast<clsScreenPartida *>(menu)->setPriority(origin);
+                        cent = true;
+                        reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos(origin,{origin.x,origin.y-10},1);
+                    }
+                    if(reinterpret_cast<clsScreenPartida *>(menu)->getTurn() == false && reinterpret_cast<clsScreenPartida *>(menu)->getPiezaColor(piezaPuntero) == 'n'){
+                        reinterpret_cast<clsScreenPartida *>(menu)->setPriority(origin);
+                        cent = true;
+                        reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos(origin,{origin.x,origin.y-10},1);
+                    }
                 }
             
             }
