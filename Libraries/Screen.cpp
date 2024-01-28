@@ -55,7 +55,7 @@ void clsScreen::closeWindow(){
     window->close();
 }
 
-void clsScreen::setTexture(int n, string filename,Texture *textureCo){
+void clsScreen::setTexture(int n, string filename){
     texturesCo[n].loadFromFile(filename);
 }
 
@@ -63,4 +63,6 @@ void clsScreen::setTextureTexturetoSprite(int n, int m){
     sprites[n]->setTexture(texturesCo[m]);
 }
 
-
+void clsScreen::setTextureForm(int n,int m, int x, int y, int w, int h){
+    sprites[n]->setTextureRect(IntRect(x,y,w,h));
+}

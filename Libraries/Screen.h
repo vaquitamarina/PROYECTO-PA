@@ -25,8 +25,10 @@ class clsScreen{
         void setSpriteOpacity(int, int);
 
         //Metodos de texturas
-        void setTexture(int, string,Texture *);
+        void setTexture(int, string);
         void setTextureTexturetoSprite(int, int);
+        void setTextureForm(int,int, int, int, int, int);
+
 
         void setScaleTexture(int, Vector2f);
         void setPosTexture(int, Vector2f);
