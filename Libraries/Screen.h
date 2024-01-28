@@ -30,14 +30,14 @@ class clsScreen{
         void setTextureForm(int, int, int, int, int);
 
 
-        void setScaleTexture(int, Vector2f);
-        void setPosTexture(int, Vector2f);
-        void setTextureOpacity(int, int);
-        void setTextureColor(int, Color);
-        void setTextureRotation(int, float);
-        void setTextureOrigin(int, Vector2f);
-        void setTextureScale(int, Vector2f);
-        void setTexturtureRect();
+        // void setScaleTexture(int, Vector2f);
+        // void setPosTexture(int, Vector2f);
+        // void setTextureOpacity(int, int);
+        // void setTextureColor(int, Color);
+        // void setTextureRotation(int, float);
+        // void setTextureOrigin(int, Vector2f);
+        // void setTextureScale(int, Vector2f);
+        // void setTexturtureRect();
 
         //Metodos de texto
         void setText(int, Font *, string, int, Vector2f);

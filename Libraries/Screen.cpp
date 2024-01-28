@@ -60,7 +60,7 @@ void clsScreen::setTexture(int n, string filename){
 }
 
 void clsScreen::setTextureTexturetoSprite(int n, int m){
-    sprites[n]->setTexture(texturesCo[m]);
+    sprites[n]=new Sprite(texturesCo[m]);
 }
 
 void clsScreen::setTextureForm(int n,int x, int y, int w, int h){
