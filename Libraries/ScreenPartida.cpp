@@ -13,7 +13,7 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
     this->setPosSprite(1,{casillas[0][0].x,casillas[0][0].y});
     
     //para acomodar el puntero
-    sprites[1]->setOrigin({-14,-27});
+    sprites[1]->setOrigin({-14,-32});
     sprites[1]->setColor(Color(188, 87, 222,255));
 
     //para colocar el tablero
