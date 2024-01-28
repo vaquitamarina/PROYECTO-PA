@@ -2,9 +2,9 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-#define _CASILLA 63
-#define _CASILLAORIGENY 110
-#define _CASILLAORIGENX 95
+#define _CASILLA 61
+#define _CASILLAORIGENY 97
+#define _CASILLAORIGENX 117
 
 #include "Textbox.h"
 #include "Casilla.h"
