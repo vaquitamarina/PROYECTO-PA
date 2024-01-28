@@ -4,7 +4,7 @@ clsCaballo::clsCaballo(Vector2f pos, char c) : clsPieza(pos,c){
     
 }
 
-bool clsCaballo::testMovement(Vector2f pos, bool matriz[][8]){
+bool clsCaballo::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
     if(pos.x == posOrigin.x + _CASILLA && pos.y == posOrigin.y + (2 * _CASILLA)){
         return true;
     }

@@ -23,7 +23,7 @@ class clsPieza{
         void setSprite(string);
         char getColor();
         Sprite getSprite();
-        virtual bool testMovement(Vector2f,bool matriz[8][8]) = 0;
+        virtual bool testMovement(Vector2f,bool matriz[8][8], bool* turno) = 0;
         void setPosOrigin(Vector2f);
         Vector2f getPosOrigin();
 };

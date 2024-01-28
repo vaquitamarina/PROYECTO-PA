@@ -11,6 +11,7 @@ class clsScreenPartida : public clsScreen {
         bool casillasOcupadas[8][8];
         string usuarioN;
         string usuarioB;
+        bool turn = true;
         int priority;
     public:
         clsScreenPartida(RenderWindow *, clsPartida *);

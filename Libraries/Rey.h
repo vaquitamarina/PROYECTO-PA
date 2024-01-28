@@ -7,7 +7,7 @@ class clsRey : public clsPieza{
     private:
     public:
         clsRey(Vector2f,char);
-        bool testMovement(Vector2f,bool matriz[8][8]);
+        bool testMovement(Vector2f pos, bool matriz[][8],bool* turno);
 };
 
 #include "Rey.cpp"

@@ -214,7 +214,7 @@ void clsScreenPartida::setPriority(Vector2f pos){
 }
 
 bool clsScreenPartida::getTestMovement(Vector2f pos, int i){
-    return piezas[i]->testMovement(pos,casillasOcupadas);
+    return piezas[i]->testMovement(pos,casillasOcupadas, &turn);    
 }
 
 void clsScreenPartida::imprimirMatrizPrueba(){

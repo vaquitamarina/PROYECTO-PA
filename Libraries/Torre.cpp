@@ -3,7 +3,7 @@
 clsTorre::clsTorre(Vector2f pos, char c) : clsPieza(pos,c){
 }
 
-bool clsTorre::testMovement(Vector2f pos, bool matriz[][8]){
+bool clsTorre::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
     if(pos == posOrigin){
         return true;
     }
