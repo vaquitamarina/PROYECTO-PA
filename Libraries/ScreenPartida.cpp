@@ -18,7 +18,9 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
     //para colocar el tablero
     this->setTexture(0,"./Images/Wii - Wii Chess - Chessboards.png");
     this->setTextureTexturetoSprite(2,0);
-    this->setTextureForm(2, 50,50,100,100);
+    this->setTextureForm(2, 100,10,400,400);
+    this->setScaleSprite(2,{1.4,1.4});
+    this->setPosSprite(2,{85,85});
 
     memset(casillasOcupadas,0,sizeof(casillasOcupadas));
     casillasOcupadas[0][1] = true;
