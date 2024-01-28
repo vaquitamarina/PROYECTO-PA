@@ -81,7 +81,3 @@ void clsScreen::update(int n,int m) {
         reloj->restart();
     }
 }
-
-void clsScreen::setSprite(int i){
-    sprites[i] = new Sprite;
-}

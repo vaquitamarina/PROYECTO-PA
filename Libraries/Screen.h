@@ -22,7 +22,6 @@ class clsScreen{
         clsScreen(RenderWindow *,Clock*);
         //Metodos de imagenes
         void setSprite(int,string);
-        void setSprite(int);
         void setScaleSprite(int, Vector2f);
         void setPosSprite(int, Vector2f);
         Vector2f getPosSprite(int);
