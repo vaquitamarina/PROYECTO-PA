@@ -26,7 +26,7 @@ bool clsTorre::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
                 }
             }           
         }
-        
+        *turno = !*turno;
         return true;
     }
     inicio = posOrigin.x/_CASILLA;
@@ -47,7 +47,7 @@ bool clsTorre::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
                 }
             } 
         }
-        
+        *turno = !*turno;
         return true;
     }
     return false;

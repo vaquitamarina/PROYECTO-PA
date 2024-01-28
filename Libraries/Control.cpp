@@ -244,10 +244,11 @@ void clsControl::pressEnter(int* actualScreen){
                         cent = false;
                         reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10},{origin.x,origin.y},2);
                         //
-                        
+                        cout<< reinterpret_cast<clsScreenPartida * >(menu)->getTurn();
                     }
                 }
             }
+            
             break;
 
     } 

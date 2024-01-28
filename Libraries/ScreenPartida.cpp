@@ -219,6 +219,8 @@ bool clsScreenPartida::getTestMovement(Vector2f pos, int i){
     return piezas[i]->testMovement(pos,casillasOcupadas, &turn);    
 }
 
+
+
 void clsScreenPartida::imprimirMatrizPrueba(){
     cout<<endl;
     for(int i = 0; i < 8; i++){
@@ -229,4 +231,8 @@ void clsScreenPartida::imprimirMatrizPrueba(){
     }
     cout<<endl;
     cout<<endl;
+}
+
+bool clsScreenPartida::getTurn(){
+    return turn;
 }
