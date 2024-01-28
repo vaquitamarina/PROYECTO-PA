@@ -196,12 +196,12 @@ clsAdmin::clsAdmin(RenderWindow *w){
     
     //background
     // screen[0]->setSprite(0,"./Images/backgroundMenu.jpg");
-    screen[0]->setText(0,&fonts[0],"CHESS",80,{400,30});
+    screen[0]->setText(0,&fonts[0],"CHESS",80,{100,200});
     //
-    screen[0]->setText(1,&fonts[4],"Start Game",30,{400,300});
+    screen[0]->setText(1,&fonts[4],"Start Game",30,{100,400});
     screen[0]->setTextColor(1,Color::Yellow);
-    screen[0]->setText(2,&fonts[4],"Settings",30,{400,400});
-    screen[0]->setText(3,&fonts[4],"Quit",30,{400,500});
+    screen[0]->setText(2,&fonts[4],"Settings",30,{100,500});
+    screen[0]->setText(3,&fonts[4],"Quit",30,{100,600});
     
     control[0] = new clsControl(screen[0], 1, 3, 1, 0);
 
