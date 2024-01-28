@@ -35,7 +35,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
     // screen[4] = new clsScreen(window);
     screen[0] = new clsScreen(window, &clock);
-    screen[0]->setSprite(0,"./Images/FramesH/1.jpg");
+    screen[0]->setSprite(0,"./Images/FramesC/1.jpg");
     // screen[0]->setTexture(0,"./Images/Frames/b0001.png");
     // screen[0]->setTexture(1,"./Images/Frames/b0002.png");
     // screen[0]->setTexture(2,"./Images/Frames/b0003.png");
@@ -136,26 +136,52 @@ clsAdmin::clsAdmin(RenderWindow *w){
     // screen[0]->setTexture(97,"./Images/Frames/b0098.png");
     // screen[0]->setTexture(98,"./Images/Frames/b0099.png");
     // screen[0]->setTexture(99,"./Images/Frames/b0100.png");
-    screen[0]->setTexture(0,"./Images/FramesH/1.jpg");
-    screen[0]->setTexture(1,"./Images/FramesH/2.jpg");
-    screen[0]->setTexture(2,"./Images/FramesH/3.jpg");
-    screen[0]->setTexture(3,"./Images/FramesH/4.jpg");
-    screen[0]->setTexture(4,"./Images/FramesH/5.jpg");
-    screen[0]->setTexture(5,"./Images/FramesH/6.jpg");
-    screen[0]->setTexture(6,"./Images/FramesH/7.jpg");
-    screen[0]->setTexture(7,"./Images/FramesH/8.jpg");
-    screen[0]->setTexture(8,"./Images/FramesH/9.jpg");
-    screen[0]->setTexture(9,"./Images/FramesH/10.jpg");
-    screen[0]->setTexture(10,"./Images/FramesH/11.jpg");
-    screen[0]->setTexture(11,"./Images/FramesH/12.jpg");
-    screen[0]->setTexture(12,"./Images/FramesH/13.jpg");
-    screen[0]->setTexture(13,"./Images/FramesH/14.jpg");
-    screen[0]->setTexture(14,"./Images/FramesH/15.jpg");
-    screen[0]->setTexture(15,"./Images/FramesH/16.jpg");
-    screen[0]->setTexture(16,"./Images/FramesH/17.jpg");
-    screen[0]->setTexture(17,"./Images/FramesH/18.jpg");
-    screen[0]->setTexture(18,"./Images/FramesH/19.jpg");
-
+    // screen[0]->setTexture(0,"./Images/FramesH/1.jpg");
+    // screen[0]->setTexture(1,"./Images/FramesH/2.jpg");
+    // screen[0]->setTexture(2,"./Images/FramesH/3.jpg");
+    // screen[0]->setTexture(3,"./Images/FramesH/4.jpg");
+    // screen[0]->setTexture(4,"./Images/FramesH/5.jpg");
+    // screen[0]->setTexture(5,"./Images/FramesH/6.jpg");
+    // screen[0]->setTexture(6,"./Images/FramesH/7.jpg");
+    // screen[0]->setTexture(7,"./Images/FramesH/8.jpg");
+    // screen[0]->setTexture(8,"./Images/FramesH/9.jpg");
+    // screen[0]->setTexture(9,"./Images/FramesH/10.jpg");
+    // screen[0]->setTexture(10,"./Images/FramesH/11.jpg");
+    // screen[0]->setTexture(11,"./Images/FramesH/12.jpg");
+    // screen[0]->setTexture(12,"./Images/FramesH/13.jpg");
+    // screen[0]->setTexture(13,"./Images/FramesH/14.jpg");
+    // screen[0]->setTexture(14,"./Images/FramesH/15.jpg");
+    // screen[0]->setTexture(15,"./Images/FramesH/16.jpg");
+    // screen[0]->setTexture(16,"./Images/FramesH/17.jpg");
+    // screen[0]->setTexture(17,"./Images/FramesH/18.jpg");
+    // screen[0]->setTexture(18,"./Images/FramesH/19.jpg");
+    
+    screen[0]->setTexture(0,"./Images/FramesC/1.jpg");
+    screen[0]->setTexture(1,"./Images/FramesC/2.jpg");
+    screen[0]->setTexture(2,"./Images/FramesC/3.jpg");
+    screen[0]->setTexture(3,"./Images/FramesC/4.jpg");
+    screen[0]->setTexture(4,"./Images/FramesC/5.jpg");
+    screen[0]->setTexture(5,"./Images/FramesC/6.jpg");
+    screen[0]->setTexture(6,"./Images/FramesC/7.jpg");
+    screen[0]->setTexture(7,"./Images/FramesC/8.jpg");
+    screen[0]->setTexture(8,"./Images/FramesC/9.jpg");
+    screen[0]->setTexture(9,"./Images/FramesC/10.jpg");
+    screen[0]->setTexture(10,"./Images/FramesC/11.jpg");
+    screen[0]->setTexture(11,"./Images/FramesC/12.jpg");
+    screen[0]->setTexture(12,"./Images/FramesC/13.jpg");
+    screen[0]->setTexture(13,"./Images/FramesC/14.jpg");
+    screen[0]->setTexture(14,"./Images/FramesC/15.jpg");
+    screen[0]->setTexture(15,"./Images/FramesC/16.jpg");
+    screen[0]->setTexture(16,"./Images/FramesC/17.jpg");
+    screen[0]->setTexture(17,"./Images/FramesC/18.jpg");
+    screen[0]->setTexture(18,"./Images/FramesC/19.jpg");
+    screen[0]->setTexture(19,"./Images/FramesC/20.jpg");
+    screen[0]->setTexture(20,"./Images/FramesC/21.jpg");
+    screen[0]->setTexture(21,"./Images/FramesC/22.jpg");
+    screen[0]->setTexture(22,"./Images/FramesC/23.jpg");
+    screen[0]->setTexture(23,"./Images/FramesC/24.jpg");
+    screen[0]->setTexture(24,"./Images/FramesC/25.jpg");
+    screen[0]->setTexture(25,"./Images/FramesC/26.jpg");
 
 
 
@@ -244,7 +270,7 @@ void clsAdmin::iniciarPrograma(){
         }
         window->clear();
         if(actualScreen == 0){
-            screen[actualScreen]->update(0,17);            
+            screen[actualScreen]->update(0,25);            
         }
         if(actualScreen == 3){
             reinterpret_cast<clsScreenPartida *>(screen[actualScreen])->draw();
