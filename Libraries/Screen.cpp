@@ -55,7 +55,7 @@ void clsScreen::closeWindow(){
     window->close();
 }
 
-void clsScreen::setTexture(int n, string filename,Texture *texture){
+void clsScreen::setTexture(int n, string filename,Texture *textureCo){
     texturesCo[n].loadFromFile(filename);
 }
 
