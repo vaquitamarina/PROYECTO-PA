@@ -17,6 +17,7 @@ class clsScreenInSesion : public clsScreen{
         void typedOn(Event);
         void deleteTextboxString(int);
         string getTextbox(int);
+        void SoundEat(bool);
 
 };
 
