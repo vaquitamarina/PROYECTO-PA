@@ -23,6 +23,7 @@ class clsControl{
     public:
         clsControl(clsScreen *,int,int,int,int);
         clsControl(clsScreen *,int,int,int,int,clsRegistro *,clsAdmin *);
+        clsControl(clsScreen *,int,int,int,int,clsAdmin *);
         void pressUp();
         void pressDown();
         void pressLeft();

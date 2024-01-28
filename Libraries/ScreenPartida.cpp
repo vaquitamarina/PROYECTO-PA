@@ -308,16 +308,3 @@ void clsScreenPartida::setUsuarios(string n, string b){
     text[1].setString(usuarioB);
 }
 
-void clsScreenPartida::setEffectSound(Sound s[])
-{
-    for(int i=0;i<10;i++)
-    {
-        effects[i]=s[i];
-    }
-}
-
-Sound clsScreenPartida::getEffectSound(int j)
-{
-    return effects[j];
-}
-

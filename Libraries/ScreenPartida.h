@@ -12,7 +12,6 @@ class clsScreenPartida : public clsScreen {
         string usuarioB;
         bool turn = true;
         int priority;
-        Sound effects[10];
     public:
         clsScreenPartida(RenderWindow *);
         void setPointerPos(int,char);
@@ -28,7 +27,6 @@ class clsScreenPartida : public clsScreen {
         // void comprobarGanador(int i);
         void TurnPlayer();
         void deletePieza(int);
-        void setEffectSound(Sound *);
         Sound getEffectSound(int);
         void imprimirMatrizPrueba();
 

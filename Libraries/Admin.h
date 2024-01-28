@@ -29,6 +29,7 @@ class clsAdmin{
         void iniciarPrograma();
         void iniciarPartida(string, string);
         void setSoundtrack(int);
+        void playSound(int);
 };
 
 #include "Admin.cpp"

@@ -16,7 +16,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     effectBuffer[0].loadFromFile("./soundsEffects/snd_select.wav");
     effect[0].setBuffer(effectBuffer[0]);
 
-    effectBuffer[1].loadFromFile("./soundsEffects/snd_pearrise.wav");
+    effectBuffer[1].loadFromFile("./soundsEffects/snd_spearrise.wav");
     effect[1].setBuffer(effectBuffer[1]);
 
     soundtrack[0].openFromFile("./Music/Home.ogg");
@@ -230,8 +230,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[3]->setScaleSprite(0,{1.3,1.2});
     screen[3]->setText(0,&fonts[5],"Turn of: ",70,{700,100});
     screen[3]->setText(1,&fonts[5],"pepito",60,{700,200});
-    reinterpret_cast <clsScreenPartida *> (screen[3]) -> setEffectSound(effect);
-    control[3] = new clsControl(screen[3],0,7,0,3);
+    control[3] = new clsControl(screen[3],0,7,0,3,this);
 }
 
 void clsAdmin::iniciarPrograma(){
@@ -295,4 +294,8 @@ void clsAdmin::setSoundtrack(int i){
     soundtrack[i].play();
 
     actualSoundtrack = i;
+}
+
+void clsAdmin::playSound(int i){
+    effect[i].play();
 }
