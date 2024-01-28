@@ -16,9 +16,12 @@ bool clsPeon::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
                 return true;
             }
             if(firstMovement && pos.y == posOrigin.y - (2 * _CASILLA)){ 
-                firstMovement = false;
-                *turno = !*turno;
-                return true;
+                if(matriz[int(pos.x/_CASILLA)][int(pos.y/_CASILLA)-1] == false){
+                    firstMovement = false;
+                    *turno = !*turno;
+                    return true;
+                }
+                return false;
             }
         }
         if(color == 'n'){
@@ -28,9 +31,12 @@ bool clsPeon::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
                 return true;
             }
             if(firstMovement && pos.y == posOrigin.y + (2 * _CASILLA)){ 
-                firstMovement = false;
-                *turno = !*turno;
-                return true;
+                if(matriz[int(pos.x/_CASILLA)][int(pos.y/_CASILLA)+1] == false){
+                    firstMovement = false;
+                    *turno = !*turno;
+                    return true;
+                }
+                return false;
             }
         }
     }
