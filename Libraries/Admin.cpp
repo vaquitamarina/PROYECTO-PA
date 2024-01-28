@@ -6,8 +6,9 @@ using namespace sf;
 clsAdmin::clsAdmin(RenderWindow *w){
     window = w;
     actualScreen = 0;
-    fonts[0].loadFromFile("./Fonts/04B_30__.TTF");
+    fonts[0].loadFromFile("./Fonts/MonsterFriend2Back.otf");
     fonts[1].loadFromFile("./Fonts/pixelsans.ttf");
+    fonts[2].loadFromFile("./Fonts/pixela-extreme.otf");
 
     effectBuffer[0].loadFromFile("./soundsEffects/snd_select.wav");
     effect[0].setBuffer(effectBuffer[0]);
@@ -28,10 +29,10 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[0]->setSprite(0,"./Images/backgroundMenu.jpg");
     screen[0]->setText(0,&fonts[0],"Ajedrez",80,{400,30});
     //
-    screen[0]->setText(1,&fonts[0],"Iniciar Partida",30,{400,300});
+    screen[0]->setText(1,&fonts[2],"Iniciar Partida",30,{400,300});
     screen[0]->setTextColor(1,Color::Yellow);
-    screen[0]->setText(2,&fonts[0],"Configuracion",30,{400,400});
-    screen[0]->setText(3,&fonts[0],"Salir",30,{400,500});
+    screen[0]->setText(2,&fonts[2],"Configuracion",30,{400,400});
+    screen[0]->setText(3,&fonts[2],"Salir",30,{400,500});
     
     control[0] = new clsControl(screen[0], 1, 3, 1, 0);
 
