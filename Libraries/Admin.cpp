@@ -209,7 +209,8 @@ clsAdmin::clsAdmin(RenderWindow *w){
     //Menu inicio de sesion;
     screen[1] = new clsScreenInSesion(window,&fonts[0]);
     //background
-    screen[1]->setSprite(0,"./Images/prueba.png");
+    
+    screen[1]->setSprite(0,screen[0]->sprites[0]);
     screen[1]->setScaleSprite(0,{0.65,0.65});
 
     //
@@ -375,15 +376,31 @@ void clsAdmin::iniciarPrograma(){
             }
         }
         window->clear();
-        if(actualScreen == 0){
-            screen[actualScreen]->update(0,25);            
-        }
-        if(actualScreen == 3){
-            reinterpret_cast<clsScreenPartida *>(screen[actualScreen])->draw();
-        }
-        else{
-            screen[actualScreen]->draw();
-        }
+            switch (actualScreen){
+                case 0:
+                    screen[actualScreen]->update(0,25);
+                    screen[actualScreen]->draw();
+                    break;
+                case 1: 
+                    screen[0]->update(0,25);
+                    screen[actualScreen]->draw();
+                    break;
+                case 3:
+                    reinterpret_cast<clsScreenPartida *>(screen[actualScreen])->draw();
+                    break;
+                default:
+                    screen[actualScreen]->draw();
+                    break;
+            }
+        // if(actualScreen == 0){
+        //     screen[actualScreen]->update(0,25);            
+        // }
+        // if(actualScreen == 3){
+        //     reinterpret_cast<clsScreenPartida *>(screen[actualScreen])->draw();
+        // }
+        // else{
+        //     screen[actualScreen]->draw();
+        // }
         window->display();
     }
 }

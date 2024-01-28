@@ -11,17 +11,18 @@ class clsScreen{
         //Music   soundtrack[NUM_SOUNDTRACKS];
         Text    text[100];
         Texture textures[1000];
-        Sprite  *sprites[1000];
         Texture texturesCo[100];
         Texture frames[500];
         int actualTexture = 0;
         Clock *reloj;
 
     public:
+        Sprite  *sprites[1000];
         clsScreen(RenderWindow*);
         clsScreen(RenderWindow *,Clock*);
         //Metodos de imagenes
         void setSprite(int,string);
+        void setSprite(int,Sprite*);
         void setScaleSprite(int, Vector2f);
         void setPosSprite(int, Vector2f);
         Vector2f getPosSprite(int);
