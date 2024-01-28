@@ -25,6 +25,7 @@ class clsScreenPartida : public clsScreen {
         void setUsuarios();
         void updateCasillas();
         void comprobarGanador(int i);
+        void TurnPlayer();
 
         void imprimirMatrizPrueba();
 
