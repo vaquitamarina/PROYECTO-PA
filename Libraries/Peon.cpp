@@ -31,7 +31,7 @@ bool clsPeon::testMovement(Vector2f pos, bool matriz[][8],bool* turno){
                 return true;
             }
             if(firstMovement && pos.y == posOrigin.y + (2 * _CASILLA)){ 
-                if(matriz[int(pos.x/_CASILLA)-1][int(pos.y/_CASILLA)+1] == false){
+                if(matriz[int(pos.x/_CASILLA)-1][int(pos.y/_CASILLA)] == false){
                     firstMovement = false;
                     *turno = !*turno;
                     return true;
