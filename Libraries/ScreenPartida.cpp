@@ -242,22 +242,20 @@ char clsScreenPartida::getPiezaColor(int i ){
 }
 
 void clsScreenPartida::comprobarGanador(int i){
-    Vector2f reyBlanco(piezas[30]->getPos());
-    Vector2f reyNegro(piezas[31]->getPos());
+    Vector2f reyNegro(piezas[30]->getPos());
+    Vector2f reyBlanco(piezas[31]->getPos());
     bool p = true;
     if(piezas[i]->getColor() == 'n'){
-        cout<<piezas[i]->getPosOrigin().x<<" "<<piezas[i]->getPosOrigin().y;
-        cout<<"Turno negro";
-        if(piezas[i]->testMovement(reyBlanco,casillasOcupadas,&p)){
+        if(this->getTestMovement(reyBlanco,i)){
             cout<<"GANARON LOS NEGROS";
         }
+        
     }
     if(piezas[i]->getColor() == 'b'){
-        cout<<piezas[i]->getPosOrigin().x<<" "<<piezas[i]->getPosOrigin().y;
-        cout<<"Turno blanco";
-        if(piezas[i]->testMovement(reyNegro,casillasOcupadas,&p)){
-            cout<<"GANARON LOS BLACNOS";
+        cout<< this->getTestMovement(reyNegro,i);
+        cout<< i;
+        if(this->getTestMovement(reyNegro,i)){
+            cout<<"GANARON LOS BLACOS";
         }
-        
     }
 }
