@@ -13,8 +13,8 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
     this->setPosSprite(1,{casillas[0][0].x,casillas[0][0].y});
     
     //para acomodar el puntero
-    sprites[1]->setOrigin({-14,-32});
-    sprites[1]->setColor(Color::Blue);
+    sprites[1]->setOrigin({-14,-27});
+    sprites[1]->setColor(Color(188, 87, 222,255));
 
     //para colocar el tablero
     this->setTexture(0,"./Images/chessboardPixel.png");
@@ -264,10 +264,10 @@ void clsScreenPartida::comprobarGanador(int i){
 void  clsScreenPartida::TurnPlayer(){
     if(turn==false)
     {
-        sprites[1]->setColor(Color::Red);
+        sprites[1]->setColor(Color(235,171,52,255));
     }
     else
     {
-        sprites[1]->setColor(Color::Blue);
+        sprites[1]->setColor(Color(188, 87, 222,255));
     }
 }
