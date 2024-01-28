@@ -329,7 +329,8 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[3]->setTexture(97,"./Images/FramesQ/scene00829.jpg");
     screen[3]->setTexture(98,"./Images/FramesQ/scene00833.jpg");
     
-    screen[3]->setScaleSprite(0,{1.3,1.2});
+    screen[3]->setScaleSprite(0,{1.3,1.3});
+    screen[3]->setPosSprite(0,{0,0});
     screen[3]->setText(0,&fonts[5],"Turn of: ",70,{700,100});
     screen[3]->setText(1,&fonts[5],"pepito",60,{700,200});
     control[3] = new clsControl(screen[3],0,7,0,3,this);
