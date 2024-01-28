@@ -16,7 +16,7 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
     sprites[1]->setOrigin({-14,-27});
 
     //para colocar el tablero
-    // this->setTexture(0,"./Images/Wii - Wii Chess - Chessboards.png");
+    this->setTexture(0,"./Images/Wii - Wii Chess - Chessboards.png");
     this->setTextureTexturetoSprite(2,0);
     this->setTextureForm(2, 50,50,100,100);
 
