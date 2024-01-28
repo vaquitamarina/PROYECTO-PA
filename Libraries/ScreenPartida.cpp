@@ -16,6 +16,8 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
     sprites[1]->setOrigin({-14,-32});
     sprites[1]->setColor(Color(235,171,52,255));
 
+    //
+
     //para colocar el tablero
     this->setTexture(0,"./Images/chessboardPixel.png");
     this->setTextureTexturetoSprite(2,0);
@@ -172,7 +174,7 @@ void clsScreenPartida::draw(){
     window->draw(piezas[31]->getSprite());
     window->draw(piezas[priority]->getSprite());
     window->draw(*sprites[1]);
-
+    window->draw(text[0]);
     // window->draw(partida->getSprite(6,1));
 }
 

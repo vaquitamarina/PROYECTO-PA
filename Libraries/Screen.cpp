@@ -77,7 +77,7 @@ void clsScreen::setTextureForm(int n,int x, int y, int w, int h){
 void clsScreen::update(int n,int m) {
     if(reloj->getElapsedTime().asSeconds() > 0.01f){
         actualTexture = (actualTexture + 1) % m; 
-        sprites[n]->setTexture(textures[actualTexture]);
+        sprites[n]->setTexture(texturesCo[actualTexture]);
         reloj->restart();
     }
 }
