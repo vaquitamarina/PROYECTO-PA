@@ -17,7 +17,7 @@ class clsAdmin{
         clsPartida *partida;
         int actualScreen;
         int actualSoundtrack;
-        Clock *clock;
+        Clock clock;
 
     public:
         clsAdmin(RenderWindow *window);
