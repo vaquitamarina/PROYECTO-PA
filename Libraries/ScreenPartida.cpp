@@ -18,7 +18,7 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w, clsPartida *p) : clsScreen(w
     this->setScaleSprite(2,{0.25,0.25});
     this->setPosSprite(2,{120,120});    
 
-    // memset(casillasOcupadas,0,sizeof(casillasOcupadas));
+    memset(casillasOcupadas,0,sizeof(casillasOcupadas));
     casillasOcupadas[0][1] = true;
     casillasOcupadas[1][1] = true;
     casillasOcupadas[2][1] = true;
