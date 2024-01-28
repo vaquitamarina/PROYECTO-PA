@@ -6,7 +6,7 @@ class clsTorre : public clsPieza{
     private:
     public:
         clsTorre(Vector2f,char);
-        bool testMovement(Vector2f);
+        bool testMovement(Vector2f,bool matriz[8][8]);
 };
 
 #include "Torre.cpp"

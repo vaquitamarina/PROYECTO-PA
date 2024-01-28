@@ -21,6 +21,9 @@ class clsScreenPartida : public clsScreen {
         void setPriority(Vector2f);
         void setUsuarios();
         void updateCasillas();
+
+        void imprimirMatrizPrueba();
+
         void draw();
 };
 #include "ScreenPartida.cpp"

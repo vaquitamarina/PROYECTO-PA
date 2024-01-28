@@ -3,7 +3,7 @@
 clsReina::clsReina(Vector2f pos, char c) : clsPieza(pos,c){
 }
 
-bool clsReina::testMovement(Vector2f pos){
+bool clsReina::testMovement(Vector2f pos, bool matriz[][8]){
     if(pos.x == posOrigin.x || pos.y == posOrigin.y){
         return true;
     }
@@ -26,6 +26,6 @@ bool clsReina::testMovement(Vector2f pos){
             return true;
         }
     }
-    
+
     return false;
 }
