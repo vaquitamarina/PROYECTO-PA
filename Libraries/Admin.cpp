@@ -57,7 +57,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     //Partida
     screen[3] = new clsScreenPartida(window,partida);
     screen[3]->setSprite(0,"./Images/gatito.png");
-    screen[3]->setScaleSprite(0,{0.8,0.8});
+    screen[3]->setScaleSprite(0,{1.3,1.2});
     control[3] = new clsControl(screen[3],0,7,0,3);
 }
 
