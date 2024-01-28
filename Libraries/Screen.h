@@ -10,10 +10,10 @@ class clsScreen{
         //Font    fonts[NUM_FONTS]; 
         //Music   soundtrack[NUM_SOUNDTRACKS];
         Text    text[100];
-        Texture textures[100];
+        Texture textures[1000];
         Sprite  *sprites[100];
         Texture texturesCo[100];
-        
+        Texture frames[500];
 
     public:
         clsScreen(RenderWindow *);

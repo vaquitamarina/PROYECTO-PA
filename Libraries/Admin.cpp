@@ -9,6 +9,8 @@ clsAdmin::clsAdmin(RenderWindow *w){
     fonts[0].loadFromFile("./Fonts/MonsterFriend2Back.otf");
     fonts[1].loadFromFile("./Fonts/pixelsans.ttf");
     fonts[2].loadFromFile("./Fonts/pixela-extreme.otf");
+    fonts[3].loadFromFile("./Fonts/hachicro.TTF");
+    fonts[4].loadFromFile("./Fonts/CryptOfTomorrow.ttf");
 
     effectBuffer[0].loadFromFile("./soundsEffects/snd_select.wav");
     effect[0].setBuffer(effectBuffer[0]);
@@ -22,17 +24,20 @@ clsAdmin::clsAdmin(RenderWindow *w){
     soundtrack[2].setLoop(true);
     actualSoundtrack=0;
 
+    //prueba de animacion por frames
+    screen[4] = new clsScreen(window);
+    screen[4]->setSprite(0,"./Ima"); 
 
     //Menu principal;
     screen[0] = new clsScreen(window);
     //background
     screen[0]->setSprite(0,"./Images/backgroundMenu.jpg");
-    screen[0]->setText(0,&fonts[0],"Ajedrez",80,{400,30});
+    screen[0]->setText(0,&fonts[0],"CHESS",80,{400,30});
     //
-    screen[0]->setText(1,&fonts[2],"Iniciar Partida",30,{400,300});
+    screen[0]->setText(1,&fonts[4],"Start Game",30,{400,300});
     screen[0]->setTextColor(1,Color::Yellow);
-    screen[0]->setText(2,&fonts[2],"Configuracion",30,{400,400});
-    screen[0]->setText(3,&fonts[2],"Salir",30,{400,500});
+    screen[0]->setText(2,&fonts[4],"Settings",30,{400,400});
+    screen[0]->setText(3,&fonts[4],"Quit",30,{400,500});
     
     control[0] = new clsControl(screen[0], 1, 3, 1, 0);
 
