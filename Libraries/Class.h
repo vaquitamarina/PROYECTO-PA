@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-
+#include "AnimationManager.h"
 #define _CASILLA 61
 #define _CASILLAORIGENY 97
 #define _CASILLAORIGENX 117
@@ -26,5 +26,5 @@
 #include "Control.h"
 #include "Admin.h"
 
-#include "AnimationManager.h"
+
 

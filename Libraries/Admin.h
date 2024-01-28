@@ -20,6 +20,9 @@ class clsAdmin{
         Clock clock;
         Texture AnimationSpriteShet;
         AnimationManager am;
+        //
+        Sprite prueba;
+        //
 
     public:
         clsAdmin(RenderWindow *window);
