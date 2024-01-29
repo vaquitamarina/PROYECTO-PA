@@ -84,3 +84,8 @@ void clsScreen::update(int n,int m) {
 void clsScreen::setSprite(int i, Sprite *sp){
     sprites[i] = sp;
 }
+
+
+void clsScreen::setTextureColor(int i, Color color){
+    sprites[i]->setColor(color);
+}

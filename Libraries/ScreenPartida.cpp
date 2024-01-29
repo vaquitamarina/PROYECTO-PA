@@ -162,6 +162,7 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w,Clock 	*c) : clsScreen(w){
     this->setTextureForm(2, 100,10,400,400);
     this->setScaleSprite(2,{1.45,1.45});
     this->setPosSprite(2,{85,85});
+    this->setTextureColor(2,Color(18, 224, 204,255));
 
     //usuarios
 

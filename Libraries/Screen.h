@@ -35,8 +35,7 @@ class clsScreen{
 
         // void setScaleTexture(int, Vector2f);
         // void setPosTexture(int, Vector2f);
-        // void setTextureOpacity(int, int);
-        // void setTextureColor(int, Color);
+        void setTextureColor(int, Color);
         // void setTextureRotation(int, float);
         // void setTextureOrigin(int, Vector2f);
         // void setTextureScale(int, Vector2f);
