@@ -125,6 +125,17 @@ void clsControl::pressDown(){
 }
 void clsControl::pressRight(){
     switch(op){
+        case 2:
+            oldSelected++;
+            if(oldSelected == max + 1)
+            {
+                oldSelected = min;
+            }
+            menu->setTextureinSprite(1,oldSelected);
+            admin->setSoundtrackVolume(oldSelected+1,0);
+            admin->setSoundtrackVolume(oldSelected+1,1);
+            admin->setSoundtrackVolume(oldSelected+1,2);
+        break;        
         case 3:
             oldSelected++;
             if(oldSelected == max + 1)
@@ -138,11 +149,24 @@ void clsControl::pressRight(){
             if(cent){
                 reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10},false);
             }
+        break;
     }
 }
 
 void clsControl::pressLeft(){
     switch(op){
+        case 2:
+            oldSelected--;
+            if(oldSelected == min - 1)
+            {
+                oldSelected = max;
+            }
+            menu->setTextureinSprite(1,oldSelected);
+            menu->setTextureinSprite(1,oldSelected);
+            admin->setSoundtrackVolume(oldSelected+1,0);
+            admin->setSoundtrackVolume(oldSelected+1,1);
+            admin->setSoundtrackVolume(oldSelected+1,2);
+        break;
         case 3:
             oldSelected--;
             if(oldSelected == min - 1)
@@ -156,6 +180,7 @@ void clsControl::pressLeft(){
             if(cent){
                 reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10},false);
             }
+        break;
     }
 }
 
@@ -280,6 +305,8 @@ void clsControl::pressEnter(int* actualScreen){
                     }
                 }
                 if(reinterpret_cast<clsScreenPartida *>(menu)->getWin()){
+                    admin->stopSountrack(1);
+                    admin->playSound(2);
                     *actualScreen = 4;
                 }
             }   

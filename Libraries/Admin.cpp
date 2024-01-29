@@ -15,9 +15,14 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
     effectBuffer[0].loadFromFile("./soundsEffects/snd_select.wav");
     effect[0].setBuffer(effectBuffer[0]);
+    effect[0].setVolume(50);
 
     effectBuffer[1].loadFromFile("./soundsEffects/snd_spearrise.wav");
     effect[1].setBuffer(effectBuffer[1]);
+    effect[1].setVolume(50);
+
+    effectBuffer[2].loadFromFile("./soundsEffects/6AM.ogg");
+    effect[2].setBuffer(effectBuffer[2]);
 
     soundtrack[0].openFromFile("./Music/Home.ogg");
     soundtrack[1].openFromFile("./Music/Red.ogg");
@@ -26,6 +31,9 @@ clsAdmin::clsAdmin(RenderWindow *w){
     soundtrack[0].setLoop(true);
     soundtrack[1].setLoop(true);
     soundtrack[2].setLoop(true);
+    soundtrack[0].setVolume(50);
+    soundtrack[1].setVolume(50);
+    soundtrack[2].setVolume(50);
     actualSoundtrack=0;
 
     //prueba de animacion por frames
@@ -198,6 +206,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     //background
     // screen[0]->setSprite(0,"./Images/backgroundMenu.jpg");
     screen[0]->setText(0,&fonts[0],"CHESS",80,{100,200});
+    screen[0]->setSprite(1,"");
     //
     screen[0]->setText(1,&fonts[4],"Start Game",30,{100,400});
     screen[0]->setTextColor(1,Color::Yellow);
@@ -226,9 +235,26 @@ clsAdmin::clsAdmin(RenderWindow *w){
         
     //Menu de configuracion
     screen[2] = new clsScreen(window);
-    screen[2]->setSprite(0,"./Images/backgroundConfig.png");
-    
-    control[2] = new clsControl(screen[2],0,0,0,2);
+    screen[2]->setSprite(0,screen[0]->sprites[0]);
+    screen[2]->setText(2,&fonts[0],"SETTINGS",80,{100,200});
+    screen[2]->setText(3,&fonts[4],"Volume: ",30,{100,400});
+    screen[2]->setSprite(1,"./Images/Config/Barra1.png");
+    screen[2]->setTexture(0,"./Images/Config/Barra1.png");
+    screen[2]->setTexture(1,"./Images/Config/Barra2.png");
+    screen[2]->setTexture(2,"./Images/Config/Barra3.png");
+    screen[2]->setTexture(3,"./Images/Config/Barra4.png");
+    screen[2]->setTexture(4,"./Images/Config/Barra5.png");
+    screen[2]->setTexture(5,"./Images/Config/Barra6.png");
+    screen[2]->setTexture(6,"./Images/Config/Barra7.png");
+    screen[2]->setTexture(7,"./Images/Config/Barra8.png");
+    screen[2]->setTexture(8,"./Images/Config/Barra9.png");
+    screen[2]->setTexture(9,"./Images/Config/Barra10.png");
+    screen[2]->setPosSprite(1,{200,300});
+    screen[2]->setScaleSprite(1,{8.5,8.5});
+
+   // screen[2]->setSprite(0,"./Images/backgroundConfig.png");
+    screen[1]->setSprite(1,"");
+    control[2] = new clsControl(screen[2],0,9,0,2,this);
 
     //Partida
     screen[3] = new clsScreenPartida(window,&clock);
@@ -343,12 +369,16 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[3]->setText(1,&fonts[2],"pepito",60,{700,200});
     control[3] = new clsControl(screen[3],0,7,0,3,this);
 
-    
+
     //Screen de victoria
     screen[4] = new clsScreenPartida(window,&clock);
     screen[4]->setSprite(0,"./Images/FramesQ/scene00441.jpg");
 
     screen[0]->setSpriteResize(0);
+    screen[1]->setSpriteResize(0);
+    screen[2]->setSpriteResize(0);
+    screen[3]->setSpriteResize(0);
+    screen[4]->setSpriteResize(0);
 }
 
 void clsAdmin::iniciarPrograma(){
@@ -433,4 +463,12 @@ void clsAdmin::setSoundtrack(int i){
 
 void clsAdmin::playSound(int i){
     effect[i].play();
+}
+
+void clsAdmin::stopSountrack(int i)
+{
+    soundtrack[actualSoundtrack].stop();
+}
+void clsAdmin::setSoundtrackVolume(int x,int i){
+    soundtrack[i].setVolume(x*10);
 }
