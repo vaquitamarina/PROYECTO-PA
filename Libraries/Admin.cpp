@@ -346,6 +346,10 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[4]->setSprite(0,"./Images/FramesQ/scene00441.jpg");
 
     screen[0]->setSpriteResize(0);
+    screen[1]->setSpriteResize(0);
+    screen[2]->setSpriteResize(0);
+    screen[3]->setSpriteResize(0);
+    screen[4]->setSpriteResize(0);
 }
 
 void clsAdmin::iniciarPrograma(){
