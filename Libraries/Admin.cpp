@@ -248,7 +248,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[2]->setTexture(7,"./Images/Config/Barra8.png");
     screen[2]->setTexture(8,"./Images/Config/Barra9.png");
     screen[2]->setTexture(9,"./Images/Config/Barra10.png");
-    screen[2]->setPosSprite(1,{200,280});
+    screen[2]->setPosSprite(1,{200,300});
     screen[2]->setScaleSprite(1,{8.5,8.5});
 
    // screen[2]->setSprite(0,"./Images/backgroundConfig.png");
@@ -465,4 +465,7 @@ void clsAdmin::playSound(int i){
 void clsAdmin::stopSountrack(int i)
 {
     soundtrack[actualSoundtrack].stop();
+}
+void clsAdmin::setSoundtrackVolume(int x,int i){
+    soundtrack[i].setVolume(x*10);
 }
