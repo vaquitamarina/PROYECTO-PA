@@ -266,7 +266,7 @@ void clsControl::pressEnter(int* actualScreen){
                 }
                 else{
                     bool expiratorio = false;
-                    if(reinterpret_cast<clsScreenPartida *>(menu)->getTestEat(origin,piezaLevantada)){
+                    if(reinterpret_cast<clsScreenPartida *>(menu)->getTestEat(origin,piezaLevantada) && reinterpret_cast<clsScreenPartida *>(menu)->getPiezaColor(piezaLevantada) != reinterpret_cast<clsScreenPartida *>(menu)->getPiezaColor(piezaPuntero)){
                         cent = false;
                         admin->playSound(1);
                         int dlt = reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza(origin);
