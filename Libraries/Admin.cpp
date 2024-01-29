@@ -385,7 +385,7 @@ void clsAdmin::iniciarPrograma(){
                     screen[actualScreen]->draw();
                     break;
                 case 3:
-                    screen[actualScreen]->update(0,98);
+                    // screen[actualScreen]->update(0,98);
                     reinterpret_cast<clsScreenPartida *>(screen[actualScreen])->draw();
                     break;
                 default:
