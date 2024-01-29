@@ -52,6 +52,7 @@ class clsScreen{
         void updateDif(int,float);
         void updateDifI(int,float);
         void setSpriteResize(int);
+        void setTextureinSprite(int,int);
         
         //Cajas de texto
         void draw();
