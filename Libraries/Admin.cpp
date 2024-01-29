@@ -225,8 +225,9 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
     //Menu de configuracion
     screen[2] = new clsScreen(window);
-    screen[2]->setText(2,&fonts[0],"SETTINGS",80,{100,200});
     screen[2]->setSprite(0,screen[0]->sprites[0]);
+    screen[2]->setText(2,&fonts[0],"SETTINGS",80,{100,200});
+    screen[2]->setText(3,&fonts[4],"Volume: ",30,{100,400});
 
    // screen[2]->setSprite(0,"./Images/backgroundConfig.png");
     
