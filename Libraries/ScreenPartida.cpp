@@ -16,6 +16,7 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w) : clsScreen(w){
     //para acomodar el puntero 
     sprites[1]->setOrigin({-14,-32});
     sprites[1]->setColor(Color(235,171,52,255));
+    
 
     //
 
@@ -162,7 +163,7 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w,Clock 	*c) : clsScreen(w){
     this->setTextureForm(2, 100,10,400,400);
     this->setScaleSprite(2,{1.45,1.45});
     this->setPosSprite(2,{85,85});
-    this->setTextureColor(2,Color(75, 39, 94,255));
+    this->setTextureColor(2,Color(66, 47, 93,255));
 
     //usuarios
 

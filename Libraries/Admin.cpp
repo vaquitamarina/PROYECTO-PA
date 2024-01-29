@@ -189,6 +189,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
 
     screen[0]->setPosSprite(0,{0,0});
+    
     // screen[0]->setScaleSprite(0,{0.7,0.7});
 
 
@@ -222,7 +223,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[1]->setTextColor(3,Color(255,255,255,0));
     screen[1]->setTextColor(4,Color(255,255,255,0));
     control[1] = new clsControl(screen[1],0,1,0, 1, &registro,this);
-
+        
     //Menu de configuracion
     screen[2] = new clsScreen(window);
     screen[2]->setSprite(0,"./Images/backgroundConfig.png");
@@ -336,6 +337,8 @@ clsAdmin::clsAdmin(RenderWindow *w){
     
     screen[3]->setScaleSprite(0,{0.9,0.7});
     screen[3]->setPosSprite(0,{0,0});
+    screen[3]->setTextureColor(0,Color(30, 29, 71,255));    
+
     screen[3]->setText(0,&fonts[2],"Turn of: ",70,{700,100});
     screen[3]->setText(1,&fonts[2],"pepito",60,{700,200});
     control[3] = new clsControl(screen[3],0,7,0,3,this);
