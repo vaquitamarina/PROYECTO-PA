@@ -15,9 +15,11 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
     effectBuffer[0].loadFromFile("./soundsEffects/snd_select.wav");
     effect[0].setBuffer(effectBuffer[0]);
+    effect[0].setVolume(50);
 
     effectBuffer[1].loadFromFile("./soundsEffects/snd_spearrise.wav");
     effect[1].setBuffer(effectBuffer[1]);
+    effect[1].setVolume(50);
 
     soundtrack[0].openFromFile("./Music/Home.ogg");
     soundtrack[1].openFromFile("./Music/Red.ogg");
@@ -26,6 +28,9 @@ clsAdmin::clsAdmin(RenderWindow *w){
     soundtrack[0].setLoop(true);
     soundtrack[1].setLoop(true);
     soundtrack[2].setLoop(true);
+    soundtrack[0].setVolume(50);
+    soundtrack[1].setVolume(50);
+    soundtrack[2].setVolume(50);
     actualSoundtrack=0;
 
     //prueba de animacion por frames
