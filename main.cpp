@@ -10,18 +10,27 @@ using namespace sf;
 
 int main(){
     VideoMode r;
-    RenderWindow window;
+    RenderWindow window(VideoMode(), "Ajedrez", Style::Fullscreen);
+
     
-    r=VideoMode::getDesktopMode();
-    unsigned int screenWidth = r.width;
-    unsigned int screenHeight = r.height;
-    window.create(VideoMode(screenWidth, screenHeight), "Ajedrez", Style::Fullscreen);
+
+    // r=VideoMode::getDesktopMode();
+    // unsigned int screenWidth = r.width;
+    // unsigned int screenHeight = r.height;
+    // window.create(VideoMode(screenWidth, screenHeight), "Ajedrez", Style::Fullscreen);
+
+
+    // cout<<screenWidth<<" "<<screenHeight<<endl;
+
+
+
     window.setKeyRepeatEnabled(false);
-    // clsMenu menu(&window);
-    
+ 
     // menu.menuPrincipal();
     
     clsAdmin main(&window);
+    
+    // main.getWandH(screenWidth,screenHeight);
     main.iniciarPrograma();
     return 0;
 }
