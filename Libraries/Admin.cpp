@@ -21,6 +21,9 @@ clsAdmin::clsAdmin(RenderWindow *w){
     effect[1].setBuffer(effectBuffer[1]);
     effect[1].setVolume(50);
 
+    effectBuffer[2].loadFromFile("./soundsEffects/6AM.ogg");
+    effect[2].setBuffer(effectBuffer[2]);
+
     soundtrack[0].openFromFile("./Music/Home.ogg");
     soundtrack[1].openFromFile("./Music/Red.ogg");
     soundtrack[2].openFromFile("./Music/big_shot.ogg");
@@ -349,7 +352,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[3]->setText(1,&fonts[2],"pepito",60,{700,200});
     control[3] = new clsControl(screen[3],0,7,0,3,this);
 
-    
+
     //Screen de victoria
     screen[4] = new clsScreenPartida(window,&clock);
     screen[4]->setSprite(0,"./Images/FramesQ/scene00441.jpg");
@@ -443,4 +446,9 @@ void clsAdmin::setSoundtrack(int i){
 
 void clsAdmin::playSound(int i){
     effect[i].play();
+}
+
+void clsAdmin::stopSountrack(int i)
+{
+    soundtrack[actualSoundtrack].stop();
 }
