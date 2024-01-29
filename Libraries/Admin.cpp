@@ -231,7 +231,18 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[2]->setSprite(0,screen[0]->sprites[0]);
     screen[2]->setText(2,&fonts[0],"SETTINGS",80,{100,200});
     screen[2]->setText(3,&fonts[4],"Volume: ",30,{100,400});
-
+    screen[2]->setSprite(1,"./Images/Config/Barra1.png");
+    screen[2]->setTexture(0,"./Images/Config/Barra1.png");
+    screen[2]->setTexture(1,"./Images/Config/Barra2.png");
+    screen[2]->setTexture(2,"./Images/Config/Barra3.png");
+    screen[2]->setTexture(3,"./Images/Config/Barra4.png");
+    screen[2]->setTexture(4,"./Images/Config/Barra5.png");
+    screen[2]->setTexture(5,"./Images/Config/Barra6.png");
+    screen[2]->setTexture(6,"./Images/Config/Barra7.png");
+    screen[2]->setTexture(7,"./Images/Config/Barra8.png");
+    screen[2]->setTexture(8,"./Images/Config/Barra9.png");
+    screen[2]->setTexture(9,"./Images/Config/Barra10.png");
+    
    // screen[2]->setSprite(0,"./Images/backgroundConfig.png");
     
     control[2] = new clsControl(screen[2],0,0,0,2);

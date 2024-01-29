@@ -58,6 +58,7 @@ void clsScreen::draw(){
     window->draw(text[5]);
     textbox[0]->drawTo(window);
     textbox[1]->drawTo(window);
+    window->draw(*sprites[1]);
 }
 
 void clsScreen::closeWindow(){
@@ -126,4 +127,9 @@ void clsScreen::setSpriteResize(int n)
     float scaleX = (float)screenWidth / sprites[n]->getTexture()->getSize().x;
     float scaleY = (float)screenHeight / sprites[n]->getTexture()->getSize().y;
     sprites[n]->setScale(scaleX, scaleY);
+}
+
+void clsScreen::setTextureinSprite(int n,int m)
+{
+    sprites[n]->setTexture(texturesCo[m]);
 }
