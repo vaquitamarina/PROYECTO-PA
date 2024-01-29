@@ -31,6 +31,7 @@ class clsAdmin{
         void setSoundtrack(int);
         void playSound(int);
         void getWandH(int,int);
+        void stopSountrack(int);
 };
 
 #include "Admin.cpp"
