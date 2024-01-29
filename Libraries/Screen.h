@@ -16,6 +16,7 @@ class clsScreen{
         int actualTexture = 0;
         Clock *reloj;
         int alfa=255;
+        int alfam=0;
 
     public:
         Sprite  *sprites[1000];
