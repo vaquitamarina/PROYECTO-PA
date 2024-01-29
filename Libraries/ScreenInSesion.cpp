@@ -4,14 +4,14 @@ clsScreenInSesion::clsScreenInSesion(RenderWindow *w,Font *f) : clsScreen(w){
     this->setTextbox(f);
 }
 void clsScreenInSesion::setTextbox(Font *f){
-    textbox[0] = new clsTextbox(20,Color(255,255,255,0),false);
-    textbox[1] = new clsTextbox(20,Color(255,255,255,0),false);
+    textbox[0] = new clsTextbox(30,Color(255,255,255,0),false);
+    textbox[1] = new clsTextbox(30,Color(255,255,255,0),false);
 
     textbox[0]->setFont(*f);
     textbox[1]->setFont(*f);
 
-    textbox[0]->setPosition({400,300});
-    textbox[1]->setPosition({400,400});
+    textbox[0]->setPosition({350,400});
+    textbox[1]->setPosition({350,500});
 
     textbox[0]->setLimit(true,10);
     textbox[1]->setLimit(true,10);

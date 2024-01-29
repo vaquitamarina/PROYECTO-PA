@@ -207,15 +207,20 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
 
     //Menu inicio de sesion;
-    screen[1] = new clsScreenInSesion(window,&fonts[0]);
+    screen[1] = new clsScreenInSesion(window,&fonts[4]);
     //background
     
     screen[1]->setSprite(0,screen[0]->sprites[0]);
 
     //
-    screen[1]->setText(0,&fonts[0],"Iniciar Sesion",30,{400,300});
+    screen[1]->setText(2,&fonts[0],"CHESS",80,{100,200});
+    screen[1]->setText(0,&fonts[4],"Log in",30,{100,400});
     screen[1]->setTextColor(0,Color::Yellow);
-    screen[1]->setText(1,&fonts[0],"Registrar Usuario",30,{400,400});
+    screen[1]->setText(1,&fonts[4],"Sign in",30,{100,500});
+    screen[1]->setText(3,&fonts[4],"Enter user: ",30,{100,400});
+    screen[1]->setText(4,&fonts[4],"Enter passw: ",30,{100,500});
+    screen[1]->setTextColor(3,Color(255,255,255,0));
+    screen[1]->setTextColor(4,Color(255,255,255,0));
     control[1] = new clsControl(screen[1],0,1,0, 1, &registro,this);
 
     //Menu de configuracion

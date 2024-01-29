@@ -224,6 +224,8 @@ void clsControl::pressEnter(int* actualScreen){
             else{
                 menu->setTextColor(0,Color(255,255,255,0));
                 menu->setTextColor(1,Color(255,255,255,0));
+                menu->setTextColor(3,Color(255,255,255,255));
+                menu->setTextColor(4,Color(255,255,255,255));
                 reinterpret_cast < clsScreenInSesion *> (menu) -> setTextboxColor(0,Color(255,255,255,255),true);
                 reinterpret_cast < clsScreenInSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,255),false);
                 oldSelected = selected;
@@ -294,6 +296,8 @@ void clsControl::pressEscape(int* actualScreen){
             if(in){
                 menu->setTextColor(0,Color::Yellow);
                 menu->setTextColor(1,Color::White);
+                menu->setTextColor(3,Color(255,255,255,0));
+                menu->setTextColor(4,Color(255,255,255,0));
                 reinterpret_cast < clsScreenInSesion *> (menu) -> setTextboxColor(0,Color(255,255,255,0),false);
                 reinterpret_cast < clsScreenInSesion *> (menu) -> setTextboxColor(1,Color(255,255,255,0),false);
                 reinterpret_cast <clsScreenInSesion *> (menu) -> deleteTextboxString(0);
