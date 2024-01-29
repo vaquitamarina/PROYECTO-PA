@@ -92,12 +92,25 @@ void clsScreen::setTextureColor(int i, Color color){
 
 void clsScreen::updateDif(int n,float dif)
 {
-    if(alfa>0)
+    if(alfa>=0)
     {
         if(reloj->getElapsedTime().asSeconds() > dif)
         {
             sprites[n]->setColor(Color(255,255,255,alfa));
             alfa=alfa-10;
+            reloj->restart();
+        }
+    }
+}
+
+void clsScreen::updateDifI(int n,float dif)
+{
+    if(alfam<=255)
+    {
+        if(reloj->getElapsedTime().asSeconds() > dif)
+        {
+            sprites[n]->setColor(Color(255,255,255,alfam));
+            alfam=alfam+5;
             reloj->restart();
         }
     }

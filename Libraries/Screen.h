@@ -49,6 +49,7 @@ class clsScreen{
         //animacion
         void update(int,int);
         void updateDif(int,float);
+        void updateDifI(int,float);
         
         //Cajas de texto
         void draw();
