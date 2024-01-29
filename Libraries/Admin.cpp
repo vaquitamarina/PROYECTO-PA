@@ -205,6 +205,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     //background
     // screen[0]->setSprite(0,"./Images/backgroundMenu.jpg");
     screen[0]->setText(0,&fonts[0],"CHESS",80,{100,200});
+    screen[0]->setSprite(1,"");
     //
     screen[0]->setText(1,&fonts[4],"Start Game",30,{100,400});
     screen[0]->setTextColor(1,Color::Yellow);
@@ -247,10 +248,12 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[2]->setTexture(7,"./Images/Config/Barra8.png");
     screen[2]->setTexture(8,"./Images/Config/Barra9.png");
     screen[2]->setTexture(9,"./Images/Config/Barra10.png");
-    
+    screen[2]->setPosSprite(1,{200,280});
+    screen[2]->setScaleSprite(1,{8.5,8.5});
+
    // screen[2]->setSprite(0,"./Images/backgroundConfig.png");
-    
-    control[2] = new clsControl(screen[2],0,0,0,2);
+    screen[1]->setSprite(1,"");
+    control[2] = new clsControl(screen[2],0,9,0,2,this);
 
     //Partida
     screen[3] = new clsScreenPartida(window,&clock);
