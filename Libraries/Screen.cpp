@@ -117,3 +117,13 @@ void clsScreen::updateDifI(int n,float dif)
         }
     }
 }
+
+void clsScreen::setSpriteResize(int n)
+{
+    unsigned int screenWidth = VideoMode::getDesktopMode().width;
+    unsigned int screenHeight = VideoMode::getDesktopMode().height;
+
+    float scaleX = (float)screenWidth / sprites[n]->getTexture()->getSize().x;
+    float scaleY = (float)screenHeight / sprites[n]->getTexture()->getSize().y;
+    sprites[n]->setScale(scaleX, scaleY);
+}

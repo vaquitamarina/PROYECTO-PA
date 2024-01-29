@@ -189,7 +189,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
 
     screen[0]->setPosSprite(0,{0,0});
-    screen[0]->setScaleSprite(0,{0.7,0.7});
+    // screen[0]->setScaleSprite(0,{0.7,0.7});
 
 
     //Menu principal;
@@ -345,7 +345,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[4] = new clsScreenPartida(window,&clock);
     screen[4]->setSprite(0,"./Images/FramesQ/scene00441.jpg");
 
-
+    screen[0]->setSpriteResize(0);
 }
 
 void clsAdmin::iniciarPrograma(){

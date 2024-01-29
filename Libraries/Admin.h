@@ -30,6 +30,7 @@ class clsAdmin{
         void iniciarPartida(string, string);
         void setSoundtrack(int);
         void playSound(int);
+        void getWandH(int,int);
 };
 
 #include "Admin.cpp"
