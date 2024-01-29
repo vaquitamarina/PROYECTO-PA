@@ -132,6 +132,9 @@ void clsControl::pressRight(){
                 oldSelected = min;
             }
             menu->setTextureinSprite(1,oldSelected);
+            admin->setSoundtrackVolume(oldSelected+1,0);
+            admin->setSoundtrackVolume(oldSelected+1,1);
+            admin->setSoundtrackVolume(oldSelected+1,2);
         break;        
         case 3:
             oldSelected++;
@@ -159,6 +162,10 @@ void clsControl::pressLeft(){
                 oldSelected = max;
             }
             menu->setTextureinSprite(1,oldSelected);
+            menu->setTextureinSprite(1,oldSelected);
+            admin->setSoundtrackVolume(oldSelected+1,0);
+            admin->setSoundtrackVolume(oldSelected+1,1);
+            admin->setSoundtrackVolume(oldSelected+1,2);
         break;
         case 3:
             oldSelected--;
