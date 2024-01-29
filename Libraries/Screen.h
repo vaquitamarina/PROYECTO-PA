@@ -15,6 +15,7 @@ class clsScreen{
         Texture frames[500];
         int actualTexture = 0;
         Clock *reloj;
+        int alfa=255;
 
     public:
         Sprite  *sprites[1000];
@@ -47,7 +48,7 @@ class clsScreen{
 
         //animacion
         void update(int,int);
-        void updateDif(int,int);
+        void updateDif(int,float);
         
         //Cajas de texto
         void draw();
