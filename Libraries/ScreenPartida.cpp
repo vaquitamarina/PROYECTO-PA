@@ -401,12 +401,17 @@ char clsScreenPartida::getPiezaColor(int i ){
 //     if(piezas[i]->getColor() == 'b'){
 //         cout<< this->getTestMovement(reyNegro,i)<<" ";
 //         cout<< i;
-//         if(this->getTestMovement(reyNegro,i)){
+//         if(this->getTestMovement;(reyNegro,i)){
 //             cout<<"GANARON LOS BLACOS";
 //         }
 //     }
-// }
-
+//
+void clsScreenPartida::setWin(bool b){
+    win = b;
+}
+bool clsScreenPartida::getWin(){
+    return win;
+}
 void  clsScreenPartida::TurnPlayer(){
     if(turn==true)
     {
@@ -425,9 +430,11 @@ void  clsScreenPartida::TurnPlayer(){
 void clsScreenPartida::deletePieza(int i){
     if(i == 30){
         cout<<"GANARON LOS BLANCOS";
+        setWin(true);
     }
     if(i == 31){
         cout<<"GANARON LOS NEGROS";
+        setWin(true);
     }
     piezas[i]->setPos({-100,-100});
     

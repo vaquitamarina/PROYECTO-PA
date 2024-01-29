@@ -274,8 +274,11 @@ void clsControl::pressEnter(int* actualScreen){
                         // reinterpret_cast<clsScreenPartida *>(menu)->comprobarGanador(piezaLevantada);
                         reinterpret_cast < clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10},{origin.x,origin.y},2);
                         reinterpret_cast<clsScreenPartida *>(menu)->TurnPlayer();
-                        
+
                     }
+                }
+                if(reinterpret_cast<clsScreenPartida *>(menu)->getWin()){
+                    *actualScreen = 4;
                 }
             }   
             

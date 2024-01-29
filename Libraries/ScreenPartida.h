@@ -12,6 +12,7 @@ class clsScreenPartida : public clsScreen {
         string usuarioB;
         bool turn = true;
         int priority;
+        bool win;
     public:
         clsScreenPartida(RenderWindow *);
         clsScreenPartida(RenderWindow *,Clock *);
@@ -25,7 +26,8 @@ class clsScreenPartida : public clsScreen {
         void setPriority(Vector2f);
         void setUsuarios(string,string);
         void updateCasillas();
-        // void comprobarGanador(int i);
+        void setWin(bool);
+        bool getWin();
         void TurnPlayer();
         void deletePieza(int);
         Sound getEffectSound(int);

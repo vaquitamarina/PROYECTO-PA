@@ -335,7 +335,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[3]->setText(1,&fonts[2],"pepito",60,{700,200});
     control[3] = new clsControl(screen[3],0,7,0,3,this);
 
-
+    
     //Screen de victoria
     screen[4] = new clsScreenPartida(window,&clock);
     screen[4]->setSprite(0,"./Images/FramesQ/scene00441.jpg");

@@ -16,6 +16,10 @@ int main(){
     gameFont.loadFromFile("./Fonts/04B_30__.TTF");
     textbox1.setFont(gameFont);
     textbox1.setPosition({100,100});
+    Texture a;
+    Sprite sp;
+    a.loadFromFile("");
+    sp.setTexture(a);
 
     ///////////////////////////////////////////////
     // Vector2f v1;
@@ -40,7 +44,7 @@ int main(){
     cout<<a;
     while(window.isOpen()){
         Event event;
-
+        
         while(window.pollEvent(event)){
             switch(event.type){
                 case Event::Closed:
