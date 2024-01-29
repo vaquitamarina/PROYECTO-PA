@@ -225,7 +225,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     control[2] = new clsControl(screen[2],0,0,0,2);
 
     //Partida
-    screen[3] = new clsScreenPartida(window);
+    screen[3] = new clsScreenPartida(window,&clock);
     // screen[3]->setSprite(0,"./Images/gatito.png");
     screen[3]->setSprite(0,"./Images/FramesQ/scene00441.jpg");
 
@@ -385,7 +385,7 @@ void clsAdmin::iniciarPrograma(){
                     screen[actualScreen]->draw();
                     break;
                 case 3:
-                    // screen[actualScreen]->update(0,98);
+                    screen[actualScreen]->update(0,98);
                     reinterpret_cast<clsScreenPartida *>(screen[actualScreen])->draw();
                     break;
                 default:

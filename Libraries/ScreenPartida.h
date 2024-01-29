@@ -14,6 +14,7 @@ class clsScreenPartida : public clsScreen {
         int priority;
     public:
         clsScreenPartida(RenderWindow *);
+        clsScreenPartida(RenderWindow *,Clock *);
         void setPointerPos(int,char);
         void setPiezaPos(Vector2f, Vector2f, int);
         bool getTestMovement(Vector2f, int);
