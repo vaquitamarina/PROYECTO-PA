@@ -23,6 +23,7 @@
 
 #include "Screen.h"
 #include "ScreenInSesion.h"
+#include "ScreenConfiguracion.h"
 #include "ScreenPartida.h"
 #include "Control.h"
 #include "Admin.h"
