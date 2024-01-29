@@ -211,7 +211,6 @@ clsAdmin::clsAdmin(RenderWindow *w){
     //background
     
     screen[1]->setSprite(0,screen[0]->sprites[0]);
-    screen[1]->setScaleSprite(0,{0.65,0.65});
 
     //
     screen[1]->setText(0,&fonts[0],"Iniciar Sesion",30,{400,300});
@@ -386,6 +385,7 @@ void clsAdmin::iniciarPrograma(){
                     screen[actualScreen]->draw();
                     break;
                 case 3:
+                    screen[actualScreen]->update(0,98);
                     reinterpret_cast<clsScreenPartida *>(screen[actualScreen])->draw();
                     break;
                 default:

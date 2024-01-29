@@ -13,15 +13,15 @@ clsScreenPartida::clsScreenPartida(RenderWindow *w) : clsScreen(w){
     this->setSprite(1,"./Images/Pointers/02.png");
     this->setPosSprite(1,{casillas[0][0].x,casillas[0][0].y});
     
-    //para acomodar el puntero
+    //para acomodar el puntero 
     sprites[1]->setOrigin({-14,-32});
     sprites[1]->setColor(Color(235,171,52,255));
 
     //
 
     //para colocar el tablero
-    this->setTexture(0,"./Images/chessboardPixel.png");
-    this->setTextureTexturetoSprite(2,0);
+    this->setTexture(100,"./Images/chessboardPixel.png");
+    this->setTextureTexturetoSprite(2,100);
     this->setTextureForm(2, 100,10,400,400);
     this->setScaleSprite(2,{1.45,1.45});
     this->setPosSprite(2,{85,85});

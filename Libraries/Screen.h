@@ -11,7 +11,7 @@ class clsScreen{
         //Music   soundtrack[NUM_SOUNDTRACKS];
         Text    text[100];
         Texture textures[1000];
-        Texture texturesCo[100];
+        Texture texturesCo[500];
         Texture frames[500];
         int actualTexture = 0;
         Clock *reloj;
