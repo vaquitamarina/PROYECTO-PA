@@ -234,7 +234,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     control[1] = new clsControl(screen[1],0,1,0, 1, &registro,this);
         
     //Menu de configuracion
-    screen[2] = new clsScreen(window);
+    screen[2] = new clsScreen(window,&clock);
     screen[2]->setSprite(0,screen[0]->sprites[0]);
     screen[2]->setText(2,&fonts[0],"SETTINGS",80,{100,200});
     screen[2]->setText(3,&fonts[4],"Volume: ",30,{100,400});
@@ -249,8 +249,8 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[2]->setTexture(7,"./Images/Config/Barra8.png");
     screen[2]->setTexture(8,"./Images/Config/Barra9.png");
     screen[2]->setTexture(9,"./Images/Config/Barra10.png");
-    screen[2]->setPosSprite(1,{200,300});
-    screen[2]->setScaleSprite(1,{8.5,8.5});
+    screen[2]->setPosSprite(1,{200,301});
+    screen[2]->setScaleSprite(1,{8.4,8.4});
 
    // screen[2]->setSprite(0,"./Images/backgroundConfig.png");
     screen[1]->setSprite(1,"");
@@ -426,6 +426,10 @@ void clsAdmin::iniciarPrograma(){
                     screen[actualScreen]->draw();
                     break;
                 case 1: 
+                    screen[0]->update(0,25);
+                    screen[actualScreen]->draw();
+                    break;
+                case 2:
                     screen[0]->update(0,25);
                     screen[actualScreen]->draw();
                     break;
