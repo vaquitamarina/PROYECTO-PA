@@ -1,16 +1,3 @@
-vaquita ola 0
+vaquita ola 30
 will chau 0
 russ ga 0
-VAQUITA OLA 0
-WILL CHAU 0
-ASD ASD 0
-GOTO GOTO 0
-GOGO  0
-DASD QW 0
-QW QW 0
-1 1 0
-2 2 0
-russga  0
-as  0
-edu123 123 0
-  0

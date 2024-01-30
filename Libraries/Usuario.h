@@ -11,6 +11,7 @@ class clsUsuario{
         clsUsuario(string,string,int);
         string getNombre();
         string getPasswd();
+        int getMmr();
         void setMmr(int);
 };
 

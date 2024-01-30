@@ -13,9 +13,10 @@ class clsRegistro{
         ifstream registroInput;
     public:
         clsRegistro();
+        ~clsRegistro();
         bool crearUsuario(string,string,int);
         bool iniciarSesion(string,string);
-        void setMmmr(string,int);
+        void setMmr(string,int);
         void generarRanking();
 };
 

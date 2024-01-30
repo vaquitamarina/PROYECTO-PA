@@ -17,5 +17,12 @@ string clsUsuario::getPasswd(){
 }
 
 void clsUsuario::setMmr(int m){
-    mmr = m;
+    mmr = m + mmr;
+    if(mmr < 0){
+        mmr = 0;
+    }
+}
+
+int clsUsuario::getMmr(){
+    return mmr;
 }
