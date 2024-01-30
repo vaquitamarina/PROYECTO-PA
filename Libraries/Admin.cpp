@@ -215,8 +215,9 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[0]->setTextColor(1,Color::Yellow);
     screen[0]->setText(2,&fonts[4],"Settings",30,{100,500});
     screen[0]->setText(3,&fonts[4],"Quit",30,{100,600});
+    screen[0]->setText(4,&fonts[4],"Ranking",30,{100,700});
     
-    control[0] = new clsControl(screen[0], 1, 3, 1, 0);
+    control[0] = new clsControl(screen[0], 1, 4, 1, 0);
 
 
     //Menu inicio de sesion;
