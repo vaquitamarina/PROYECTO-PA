@@ -250,7 +250,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[2]->setTexture(8,"./Images/Config/Barra9.png");
     screen[2]->setTexture(9,"./Images/Config/Barra10.png");
     screen[2]->setPosSprite(1,{200,301});
-    screen[2]->setScaleSprite(1,{8.4,8.4});
+    screen[2]->setScaleSprite(1,{5.0,7.0});
 
    // screen[2]->setSprite(0,"./Images/backgroundConfig.png");
     screen[1]->setSprite(1,"");
@@ -371,14 +371,14 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
 
     //Screen de victoria
-    screen[4] = new clsScreenPartida(window,&clock);
+    screen[4] = new clsScreen(window,&clock);
     screen[4]->setSprite(0,"./Images/FramesQ/scene00441.jpg");
     screen[4]->setSprite(1,"");   
     screen[4]->setPosSprite(1,{-100,-100});
 
     //
-    control[4]=new clsControl(screen[4],0,0,0,4,this);
-    
+    control[4]=new clsControl(screen[4],0,1,0,4,this);
+
     screen[0]->setSpriteResize(0);
     screen[1]->setSpriteResize(0);
     screen[2]->setSpriteResize(0);
