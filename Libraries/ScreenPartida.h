@@ -22,6 +22,8 @@ class clsScreenPartida : public clsScreen {
         bool getTestEat(Vector2f, int);
         bool getTurn();
         char getPiezaColor(int);
+        string getUsuarioB();
+        string getUsuarioN();
         int getCasillaPieza(Vector2f);
         void setPriority(Vector2f);
         void setUsuarios(string,string);

@@ -454,3 +454,10 @@ void clsScreenPartida::setUsuarios(string n, string b){
     text[1].setString(usuarioB);
 }
 
+string clsScreenPartida::getUsuarioB(){
+    return usuarioB;
+}
+
+string clsScreenPartida::getUsuarioN(){
+    return usuarioN;
+}

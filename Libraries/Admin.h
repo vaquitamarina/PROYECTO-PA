@@ -33,6 +33,7 @@ class clsAdmin{
         void getWandH(int,int);
         void stopSountrack(int);
         void setSoundtrackVolume(int,int);
+        void setUsuarioMmr(string,int);
 };
 
 #include "Admin.cpp"

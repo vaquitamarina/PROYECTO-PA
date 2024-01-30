@@ -484,3 +484,8 @@ void clsAdmin::stopSountrack(int i)
 void clsAdmin::setSoundtrackVolume(int x,int i){
     soundtrack[i].setVolume(x*10);
 }
+
+void clsAdmin::setUsuarioMmr(string n, int i){
+    registro.setMmr(n,i);
+    cout<< i <<" ";
+}

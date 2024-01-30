@@ -214,6 +214,7 @@ void clsControl::pressEnter(int* actualScreen){
                             }
                         }
                         if(cont == 1){
+                            selected = 0;
                             if(registro->iniciarSesion(reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(0),reinterpret_cast<clsScreenInSesion *>(menu)->getTextbox(1))){
                                 //
                                 // cout<<"Se ha iniciado sesion correctamente";
@@ -308,6 +309,16 @@ void clsControl::pressEnter(int* actualScreen){
                     *actualScreen = 4;
                     admin->stopSountrack(1);
                     admin->playSound(2);
+                    if(reinterpret_cast<clsScreenPartida *>(menu)->getTurn() == true){
+                        admin->setUsuarioMmr(reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioB(),30);
+                        admin->setUsuarioMmr(reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioN(),-30);
+                        cout<<"bbbb";
+                    }
+                    else{
+                        admin->setUsuarioMmr(reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioB(),-30);
+                        admin->setUsuarioMmr(reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioN(),30);
+                        cout<<"nnn";
+                    }
                 }
             }   
             

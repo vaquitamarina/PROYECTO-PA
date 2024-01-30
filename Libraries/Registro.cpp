@@ -43,21 +43,30 @@ bool clsRegistro::crearUsuario(string n,string p,int m){
     }
     usuarios[nUsuarios] = new clsUsuario(n,p,m);
     nUsuarios++;
-    registroOutput.open("./Registro/nusuarios.txt");
-    registroOutput<<nUsuarios;
-    registroOutput.close();
-
-    registroOutput.open("./Registro/registro.txt", ios::app );
-    registroOutput<<n<<" "<<p<<" "<<m<<endl;
-    registroOutput.close();
     return true;
 }
 
-void clsRegistro::setMmmr(string n, int m){
+void clsRegistro::setMmr(string n, int m){
     for(int i = 0; i < nUsuarios;i++){
         if(usuarios[i]->getNombre() == n){
             usuarios[i]->setMmr(m);
             break;
         }
     }
+}
+
+clsRegistro::~clsRegistro(){
+    registroOutput.open("./Registro/nusuarios.txt");
+    registroOutput<<nUsuarios;
+    registroOutput.close();
+
+    registroOutput.open("./Registro/registro.txt");
+
+    for(int i = 0; i < nUsuarios; i++){
+        registroOutput<<usuarios[i]->getNombre()<<" "<<usuarios[i]->getPasswd()<<" "<<usuarios[i]->getMmr()<<endl;
+        cout<<usuarios[i]->getMmr();
+    }
+
+    registroOutput.close();
+
 }
