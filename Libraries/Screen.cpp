@@ -56,6 +56,13 @@ void clsScreen::draw(){
     window->draw(text[3]);
     window->draw(text[4]);
     window->draw(text[5]);
+    window->draw(text[6]);
+    window->draw(text[7]);
+    window->draw(text[8]);
+    window->draw(text[9]);
+    window->draw(text[10]);
+    window->draw(text[11]);
+
     textbox[0]->drawTo(window);
     textbox[1]->drawTo(window);
     window->draw(*sprites[1]);

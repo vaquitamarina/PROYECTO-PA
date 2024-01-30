@@ -220,7 +220,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[0]->setText(4,&fonts[4],"Quit",30,{100,600});
     screen[0]->setText(2,&fonts[4],"Ranking",30,{100,400});
     
-    control[0] = new clsControl(screen[0], 1, 4, 1, 0);
+    control[0] = new clsControl(screen[0], 1, 4, 1, 0,this);
 
 
     //Menu inicio de sesion;
@@ -496,8 +496,19 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
 
     screen[5] = new clsScreen(window);
-    screen[5]->setSprite(0,"./Images/gatito.png");
+    control[5] = new clsControl(screen[4],0,0,0,5,this);
+    screen[5]->setSprite(0,screen[4]->sprites[0]);
     screen[5]->setSprite(1,"");
+    screen[5]->setText(0,&fonts[6],"RANKING",80,{-320,0});
+    screen[5]->setTextOrigin(screenWidth*1./2.,50.,0);
+
+    screen[5]->setText(1,&fonts[4],"aa",40,{-200,200});
+    screen[5]->setText(2,&fonts[4],"aa",40,{-200,300});
+    screen[5]->setText(3,&fonts[4],"aa",40,{-200,400});
+    screen[5]->setText(4,&fonts[4],"aa",40,{-200,500});
+    screen[5]->setText(5,&fonts[4],"aa",40,{-200,600});
+    // screen[5]->setTextOrigin(screenWidth*1./2.,50.,1);
+
 
     screen[0]->setSpriteResize(0);
     screen[1]->setSpriteResize(0);
@@ -571,6 +582,7 @@ void clsAdmin::iniciarPrograma(){
                     screen[actualScreen]->draw();
                     break;
                 case 5:
+                    screen[4]->update(0,99,0.05);
                     screen[actualScreen]->draw();
                     break;
                 default:
@@ -629,5 +641,14 @@ void clsAdmin::setSoundtrackAfter(int n,float x)
     {
         soundtrack[n].play();
         clock.restart();
+    }
+}
+
+
+void clsAdmin::setRanking(){
+    registro.generarRanking();
+
+    for(int i = 0; i< 5; i++){
+        screen[5]->setString(i+1,registro.getUsuario(i).getNombre());
     }
 }

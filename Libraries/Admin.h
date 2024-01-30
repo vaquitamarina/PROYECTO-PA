@@ -36,6 +36,7 @@ class clsAdmin{
         void setUsuarioMmr(string,int);
         void setStrinMain(int,int,string);
         void setSoundtrackAfter(int,float);
+        void setRanking();
 };
 
 #include "Admin.cpp"

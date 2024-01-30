@@ -71,6 +71,10 @@ void clsRegistro::setMmr(string n, int m){
     }
 }
 
+clsUsuario clsRegistro::getUsuario(int i){
+    return usuarios[i];
+}
+
 clsRegistro::~clsRegistro(){
     registroOutput.open("./Registro/nusuarios.txt");
     registroOutput<<nUsuarios;

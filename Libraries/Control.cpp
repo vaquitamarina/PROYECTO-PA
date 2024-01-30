@@ -187,11 +187,22 @@ void clsControl::pressLeft(){
 void clsControl::pressEnter(int* actualScreen){ 
     switch(op){
         case 0:
-            if(selected == 3){
+            if(selected == 4){
                 menu->closeWindow();
             }
-            *actualScreen = selected;
+            switch(selected){
+                case 1:
+                    *actualScreen = 1;
+                    break;
+                case 2:
+                    admin->setRanking();
+                    *actualScreen = 5;
+                    break;
+                case 3:
+                    *actualScreen = 2;
+            }
             break;
+
         case 1: 
             if(in){
                 switch(oldSelected){
@@ -357,6 +368,9 @@ void clsControl::pressEscape(int* actualScreen){
             }
             break;
         case 2:
+            *actualScreen = 0;
+            break;
+        case 5:
             *actualScreen = 0;
             break;
     }
