@@ -482,9 +482,12 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[4]->setPosSprite(0,{0,0});
 
 
-    screen[4]->setText(0,&fonts[6],"BLACK WINS ",80,{-340,0});
-
+    screen[4]->setText(0,&fonts[6],"",80,{-340,0});
+    screen[4]->setText(1,&fonts[4],"",40,{-300,0});
+    screen[4]->setText(2,&fonts[4],"",40,{-300,0});
     screen[4]->setTextOrigin(screenWidth*1./2.,50.,0);
+    screen[4]->setTextOrigin(screenWidth*1./2.,300.,1);
+    screen[4]->setTextOrigin(screenWidth*1./2.,400.,2);
     //
     control[4]=new clsControl(screen[4],0,1,0,4,this);
 
@@ -599,4 +602,9 @@ void clsAdmin::setSoundtrackVolume(int x,int i){
 void clsAdmin::setUsuarioMmr(string n, int i){
     registro.setMmr(n,i);
     cout<< i <<" ";
+}
+
+void clsAdmin::setStrinMain(int n,int m,string x)
+{
+    screen[n]->setString(m,x);
 }

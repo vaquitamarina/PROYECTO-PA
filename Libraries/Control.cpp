@@ -310,14 +310,18 @@ void clsControl::pressEnter(int* actualScreen){
                     admin->stopSountrack(1);
                     admin->playSound(2);
                     if(reinterpret_cast<clsScreenPartida *>(menu)->getTurn() == true){
-                        admin->setUsuarioMmr(reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioB(),30);
-                        admin->setUsuarioMmr(reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioN(),-30);
-                        cout<<"bbbb";
-                    }
-                    else{
                         admin->setUsuarioMmr(reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioB(),-30);
                         admin->setUsuarioMmr(reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioN(),30);
-                        cout<<"nnn";
+                        admin->setStrinMain(4,0,"BLACK WINS");
+                        admin->setStrinMain(4,1,reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioN()+" WINNER  +30");
+                        admin->setStrinMain(4,2,reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioB()+" LOSER   -30");
+                    }
+                    else{
+                        admin->setUsuarioMmr(reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioB(),30);
+                        admin->setUsuarioMmr(reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioN(),-30);
+                        admin->setStrinMain(4,0,"WHITE WINS");
+                        admin->setStrinMain(4,1,reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioB()+" WINNER  +30");
+                        admin->setStrinMain(4,2,reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioN()+" LOSER   -30");
                     }
                     registro->generarRanking();
                 }

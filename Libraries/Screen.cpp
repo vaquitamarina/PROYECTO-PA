@@ -138,3 +138,8 @@ void clsScreen::setTextOrigin(float x,float y,int n)
 {
     text[n].setOrigin({-x,-y});
 }
+
+void clsScreen::setString(int n,string s)
+{
+    text[n].setString(s);
+}
