@@ -34,6 +34,8 @@ class clsAdmin{
         void stopSountrack(int);
         void setSoundtrackVolume(int,int);
         void setUsuarioMmr(string,int);
+        void setStrinMain(int,int,string);
+        void setSoundtrackAfter(int,float);
 };
 
 #include "Admin.cpp"

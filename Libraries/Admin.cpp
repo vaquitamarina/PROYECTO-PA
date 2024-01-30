@@ -30,13 +30,16 @@ clsAdmin::clsAdmin(RenderWindow *w){
     soundtrack[0].openFromFile("./Music/Home.ogg");
     soundtrack[1].openFromFile("./Music/Red.ogg");
     soundtrack[2].openFromFile("./Music/big_shot.ogg");
+    soundtrack[3].openFromFile(".Music/PaperPlease.ogg");
     soundtrack[0].play();
     soundtrack[0].setLoop(true);
     soundtrack[1].setLoop(true);
     soundtrack[2].setLoop(true);
+    soundtrack[3].setLoop(true);
     soundtrack[0].setVolume(50);
     soundtrack[1].setVolume(50);
     soundtrack[2].setVolume(50);
+    soundtrack[3].setVolume(50);
     actualSoundtrack=0;
 
     //prueba de animacion por frames
@@ -208,14 +211,14 @@ clsAdmin::clsAdmin(RenderWindow *w){
     
     //background
     // screen[0]->setSprite(0,"./Images/backgroundMenu.jpg");
-    screen[0]->setText(0,&fonts[0],"CHESS",80,{100,200});
+    screen[0]->setText(0,&fonts[0],"CHESS",80,{100,170});
     screen[0]->setSprite(1,"");
     //
-    screen[0]->setText(1,&fonts[4],"Start Game",30,{100,400});
+    screen[0]->setText(1,&fonts[4],"Start Game",30,{100,300});
     screen[0]->setTextColor(1,Color::Yellow);
-    screen[0]->setText(2,&fonts[4],"Settings",30,{100,500});
-    screen[0]->setText(3,&fonts[4],"Quit",30,{100,600});
-    screen[0]->setText(4,&fonts[4],"Ranking",30,{100,700});
+    screen[0]->setText(3,&fonts[4],"Settings",30,{100,500});
+    screen[0]->setText(4,&fonts[4],"Quit",30,{100,600});
+    screen[0]->setText(2,&fonts[4],"Ranking",30,{100,400});
     
     control[0] = new clsControl(screen[0], 1, 4, 1, 0);
 
@@ -482,17 +485,28 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[4]->setPosSprite(0,{0,0});
 
 
-    screen[4]->setText(0,&fonts[6],"BLACK WINS ",80,{-340,0});
-
+    screen[4]->setText(0,&fonts[6],"",80,{-340,0});
+    screen[4]->setText(1,&fonts[4],"",40,{-300,0});
+    screen[4]->setText(2,&fonts[4],"",40,{-300,0});
     screen[4]->setTextOrigin(screenWidth*1./2.,50.,0);
+    screen[4]->setTextOrigin(screenWidth*1./2.,300.,1);
+    screen[4]->setTextOrigin(screenWidth*1./2.,400.,2);
     //
     control[4]=new clsControl(screen[4],0,1,0,4,this);
+
+
+    screen[5] = new clsScreen(window);
+    screen[5]->setSprite(0,"./Images/gatito.png");
+    screen[5]->setSprite(1,"");
 
     screen[0]->setSpriteResize(0);
     screen[1]->setSpriteResize(0);
     screen[2]->setSpriteResize(0);
     screen[3]->setSpriteResize(0);
     screen[4]->setSpriteResize(0);
+    screen[5]->setSpriteResize(0);
+
+    
     // registro.generarRanking();
 }
 
@@ -556,6 +570,9 @@ void clsAdmin::iniciarPrograma(){
                     screen[actualScreen]->update(0,99,0.05);
                     screen[actualScreen]->draw();
                     break;
+                case 5:
+                    screen[actualScreen]->draw();
+                    break;
                 default:
                     screen[actualScreen]->draw();
                     break;
@@ -599,4 +616,18 @@ void clsAdmin::setSoundtrackVolume(int x,int i){
 void clsAdmin::setUsuarioMmr(string n, int i){
     registro.setMmr(n,i);
     cout<< i <<" ";
+}
+
+void clsAdmin::setStrinMain(int n,int m,string x)
+{
+    screen[n]->setString(m,x);
+}
+
+void clsAdmin::setSoundtrackAfter(int n,float x)
+{
+    if(clock.getElapsedTime().asSeconds() > x)
+    {
+        soundtrack[n].play();
+        clock.restart();
+    }
 }
