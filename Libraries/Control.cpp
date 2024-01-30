@@ -136,7 +136,7 @@ void clsControl::pressRight(){
             admin->setSoundtrackVolume(oldSelected+1,1);
             admin->setSoundtrackVolume(oldSelected+1,2);
         break;        
-        case 3:
+        case 3:{
             oldSelected++;
             if(oldSelected == max + 1)
             {
@@ -149,7 +149,16 @@ void clsControl::pressRight(){
             if(cent){
                 reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10},false);
             }
-        break;
+        break;}
+        case 4:{
+            oldSelected++;
+            if(oldSelected == max + 1)
+            {
+                oldSelected = min;
+            }
+            menu->setTextureinSprite(1,oldSelected+100);
+            cout<<oldSelected;
+        break;}
     }
 }
 
@@ -167,7 +176,7 @@ void clsControl::pressLeft(){
             admin->setSoundtrackVolume(oldSelected+1,1);
             admin->setSoundtrackVolume(oldSelected+1,2);
         break;
-        case 3:
+        case 3:{
             oldSelected--;
             if(oldSelected == min - 1)
             {
@@ -180,7 +189,16 @@ void clsControl::pressLeft(){
             if(cent){
                 reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10},false);
             }
-        break;
+        break;}
+        case 4:{
+            oldSelected--;
+            if(oldSelected == min - 1)
+            {
+                oldSelected = max;
+            }
+            menu->setTextureinSprite(1,oldSelected+100);
+            cout<<oldSelected;
+        break;}
     }
 }
 
@@ -272,7 +290,7 @@ void clsControl::pressEnter(int* actualScreen){
             }
             break;
 
-        case 3:
+        case 3: {
             Vector2f origin(menu->getPosSprite(1));
             int piezaPuntero = reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza(origin);
             int piezaLevantada = reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza({origin.x,origin.y-10});
@@ -340,6 +358,15 @@ void clsControl::pressEnter(int* actualScreen){
                 }
             }   
             
+            break;}
+        case 4:
+            admin->reiniciarPiezas();
+            if(oldSelected == 0){
+                *actualScreen = 0;
+            }
+            else {
+                *actualScreen = 3;
+            }
             break;
 
     } 
