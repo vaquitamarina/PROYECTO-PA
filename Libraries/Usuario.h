@@ -9,10 +9,15 @@ class clsUsuario{
         string passwd;
     public:
         clsUsuario(string,string,int);
+        clsUsuario();
         string getNombre();
         string getPasswd();
         int getMmr();
         void setMmr(int);
+        void setNombre(string);
+        void setPasswd(string);
+        bool operator >(clsUsuario);
+        bool operator <(clsUsuario);
 };
 
 #include "Usuario.cpp"

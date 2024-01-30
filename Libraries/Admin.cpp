@@ -367,7 +367,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
     screen[3]->setText(0,&fonts[2],"Turn of: ",70,{700,100});
     screen[3]->setText(1,&fonts[2],"pepito",60,{700,200});
-    control[3] = new clsControl(screen[3],0,7,0,3,this);
+    control[3] = new clsControl(screen[3],0,7,0,3,&registro,this);
 
 
     //Screen de victoria
@@ -384,6 +384,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[2]->setSpriteResize(0);
     screen[3]->setSpriteResize(0);
     screen[4]->setSpriteResize(0);
+    // registro.generarRanking();
 }
 
 void clsAdmin::iniciarPrograma(){

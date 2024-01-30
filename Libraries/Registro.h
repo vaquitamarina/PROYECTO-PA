@@ -7,7 +7,7 @@ using namespace std;
 #include <bits/stdc++.h>
 class clsRegistro{
     private:
-        clsUsuario *usuarios[100];
+        clsUsuario usuarios[100];
         int nUsuarios;
         ofstream registroOutput;
         ifstream registroInput;

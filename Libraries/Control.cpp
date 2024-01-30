@@ -319,6 +319,7 @@ void clsControl::pressEnter(int* actualScreen){
                         admin->setUsuarioMmr(reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioN(),30);
                         cout<<"nnn";
                     }
+                    registro->generarRanking();
                 }
             }   
             

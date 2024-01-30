@@ -15,20 +15,30 @@ clsRegistro::clsRegistro(){
     for (int i = 0; i < nUsuarios; i++)
     {
         registroInput>>n>>p>>m;
-        usuarios[i] = new clsUsuario(n,p,m);
+        usuarios[i].setMmr(m);
+        usuarios[i].setNombre(n);
+        usuarios[i].setPasswd(p);
     }
     registroInput.close();
 }
 
 //metodos
-void generarRanking(){
-    //metodo que ordene el mmr;
+void clsRegistro::generarRanking(){
+    clsUsuario a;
+    for(int i = 0; i < nUsuarios; i++)
+        for(int j = 0; j < nUsuarios-i; j++)
+            if(usuarios[j] > usuarios[j+1]){
+                a = usuarios[j];
+                usuarios[j] = usuarios[j+1];
+                usuarios[j+1] = usuarios[j];
+            }
+
 }
 
 
 bool clsRegistro::iniciarSesion(string n, string p){
     for(int i = 0; i < nUsuarios; i++){
-        if(usuarios[i]->getNombre() == n && usuarios[i]->getPasswd() == p){
+        if(usuarios[i].getNombre() == n && usuarios[i].getPasswd() == p){
             return true;
         }
     }
@@ -37,19 +47,21 @@ bool clsRegistro::iniciarSesion(string n, string p){
 
 bool clsRegistro::crearUsuario(string n,string p,int m){
     for(int i=0;i<nUsuarios;i++){
-        if(usuarios[i]->getNombre() == n){
+        if(usuarios[i].getNombre() == n){
             return false;
         }  
     }
-    usuarios[nUsuarios] = new clsUsuario(n,p,m);
+    usuarios[nUsuarios].setMmr(m);
+    usuarios[nUsuarios].setNombre(n);
+    usuarios[nUsuarios].setPasswd(p);
     nUsuarios++;
     return true;
 }
 
 void clsRegistro::setMmr(string n, int m){
     for(int i = 0; i < nUsuarios;i++){
-        if(usuarios[i]->getNombre() == n){
-            usuarios[i]->setMmr(m);
+        if(usuarios[i].getNombre() == n){
+            usuarios[i].setMmr(m);
             break;
         }
     }
@@ -63,8 +75,8 @@ clsRegistro::~clsRegistro(){
     registroOutput.open("./Registro/registro.txt");
 
     for(int i = 0; i < nUsuarios; i++){
-        registroOutput<<usuarios[i]->getNombre()<<" "<<usuarios[i]->getPasswd()<<" "<<usuarios[i]->getMmr()<<endl;
-        cout<<usuarios[i]->getMmr();
+        registroOutput<<usuarios[i].getNombre()<<" "<<usuarios[i].getPasswd()<<" "<<usuarios[i].getMmr()<<endl;
+        cout<<usuarios[i].getMmr();
     }
 
     registroOutput.close();

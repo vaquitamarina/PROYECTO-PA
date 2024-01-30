@@ -26,3 +26,30 @@ void clsUsuario::setMmr(int m){
 int clsUsuario::getMmr(){
     return mmr;
 }
+
+bool clsUsuario::operator <(clsUsuario user){
+    if(mmr < user.mmr){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+bool clsUsuario::operator >(clsUsuario user){
+    if(mmr > user.mmr){
+        return true;
+    }
+    return false;
+}
+
+clsUsuario::clsUsuario(){
+
+}
+
+void clsUsuario::setNombre(string p){
+    nombre = p;
+}
+void clsUsuario::setPasswd(string p){
+    passwd = p;
+}

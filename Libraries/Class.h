@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "AnimationManager.h"
 #include <SFML/Audio.hpp>
+#include "Ordenacion.h"
 
 #define _CASILLA 61
 #define _CASILLAORIGENY 97
