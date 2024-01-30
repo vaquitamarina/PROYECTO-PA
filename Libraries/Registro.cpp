@@ -52,3 +52,12 @@ bool clsRegistro::crearUsuario(string n,string p,int m){
     registroOutput.close();
     return true;
 }
+
+void clsRegistro::setMmmr(string n, int m){
+    for(int i = 0; i < nUsuarios;i++){
+        if(usuarios[i]->getNombre() == n){
+            usuarios[i]->setMmr(m);
+            break;
+        }
+    }
+}

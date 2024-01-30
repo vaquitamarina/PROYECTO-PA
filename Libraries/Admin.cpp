@@ -373,7 +373,10 @@ clsAdmin::clsAdmin(RenderWindow *w){
     //Screen de victoria
     screen[4] = new clsScreenPartida(window,&clock);
     screen[4]->setSprite(0,"./Images/FramesQ/scene00441.jpg");
+    screen[4]->setSprite(1,"");   
+    screen[4]->setPosSprite(1,{-100,-100});
 
+    //
     screen[0]->setSpriteResize(0);
     screen[1]->setSpriteResize(0);
     screen[2]->setSpriteResize(0);

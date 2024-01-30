@@ -15,6 +15,7 @@ class clsRegistro{
         clsRegistro();
         bool crearUsuario(string,string,int);
         bool iniciarSesion(string,string);
+        void setMmmr(string,int);
         void generarRanking();
 };
 
