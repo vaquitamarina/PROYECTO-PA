@@ -14,6 +14,7 @@ class clsUsuario{
         string getPasswd();
         int getMmr();
         void setMmr(int);
+        void setMmrr(int);
         void setNombre(string);
         void setPasswd(string);
         bool operator >(clsUsuario);

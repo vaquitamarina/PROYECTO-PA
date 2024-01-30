@@ -15,7 +15,8 @@ clsRegistro::clsRegistro(){
     for (int i = 0; i < nUsuarios; i++)
     {
         registroInput>>n>>p>>m;
-        usuarios[i].setMmr(m);
+        cout<<n<<" "<<" "<<p<<" "<<m;
+        usuarios[i].setMmrr(m);
         usuarios[i].setNombre(n);
         usuarios[i].setPasswd(p);
     }
@@ -24,14 +25,14 @@ clsRegistro::clsRegistro(){
 
 //metodos
 void clsRegistro::generarRanking(){
-    clsUsuario a;
-    for(int i = 0; i < nUsuarios; i++)
-        for(int j = 0; j < nUsuarios-i; j++)
-            if(usuarios[j] > usuarios[j+1]){
-                a = usuarios[j];
-                usuarios[j] = usuarios[j+1];
-                usuarios[j+1] = usuarios[j];
-            }
+    // clsUsuario a;
+    // for(int i = 0; i < nUsuarios; i++)
+    //     for(int j = 0; j < nUsuarios-i; j++)
+    //         if(usuarios[j] > usuarios[j+1]){
+    //             a = usuarios[j];
+    //             usuarios[j] = usuarios[j+1];
+    //             usuarios[j+1] = a;
+    //         }
 
 }
 
@@ -76,6 +77,8 @@ clsRegistro::~clsRegistro(){
 
     for(int i = 0; i < nUsuarios; i++){
         registroOutput<<usuarios[i].getNombre()<<" "<<usuarios[i].getPasswd()<<" "<<usuarios[i].getMmr()<<endl;
+        cout<<usuarios[i].getNombre();
+        cout<<usuarios[i].getPasswd();
         cout<<usuarios[i].getMmr();
     }
 

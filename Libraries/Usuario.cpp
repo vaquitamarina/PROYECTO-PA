@@ -22,6 +22,9 @@ void clsUsuario::setMmr(int m){
         mmr = 0;
     }
 }
+void clsUsuario::setMmrr(int m){
+    mmr = m;
+}
 
 int clsUsuario::getMmr(){
     return mmr;
