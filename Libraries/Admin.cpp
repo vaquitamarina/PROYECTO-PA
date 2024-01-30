@@ -208,14 +208,14 @@ clsAdmin::clsAdmin(RenderWindow *w){
     
     //background
     // screen[0]->setSprite(0,"./Images/backgroundMenu.jpg");
-    screen[0]->setText(0,&fonts[0],"CHESS",80,{100,200});
+    screen[0]->setText(0,&fonts[0],"CHESS",80,{100,170});
     screen[0]->setSprite(1,"");
     //
-    screen[0]->setText(1,&fonts[4],"Start Game",30,{100,400});
+    screen[0]->setText(1,&fonts[4],"Start Game",30,{100,300});
     screen[0]->setTextColor(1,Color::Yellow);
-    screen[0]->setText(2,&fonts[4],"Settings",30,{100,500});
-    screen[0]->setText(3,&fonts[4],"Quit",30,{100,600});
-    screen[0]->setText(4,&fonts[4],"Ranking",30,{100,700});
+    screen[0]->setText(3,&fonts[4],"Settings",30,{100,500});
+    screen[0]->setText(4,&fonts[4],"Quit",30,{100,600});
+    screen[0]->setText(2,&fonts[4],"Ranking",30,{100,400});
     
     control[0] = new clsControl(screen[0], 1, 4, 1, 0);
 
@@ -488,11 +488,19 @@ clsAdmin::clsAdmin(RenderWindow *w){
     //
     control[4]=new clsControl(screen[4],0,1,0,4,this);
 
+
+    screen[5] = new clsScreen(window);
+    screen[5]->setSprite(0,"./Images/gatito.png");
+    screen[5]->setSprite(1,"");
+
     screen[0]->setSpriteResize(0);
     screen[1]->setSpriteResize(0);
     screen[2]->setSpriteResize(0);
     screen[3]->setSpriteResize(0);
     screen[4]->setSpriteResize(0);
+    screen[5]->setSpriteResize(0);
+
+    
     // registro.generarRanking();
 }
 
@@ -554,6 +562,9 @@ void clsAdmin::iniciarPrograma(){
                     break;
                 case 4:
                     screen[actualScreen]->update(0,99,0.05);
+                    screen[actualScreen]->draw();
+                    break;
+                case 5:
                     screen[actualScreen]->draw();
                     break;
                 default:
