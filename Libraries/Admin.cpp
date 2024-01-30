@@ -12,6 +12,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     fonts[3].loadFromFile("./Fonts/hachicro.TTF");
     fonts[4].loadFromFile("./Fonts/CryptOfTomorrow.ttf");
     fonts[5].loadFromFile("./Fonts/font.TTF");
+    fonts[6].loadFromFile("./Fonts/ARCADE_I.TTF");
 
     effectBuffer[0].loadFromFile("./soundsEffects/snd_select.wav");
     effect[0].setBuffer(effectBuffer[0]);
@@ -477,6 +478,8 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[4]->setPosSprite(1,{-100,-100});
     screen[4]->setPosSprite(0,{0,0});
 
+
+    screen[4]->setText(0,&fonts[6],"BLACK WINS ",400,{700,100});
     //
     control[4]=new clsControl(screen[4],0,1,0,4,this);
 
@@ -545,7 +548,7 @@ void clsAdmin::iniciarPrograma(){
                     reinterpret_cast<clsScreenPartida *>(screen[actualScreen])->draw();
                     break;
                 case 4:
-                    screen[actualScreen]->update(0,99,0.9);
+                    screen[actualScreen]->update(0,99,0.05);
                     screen[actualScreen]->draw();
                     break;
                 default:
