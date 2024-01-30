@@ -25,6 +25,9 @@ clsRegistro::clsRegistro(){
 
 //metodos
 void clsRegistro::generarRanking(){
+    ShellSort<clsUsuario> shell;
+    shell.Ordena(usuarios,nUsuarios);
+
     // clsUsuario a;
     // for(int i = 0; i < nUsuarios; i++)
     //     for(int j = 0; j < nUsuarios-i; j++)
