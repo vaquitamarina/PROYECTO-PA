@@ -373,7 +373,8 @@ clsAdmin::clsAdmin(RenderWindow *w){
     //Screen de victoria
     screen[4] = new clsScreenPartida(window,&clock);
     screen[4]->setSprite(0,"./Images/FramesQ/scene00441.jpg");
-
+    control[4]=new clsControl(screen[4],0,0,0,4,this);
+    
     screen[0]->setSpriteResize(0);
     screen[1]->setSpriteResize(0);
     screen[2]->setSpriteResize(0);
@@ -436,6 +437,9 @@ void clsAdmin::iniciarPrograma(){
                 case 3:
                     screen[actualScreen]->update(0,98);
                     reinterpret_cast<clsScreenPartida *>(screen[actualScreen])->draw();
+                    break;
+                case 4:
+                    screen[actualScreen]->draw();
                     break;
                 default:
                     screen[actualScreen]->draw();
