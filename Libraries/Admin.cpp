@@ -377,6 +377,8 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[4]->setPosSprite(1,{-100,-100});
 
     //
+    control[4]=new clsControl(screen[4],0,0,0,4,this);
+    
     screen[0]->setSpriteResize(0);
     screen[1]->setSpriteResize(0);
     screen[2]->setSpriteResize(0);
@@ -439,6 +441,9 @@ void clsAdmin::iniciarPrograma(){
                 case 3:
                     screen[actualScreen]->update(0,98);
                     reinterpret_cast<clsScreenPartida *>(screen[actualScreen])->draw();
+                    break;
+                case 4:
+                    screen[actualScreen]->draw();
                     break;
                 default:
                     screen[actualScreen]->draw();

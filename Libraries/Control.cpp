@@ -305,9 +305,9 @@ void clsControl::pressEnter(int* actualScreen){
                     }
                 }
                 if(reinterpret_cast<clsScreenPartida *>(menu)->getWin()){
+                    *actualScreen = 4;
                     admin->stopSountrack(1);
                     admin->playSound(2);
-                    *actualScreen = 4;
                 }
             }   
             
