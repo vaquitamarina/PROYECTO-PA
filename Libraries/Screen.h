@@ -48,7 +48,7 @@ class clsScreen{
         void setTextColor(int, Color);
 
         //animacion
-        void update(int,int);
+        void update(int,int,float);
         void updateDif(int,float);
         void updateDifI(int,float);
         void setSpriteResize(int);
