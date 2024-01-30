@@ -372,7 +372,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
 
     //Screen de victoria
     screen[4] = new clsScreen(window,&clock);
-    screen[4]->setSprite(0,"./Images/FramesQ/scene00441.jpg");
+    screen[4]->setSprite(0,"./Images/FramesQ/b0001.png");
     screen[4]->setSprite(1,"");   
     screen[4]->setPosSprite(1,{-100,-100});
 
