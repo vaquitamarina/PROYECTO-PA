@@ -30,13 +30,16 @@ clsAdmin::clsAdmin(RenderWindow *w){
     soundtrack[0].openFromFile("./Music/Home.ogg");
     soundtrack[1].openFromFile("./Music/Red.ogg");
     soundtrack[2].openFromFile("./Music/big_shot.ogg");
+    soundtrack[3].openFromFile(".Music/PaperPlease.ogg");
     soundtrack[0].play();
     soundtrack[0].setLoop(true);
     soundtrack[1].setLoop(true);
     soundtrack[2].setLoop(true);
+    soundtrack[3].setLoop(true);
     soundtrack[0].setVolume(50);
     soundtrack[1].setVolume(50);
     soundtrack[2].setVolume(50);
+    soundtrack[3].setVolume(50);
     actualSoundtrack=0;
 
     //prueba de animacion por frames
@@ -618,4 +621,13 @@ void clsAdmin::setUsuarioMmr(string n, int i){
 void clsAdmin::setStrinMain(int n,int m,string x)
 {
     screen[n]->setString(m,x);
+}
+
+void clsAdmin::setSoundtrackAfter(int n,float x)
+{
+    if(clock.getElapsedTime().asSeconds()>=x)
+    {
+        soundtrack[n].play();
+        clock.restart();
+    }
 }

@@ -166,6 +166,7 @@ void clsControl::pressLeft(){
             admin->setSoundtrackVolume(oldSelected+1,0);
             admin->setSoundtrackVolume(oldSelected+1,1);
             admin->setSoundtrackVolume(oldSelected+1,2);
+            admin->setSoundtrackVolume(oldSelected+1,3);
         break;
         case 3:
             oldSelected--;
@@ -318,6 +319,7 @@ void clsControl::pressEnter(int* actualScreen){
                     *actualScreen = 4;
                     admin->stopSountrack(1);
                     admin->playSound(2);
+                    admin->setSoundtrackAfter(3,10.);
                     if(reinterpret_cast<clsScreenPartida *>(menu)->getTurn() == true){
                         admin->setUsuarioMmr(reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioB(),-30);
                         admin->setUsuarioMmr(reinterpret_cast<clsScreenPartida *>(menu)->getUsuarioN(),30);
