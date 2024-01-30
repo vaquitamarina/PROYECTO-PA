@@ -11,6 +11,7 @@ class clsUsuario{
         clsUsuario(string,string,int);
         string getNombre();
         string getPasswd();
+        void setMmr(int);
 };
 
 #include "Usuario.cpp"

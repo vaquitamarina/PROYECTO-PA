@@ -15,3 +15,7 @@ string clsUsuario::getNombre(){
 string clsUsuario::getPasswd(){
     return passwd;
 }
+
+void clsUsuario::setMmr(int m){
+    mmr = m;
+}
