@@ -484,6 +484,13 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[4]->setPosSprite(1,{-100,-100});
     screen[4]->setPosSprite(0,{0,0});
 
+    screen[4]->setSprite(2,"./Images/Config/Menu1.png");
+    screen[4]->setTexture(100,"./Images/Config/Menu1.png");
+    screen[4]->setTexture(101,"./Images/Config/Menu2.png");
+
+    screen[4]->setPosSprite(2,{screenWidth/2,screenHeight/5});
+    screen[4]->setScaleSprite(2,{5.0,7.0});
+
 
     screen[4]->setText(0,&fonts[6],"",80,{-340,0});
     screen[4]->setText(1,&fonts[4],"",40,{-300,0});
@@ -602,6 +609,7 @@ void clsAdmin::setSoundtrack(int i){
 }
 
 void clsAdmin::playSound(int i){
+    clock.restart();
     effect[i].play();
 }
 

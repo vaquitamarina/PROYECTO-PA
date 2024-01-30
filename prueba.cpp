@@ -11,28 +11,36 @@ using namespace sf;
 
 int main(){
     RenderWindow window(VideoMode(1280, 720), "Ajedrez", Style::Default);
-    
-    clsUsuario a[10];
+    Music xd;
+    Clock clock;
+    xd.openFromFile("Resources/Soundtrack/PaperPlease.ogg");
+    // clsUsuario a[10];
 
-    a[0].setNombre("will");
-    a[0].setMmr(20);
+    // a[0].setNombre("will");
+    // a[0].setMmr(20);
 
-    a[1].setNombre("vaq");
-    a[1].setMmr(200);
+    // a[1].setNombre("vaq");
+    // a[1].setMmr(200);
 
-    a[2].setPasswd("rus");
-    a[2].setMmr(3);
-    clsUsuario aux;
-    for(int i = 0; i < 3; i++)
-        for(int j = 0; j < 3-i; j++)
-            if(a[j] > a[j+1]){
-                aux = a[j];
-                a[j] = a[j+1];
-                a[j+1] = aux;
-            }
+    // a[2].setPasswd("rus");
+    // a[2].setMmr(3);
+    // clsUsuario aux;
+    // for(int i = 0; i < 3; i++)
+    //     for(int j = 0; j < 3-i; j++)
+    //         if(a[j] > a[j+1]){
+    //             aux = a[j];
+    //             a[j] = a[j+1];
+    //             a[j+1] = aux;
+    //         }
 
-    for(int i =0;i<3;i++){
-        cout<<a[i].getMmr();
+    // for(int i =0;i<3;i++){
+    //     cout<<a[i].getMmr();
+    // }
+
+    if(clock.getElapsedTime().asSeconds() > 10)
+    {
+        xd.play();
+        clock.restart();
     }
 
     while(window.isOpen()){

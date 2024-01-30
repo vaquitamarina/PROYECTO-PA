@@ -150,6 +150,14 @@ void clsControl::pressRight(){
                 reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10},false);
             }
         break;
+        case 4:
+            oldSelected++;
+            if(oldSelected == max + 1)
+            {
+                oldSelected = min;
+            }
+            menu->setTextureinSprite(2,oldSelected+99);
+        break;
     }
 }
 
@@ -180,6 +188,14 @@ void clsControl::pressLeft(){
             if(cent){
                 reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10},false);
             }
+        break;
+        case 4:
+            oldSelected--;
+            if(oldSelected == min - 1)
+            {
+                oldSelected = max;
+            }
+            menu->setTextureinSprite(2,oldSelected+100);
         break;
     }
 }
