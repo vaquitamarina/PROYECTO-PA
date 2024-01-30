@@ -4,6 +4,8 @@ using namespace std;
 using namespace sf;  
 
 clsAdmin::clsAdmin(RenderWindow *w){
+    unsigned int screenWidth = VideoMode::getDesktopMode().width;
+    unsigned int screenHeight = VideoMode::getDesktopMode().height;
     window = w;
     actualScreen = 0;
     fonts[0].loadFromFile("./Fonts/MonsterFriend2Back.otf");
@@ -479,7 +481,9 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[4]->setPosSprite(0,{0,0});
 
 
-    screen[4]->setText(0,&fonts[6],"BLACK WINS ",400,{700,100});
+    screen[4]->setText(0,&fonts[6],"BLACK WINS ",80,{-340,0});
+
+    screen[4]->setTextOrigin(screenWidth*1./2.,50.,0);
     //
     control[4]=new clsControl(screen[4],0,1,0,4,this);
 

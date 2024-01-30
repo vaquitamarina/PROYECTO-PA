@@ -133,3 +133,8 @@ void clsScreen::setTextureinSprite(int n,int m)
 {
     sprites[n]->setTexture(texturesCo[m]);
 }
+
+void clsScreen::setTextOrigin(float x,float y,int n)
+{
+    text[n].setOrigin({-x,-y});
+}
