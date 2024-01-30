@@ -250,7 +250,7 @@ clsAdmin::clsAdmin(RenderWindow *w){
     screen[2]->setTexture(8,"./Images/Config/Barra9.png");
     screen[2]->setTexture(9,"./Images/Config/Barra10.png");
     screen[2]->setPosSprite(1,{200,301});
-    screen[2]->setScaleSprite(1,{8.5,8.5});
+    screen[2]->setScaleSprite(1,{8.4,8.4});
 
    // screen[2]->setSprite(0,"./Images/backgroundConfig.png");
     screen[1]->setSprite(1,"");
