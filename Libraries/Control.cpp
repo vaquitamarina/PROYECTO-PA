@@ -136,7 +136,7 @@ void clsControl::pressRight(){
             admin->setSoundtrackVolume(oldSelected+1,1);
             admin->setSoundtrackVolume(oldSelected+1,2);
         break;        
-        case 3:
+        case 3:{
             oldSelected++;
             if(oldSelected == max + 1)
             {
@@ -149,15 +149,26 @@ void clsControl::pressRight(){
             if(cent){
                 reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10},false);
             }
+<<<<<<< HEAD
         break;
         case 4:
+=======
+        break;}
+        case 4:{
+>>>>>>> 4c63faedf89bc69a9002d6700035619de7754672
             oldSelected++;
             if(oldSelected == max + 1)
             {
                 oldSelected = min;
             }
+<<<<<<< HEAD
             menu->setTextureinSprite(2,oldSelected+99);
         break;
+=======
+            menu->setTextureinSprite(1,oldSelected+100);
+            cout<<oldSelected;
+        break;}
+>>>>>>> 4c63faedf89bc69a9002d6700035619de7754672
     }
 }
 
@@ -175,7 +186,7 @@ void clsControl::pressLeft(){
             admin->setSoundtrackVolume(oldSelected+1,1);
             admin->setSoundtrackVolume(oldSelected+1,2);
         break;
-        case 3:
+        case 3:{
             oldSelected--;
             if(oldSelected == min - 1)
             {
@@ -188,26 +199,48 @@ void clsControl::pressLeft(){
             if(cent){
                 reinterpret_cast<clsScreenPartida *> (menu)->setPiezaPos({origin.x,origin.y-10}, {menu->getPosSprite(1).x,menu->getPosSprite(1).y-10},false);
             }
+<<<<<<< HEAD
         break;
         case 4:
+=======
+        break;}
+        case 4:{
+>>>>>>> 4c63faedf89bc69a9002d6700035619de7754672
             oldSelected--;
             if(oldSelected == min - 1)
             {
                 oldSelected = max;
             }
+<<<<<<< HEAD
             menu->setTextureinSprite(2,oldSelected+100);
         break;
+=======
+            menu->setTextureinSprite(1,oldSelected+100);
+            cout<<oldSelected;
+        break;}
+>>>>>>> 4c63faedf89bc69a9002d6700035619de7754672
     }
 }
 
 void clsControl::pressEnter(int* actualScreen){ 
     switch(op){
         case 0:
-            if(selected == 3){
+            if(selected == 4){
                 menu->closeWindow();
             }
-            *actualScreen = selected;
+            switch(selected){
+                case 1:
+                    *actualScreen = 1;
+                    break;
+                case 2:
+                    admin->setRanking();
+                    *actualScreen = 5;
+                    break;
+                case 3:
+                    *actualScreen = 2;
+            }
             break;
+
         case 1: 
             if(in){
                 switch(oldSelected){
@@ -277,7 +310,7 @@ void clsControl::pressEnter(int* actualScreen){
             }
             break;
 
-        case 3:
+        case 3: {
             Vector2f origin(menu->getPosSprite(1));
             int piezaPuntero = reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza(origin);
             int piezaLevantada = reinterpret_cast<clsScreenPartida *>(menu)->getCasillaPieza({origin.x,origin.y-10});
@@ -345,6 +378,15 @@ void clsControl::pressEnter(int* actualScreen){
                 }
             }   
             
+            break;}
+        case 4:
+            admin->reiniciarPiezas();
+            if(oldSelected == 0){
+                *actualScreen = 0;
+            }
+            else {
+                *actualScreen = 3;
+            }
             break;
 
     } 
@@ -373,6 +415,9 @@ void clsControl::pressEscape(int* actualScreen){
             }
             break;
         case 2:
+            *actualScreen = 0;
+            break;
+        case 5:
             *actualScreen = 0;
             break;
     }

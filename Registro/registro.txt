@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 russ ga 120
 will chau 310
 vaquita ola 9030
+=======
+russ ga 240
+will chau 400
+vaquita ola 8820
+>>>>>>> 4c63faedf89bc69a9002d6700035619de7754672

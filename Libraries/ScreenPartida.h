@@ -34,6 +34,7 @@ class clsScreenPartida : public clsScreen {
         void deletePieza(int);
         Sound getEffectSound(int);
         void imprimirMatrizPrueba();
+        void reiniciarPiezas();
 
         void draw();
 };

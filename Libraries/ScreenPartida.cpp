@@ -461,3 +461,76 @@ string clsScreenPartida::getUsuarioB(){
 string clsScreenPartida::getUsuarioN(){
     return usuarioN;
 }
+
+void clsScreenPartida::reiniciarPiezas(){
+    piezas[0] = new clsPeon(casillas[0][1],'n');
+    // piezas[0]->setSprite("./Images/Sprites/peon2.png");
+    piezas[1] = new clsPeon(casillas[1][1],'n');
+    // piezas[1]->setSprite("./Images/Sprites/peon2.png");
+    piezas[2] = new clsPeon(casillas[2][1],'n');
+    // piezas[2]->setSprite("./Images/Sprites/peon2.png");
+    piezas[3] = new clsPeon(casillas[3][1],'n');
+    // piezas[3]->setSprite("./Images/Sprites/peon2.png");
+    piezas[4] = new clsPeon(casillas[4][1],'n');
+    // piezas[4]->setSprite("./Images/Sprites/peon2.png");
+    piezas[5] = new clsPeon(casillas[5][1],'n');
+    // piezas[5]->setSprite("./Images/Sprites/peon2.png");
+    piezas[6] = new clsPeon(casillas[6][1],'n');
+    // piezas[6]->setSprite("./Images/Sprites/peon2.png");
+    piezas[7] = new clsPeon(casillas[7][1],'n');
+    // piezas[7]->setSprite("./Images/Sprites/peon2.png");
+
+    piezas[8] = new clsPeon(casillas[0][6],'b');
+    // piezas[8]->setSprite("./Images/Sprites/peon1.png");
+    piezas[9] = new clsPeon(casillas[1][6],'b');
+    // piezas[9]->setSprite("./Images/Sprites/peon1.png");
+    piezas[10] = new clsPeon(casillas[2][6],'b');
+    // piezas[10]->setSprite("./Images/Sprites/peon1.png");
+    piezas[11] = new clsPeon(casillas[3][6],'b');
+    // piezas[11]->setSprite("./Images/Sprites/peon1.png");
+    piezas[12] = new clsPeon(casillas[4][6],'b');
+    // piezas[12]->setSprite("./Images/Sprites/peon1.png");
+    piezas[13] = new clsPeon(casillas[5][6],'b');
+    // piezas[13]->setSprite("./Images/Sprites/peon1.png");
+    piezas[14] = new clsPeon(casillas[6][6],'b');
+    // piezas[14]->setSprite("./Images/Sprites/peon1.png");
+    piezas[15] = new clsPeon(casillas[7][6],'b');
+    // piezas[15]->setSprite("./Images/Sprites/peon1.png");
+
+    piezas[16] = new clsTorre(casillas[0][0],'n');
+    // piezas[16]->setSprite("./Images/Sprites/torre2.png");
+    piezas[17] = new clsTorre(casillas[7][0],'n');
+    // piezas[17]->setSprite("./Images/Sprites/torre2.png");
+    piezas[18] = new clsTorre(casillas[0][7],'b');
+    // piezas[18]->setSprite("./Images/Sprites/torre1.png");
+    piezas[19] = new clsTorre(casillas[7][7],'b');
+    // piezas[19]->setSprite("./Images/Sprites/torre1.png");
+    
+    piezas[20] = new clsCaballo(casillas[1][0],'n');
+    // piezas[20]->setSprite("./Images/Sprites/caballo2.png");
+    piezas[21] = new clsCaballo(casillas[6][0],'n');
+    // piezas[21]->setSprite("./Images/Sprites/caballo2.png");
+    piezas[22] = new clsCaballo(casillas[1][7],'b');
+    // piezas[22]->setSprite("./Images/Sprites/caballo1.png");
+    piezas[23] = new clsCaballo(casillas[6][7],'b');
+    // piezas[23]->setSprite("./Images/Sprites/caballo1.png");  
+    
+    piezas[24] = new clsAlfil(casillas[2][0],'n');
+    // piezas[24]->setSprite("./Images/Sprites/alfil2.png");
+    piezas[25] = new clsAlfil(casillas[5][0],'n');
+    
+    piezas[26] = new clsAlfil(casillas[2][7],'b');
+    
+    piezas[27] = new clsAlfil(casillas[5][7],'b');
+    
+
+    piezas[28] = new clsReina(casillas[3][0],'n');
+    
+    piezas[29] = new clsReina(casillas[3][7],'b');
+    
+
+    piezas[30] = new clsRey(casillas[4][0],'n');
+    
+    piezas[31] = new clsRey(casillas[4][7],'b');
+    
+}
